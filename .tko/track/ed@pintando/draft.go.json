@@ -1,0 +1,19 @@
+{
+    "patches": [
+        {
+            "label": "2026-03-12_20-47-32",
+            "content": "@@ -144,14 +144,30 @@\n     \n+var p float64%0A    \n p \n-:\n = \n-(\n n1 +\n@@ -178,14 +178,16 @@\n + n3\n-)/\n+ / \n 2.0%0A\n+%0A\n     \n@@ -251,16 +251,8 @@\n tln(\n-%22%25.2f%22, \n area\n",
+            "lines": "18"
+        },
+        {
+            "label": "2026-03-12_20-51-03",
+            "content": "@@ -225,18 +225,15 @@\n     \n-fmt.P\n+p\n rint\n-f\n+ln\n (%22%25.\n",
+            "lines": "16"
+        },
+        {
+            "label": "2026-03-12_20-51-50",
+            "content": "package main\nimport \"fmt\"\nimport \"math\"\nfunc main() {\n\n    var n1, n2, n3 float64\n    fmt.Scanln(&n1)\n    fmt.Scanln(&n2)\n    fmt.Scanln(&n3)\n\n    p := (n1 + n2 + n3)/2.0\n    area := math.Sqrt(p*(p - n1)*(p - n2)*(p - n3))\n\n    fmt.Printf(\"%.2f\", area)\n\n}\n",
+            "lines": "16"
+        }
+    ]
+}
