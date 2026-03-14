@@ -1,0 +1,11 @@
+2026-03-14 00:14:23, MOVE, v:1, k:ed@fuga, mode:DOWN
+2026-03-14 00:14:26, MOVE, v:1, k:ed@fuga, mode:PICK
+2026-03-14 00:43:06, EXEC, v:1, k:ed@fuga, mode:FREE, size:13
+2026-03-14 01:40:58, EXEC, v:1, k:ed@fuga, mode:FULL, rate:40, size:61
+2026-03-14 01:57:14, EXEC, v:1, k:ed@fuga, mode:FULL, size:82, fail:COMP
+2026-03-14 01:57:30, EXEC, v:1, k:ed@fuga, mode:FULL, rate:40, size:82
+2026-03-14 02:06:30, EXEC, v:1, k:ed@fuga, mode:FULL, rate:100, size:36
+2026-03-14 02:06:58, MOVE, v:1, k:ed@fuga, mode:BACK
+2026-03-14 02:06:58, MOVE, v:1, k:ed@fuga, mode:PICK
+2026-03-14 02:07:02, MOVE, v:1, k:ed@fuga, mode:BACK
+2026-03-14 02:08:13, SELF, v:1, k:ed@fuga, self:1, rate:100, study:60, friend:nao, concept:1, problem:1, refactor:1

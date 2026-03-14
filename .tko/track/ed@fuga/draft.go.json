@@ -1,0 +1,29 @@
+{
+    "patches": [
+        {
+            "label": "2026-03-14_00-43-06",
+            "content": "@@ -131,727 +131,40 @@\n %3E 15\n-)%7B%0A        fmt.Println(%22error%22)%0A    %7D %0A%0A    var distH, distP int%0A    %0A    switch d %7B%0A    case 1:%0A%0A        distH = h - f%0A        distP = p - f%0A%0A        if(distH %3C 0)%7B%0A            distH += 16%0A            if(distH %3C distP)%7B%0A                fmt.Println(%22S%22)%0A            %7D else %7B%0A                fmt.Println(%22N%22)%0A            %7D%0A        %7D else %7B%0A            if(distP %3C 0)%7B%0A                distP += 16%0A                if(distP %3C distH)%7B%0A                    fmt.Println(%22N%22)%0A                %7D else %7B%0A                    fmt.Println(%22S%22)%0A                %7D%0A            %7D%0A        %7D%0A%0A    case -1:%0A        distH = f - h%0A        distP = f - p%0A%0A        if(distH %3C 0)%7B%0A            distH += 16%0A            if(distH %3C distP)%7B%0A    \n+ && d != 1 %7C%7C d != -1)%7B%0A\n         \n     \n@@ -151,36 +151,32 @@\n != -1)%7B%0A        \n-    \n fmt.Println(%22S%22)\n@@ -176,337 +176,26 @@\n ln(%22\n-S%22)%0A            %7D else %7B%0A                fmt.Println(%22N%22)%0A            %7D%0A        %7D else %7B%0A            if(distP %3C 0)%7B%0A                distP += 16%0A                if(distP %3C distH)%7B%0A                    fmt.Println(%22N%22)%0A                %7D else %7B%0A                    fmt.Println(%22S%22)%0A                %7D%0A            %7D%0A        %7D%0A    %7D%0A    \n+error%22)%0A    %7D%0A    %0A\n %0A%7D%0A\n",
+            "lines": "13"
+        },
+        {
+            "label": "2026-03-14_01-40-58",
+            "content": "@@ -706,253 +706,16 @@\n     \n-    if(distH %3C 0 && distP %3C 0)%7B%0A            distH += 16%0A            distP += 16%0A            if(distH %3C distP) %7B%0A                fmt.Println(%22S%22)%0A            %7D else %7B%0A                fmt.Println(%22N%22)%0A            %7D%0A        %7D%0A%0A    case -1:%0A        \n+case -1:\n %0A   \n@@ -1133,32 +1133,32 @@\n mt.Println(%22S%22)%0A\n+\n                 \n@@ -1186,236 +1186,8 @@\n    %7D\n-%0A%0A        if(distH %3C 0 && distP %3C 0)%7B%0A            distH += 16%0A            distP += 16%0A            if(dist P %3C distH)%7B%0A                fmt.Println(%22N%22)%0A            %7D else %7B%0A                fmt.Println(%22S%22)%0A            %7D%0A        %7D\n %0A   \n",
+            "lines": "61"
+        },
+        {
+            "label": "2026-03-14_01-57-14",
+            "content": "@@ -939,16 +939,24 @@\n ase -1:%0A\n+        \n %0A       \n@@ -1516,32 +1516,33 @@\n          if(dist\n+ \n P %3C distH)%7B%0A    \n",
+            "lines": "82"
+        },
+        {
+            "label": "2026-03-14_01-57-30",
+            "content": "@@ -205,19 +205,31 @@\n     \n-if d == 1 %7B\n+switch d %7B%0A    case 1:%0A\n %0A   \n@@ -269,28 +269,686 @@\n = p - f%0A\n-    %7D else %7B\n+%0A        if(distH %3C 0)%7B%0A            distH += 16%0A            if(distH %3C distP)%7B%0A                fmt.Println(%22S%22)%0A            %7D else %7B%0A                fmt.Println(%22N%22)%0A            %7D%0A        %7D else %7B%0A            if(distP %3C 0)%7B%0A                distP += 16%0A                if(distP %3C distH)%7B%0A                    fmt.Println(%22N%22)%0A                %7D else %7B%0A                    fmt.Println(%22S%22)%0A                %7D%0A            %7D%0A        %7D%0A%0A        if(distH %3C 0 && distP %3C 0)%7B%0A            distH += 16%0A            distP += 16%0A            if(distH %3C distP) %7B%0A                fmt.Println(%22S%22)%0A            %7D else %7B%0A                fmt.Println(%22N%22)%0A            %7D%0A        %7D%0A%0A    case -1:%0A\n %0A       \n@@ -984,30 +984,28 @@\n = f - p%0A\n+%0A\n     \n-%7D%0A%0A\n     if\n- \n+(\n distH %3C \n@@ -1005,18 +1005,23 @@\n istH %3C 0\n+)\n %7B%0A\n+    \n         \n@@ -1032,34 +1032,184 @@\n H += 16%0A    \n-%7D%0A%0A\n+        if(distH %3C distP)%7B%0A                fmt.Println(%22S%22)%0A            %7D else %7B%0A                fmt.Println(%22N%22)%0A            %7D%0A        %7D else %7B%0A        \n     if\n- \n+(\n distP %3C 0 %7B%0A\n@@ -1205,17 +1205,17 @@\n istP %3C 0\n- \n+)\n %7B%0A      \n@@ -1208,32 +1208,40 @@\n P %3C 0)%7B%0A        \n+   \n+     \n distP += 16%0A    \n@@ -1244,34 +1244,304 @@\n     \n-%7D%0A%0A\n+            if(distP %3C distH)%7B%0A                    fmt.Println(%22N%22)%0A                %7D else %7B%0A                    fmt.Println(%22S%22)%0A                %7D%0A            %7D%0A        %7D%0A%0A   \n     \n+ \n if\n- distH %3C distP %7B%0A\n+(distH %3C 0 && distP %3C 0)%7B%0A            distH += 16%0A            distP += 16%0A            if(distP %3C distH)%7B%0A        \n     \n@@ -1553,28 +1553,36 @@\n mt.Println(%22\n-S\n+N\n %22)%0A\n+        \n     %7D else %7B\n@@ -1574,32 +1574,40 @@\n        %7D else %7B%0A\n+        \n         fmt.Prin\n@@ -1607,28 +1607,52 @@\n mt.Println(%22\n-N\n+S\n %22)%0A\n+            %7D%0A        %7D%0A\n     %7D%0A    %0A%7D\n",
+            "lines": "82"
+        },
+        {
+            "label": "2026-03-14_02-06-30",
+            "content": "package main\nimport \"fmt\"\nfunc main() {\n     \n    var h, p, f, d int\n    fmt.Scanln(&h, &p, &f, &d)\n\n    if(h > 15 || p > 15 || f > 15){\n        fmt.Println(\"error\")\n    } \n\n    var distH, distP int\n    \n    if d == 1 {\n        distH = h - f\n        distP = p - f\n    } else {\n        distH = f - h\n        distP = f - p\n    }\n\n    if distH < 0{\n        distH += 16\n    }\n\n    if distP < 0 {\n        distP += 16\n    }\n\n    if distH < distP {\n        fmt.Println(\"S\")\n    } else {\n        fmt.Println(\"N\")\n    }\n    \n}\n",
+            "lines": "36"
+        }
+    ]
+}
