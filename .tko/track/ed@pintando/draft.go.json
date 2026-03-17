@@ -12,7 +12,17 @@
         },
         {
             "label": "2026-03-12_20-51-50",
-            "content": "package main\nimport \"fmt\"\nimport \"math\"\nfunc main() {\n\n    var n1, n2, n3 float64\n    fmt.Scanln(&n1)\n    fmt.Scanln(&n2)\n    fmt.Scanln(&n3)\n\n    p := (n1 + n2 + n3)/2.0\n    area := math.Sqrt(p*(p - n1)*(p - n2)*(p - n3))\n\n    fmt.Printf(\"%.2f\", area)\n\n}\n",
+            "content": "@@ -241,10 +241,8 @@\n %25.2f\n-/n\n %22, a\n",
+            "lines": "16"
+        },
+        {
+            "label": "2026-03-17_13-13-30",
+            "content": "@@ -241,9 +241,9 @@\n %25.2f\n-%5C\n+/\n n%22, \n",
+            "lines": "16"
+        },
+        {
+            "label": "2026-03-17_13-13-41",
+            "content": "package main\nimport \"fmt\"\nimport \"math\"\nfunc main() {\n\n    var n1, n2, n3 float64\n    fmt.Scanln(&n1)\n    fmt.Scanln(&n2)\n    fmt.Scanln(&n3)\n\n    p := (n1 + n2 + n3)/2.0\n    area := math.Sqrt(p*(p - n1)*(p - n2)*(p - n3))\n\n    fmt.Printf(\"%.2f\\n\", area)\n\n}\n",
             "lines": "16"
         }
     ]
