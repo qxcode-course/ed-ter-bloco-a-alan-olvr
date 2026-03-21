@@ -1,0 +1,18 @@
+2026-03-20 17:36:40, MOVE, v:1, k:ed@casais, mode:PICK
+2026-03-20 17:36:43, EXEC, v:1, k:ed@casais, mode:FREE, size:21
+2026-03-20 17:37:30, EXEC, v:1, k:ed@casais, mode:FREE
+2026-03-20 17:58:45, MOVE, v:1, k:ed@casais, mode:PICK
+2026-03-20 17:58:54, EXEC, v:1, k:ed@casais, mode:FULL, size:38, fail:COMP
+2026-03-20 17:59:08, EXEC, v:1, k:ed@casais, mode:FULL, size:38, fail:COMP
+2026-03-20 17:59:10, EXEC, v:1, k:ed@casais, mode:FULL, fail:COMP
+2026-03-20 17:59:11, EXEC, v:1, k:ed@casais, mode:FULL, fail:COMP
+2026-03-20 17:59:12, EXEC, v:1, k:ed@casais, mode:FULL, fail:COMP
+2026-03-20 17:59:14, MOVE, v:1, k:ed@casais, mode:BACK
+2026-03-20 17:59:16, MOVE, v:1, k:ed@casais, mode:PICK
+2026-03-20 17:59:17, EXEC, v:1, k:ed@casais, mode:FULL, fail:COMP
+2026-03-20 17:59:18, EXEC, v:1, k:ed@casais, mode:FULL, fail:COMP
+2026-03-20 18:00:30, EXEC, v:1, k:ed@casais, mode:FULL, rate:0, size:38
+2026-03-20 18:05:01, EXEC, v:1, k:ed@casais, mode:FULL, size:39, fail:COMP
+2026-03-20 18:05:25, EXEC, v:1, k:ed@casais, mode:FULL, rate:25, size:39
+2026-03-20 18:27:41, MOVE, v:1, k:ed@casais, mode:PICK
+2026-03-20 18:27:52, EXEC, v:1, k:ed@casais, mode:FULL, rate:50, size:41

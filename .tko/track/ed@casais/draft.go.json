@@ -1,0 +1,74 @@
+{
+    "patches": [
+        {
+            "label": "2026-03-20_17-36-43",
+            "content": "@@ -72,16 +72,34 @@\n %09var vet\n+P %5Bn%5Dint%0A%09var vetN\n  %5Bn%5Dint \n@@ -112,60 +112,51 @@\n zena\n+ndo\n  os \n-%22descasados%22%0A%09var qtdPares int%0A%09var topo int = 0\n+animais sem pares%0A%0A%09var qtdPares int\n %0A%0A%09f\n@@ -225,241 +225,8 @@\n )%0A%0A%09\n-%09encontrou := false%0A%0A%09%09for j := 0; j %3C topo; j++ %7B%0A%09%09%09if vet%5Bj%5D == -animal %7B%0A%09%09%09%09vet%5Bj%5D = 0%0A%09%09%09%09qtdPares++%0A%09%09%09%09encontrou = true%0A%09%09%09%09break%0A%09%09%09%7D %0A%0A%09%09%09if !encontrou %7B%0A%09%09%09%09vet%5Btopo%5D = animal%0A%09%09%09%09topo++%0A%09%09%09%7D%0A%0A%09%09%7D%0A%09%7D%0A%0A%09fmt.Println(qtdPares)\n+%7D\n %0A%7D%0A\n",
+            "lines": "21"
+        },
+        {
+            "label": "2026-03-20_17-58-54",
+            "content": "@@ -76,12 +76,12 @@\n  vet\n+ \n %5Bn%5D\n- \n int \n",
+            "lines": "38"
+        },
+        {
+            "label": "2026-03-20_17-59-08",
+            "content": "@@ -76,25 +76,15 @@\n  vet\n- = make(%5B%5Dint, n)\n+%5Bn%5D int\n  //a\n",
+            "lines": "38"
+        },
+        {
+            "label": "2026-03-20_18-00-30",
+            "content": "@@ -273,17 +273,16 @@\n ; j++ %7B%0A\n-%0A\n %09%09%09if ve\n@@ -368,20 +368,16 @@\n %09%09%09%7D %0A%0A%09\n-%09%7D%0A%0A\n %09%09if !en\n@@ -389,19 +389,20 @@\n ou %7B%0A%09%09%09\n-var\n+%09vet\n %5Btopo%5D =\n@@ -416,15 +416,22 @@\n %0A%09%09%09\n+%09\n topo++%0A\n+%09%09%09%7D%0A%0A\n %09%09%7D%0A\n",
+            "lines": "38"
+        },
+        {
+            "label": "2026-03-20_18-05-01",
+            "content": "@@ -395,18 +395,18 @@\n u %7B%0A%09%09%09v\n-et\n+ar\n %5Btopo%5D =\n",
+            "lines": "39"
+        },
+        {
+            "label": "2026-03-20_18-05-25",
+            "content": "@@ -317,36 +317,9 @@\n %5D = \n-vet%5Btopo-1%5D%0A%09%09%09%09topo-- %0A%09%09%09%09\n+0\n %0A%09%09%09\n",
+            "lines": "39"
+        },
+        {
+            "label": "2026-03-20_18-27-52",
+            "content": "@@ -63,16 +63,17 @@\n nln(&n)%0A\n+%0A\n %09var vet\n@@ -87,17 +87,17 @@\n (%5B%5Dint, \n-0\n+n\n ) //arma\n@@ -227,17 +227,26 @@\n %0A%0A%09%09\n-pos := -1\n+encontrou := false\n %0A%0A%09%09\n@@ -261,24 +261,20 @@\n  0; j %3C \n-len(vet)\n+topo\n ; j++ %7B%0A\n@@ -308,201 +308,153 @@\n %09%09%09%09\n-pos = j%0A%09%09%09%09break%0A%09%09%09%7D %0A%0A%09%09%7D%0A%0A%09%09if pos != -1 %7B%0A%0A%09%09%09for k := pos; k %3C len(vet)-1; k++ %7B%0A%09%09%09%09vet%5Bk%5D = vet%5Bk+1%5D%0A%09%09%09%7D%0A%09%09%09vet = vet%5B:len(vet)-1%5D%0A%09%09%09qtdPares++%0A%09%09%7D else %7B%0A%09%09%09vet = append(vet, animal)\n+vet%5Bj%5D = vet%5Btopo-1%5D%0A%09%09%09%09topo-- %0A%09%09%09%09%0A%09%09%09%09qtdPares++%0A%09%09%09%09encontrou = true%0A%09%09%09%09break%0A%09%09%09%7D %0A%0A%09%09%7D%0A%0A%09%09if !encontrou %7B%0A%09%09%09vet%5Btopo%5D = animal%0A%09%09%09topo++\n %0A%09%09%7D\n",
+            "lines": "41"
+        },
+        {
+            "label": "2026-03-21_01-25-07",
+            "content": "@@ -133,16 +133,34 @@\n ares int\n+%0A%09var topo int = 0\n %0A%0A%09for i\n",
+            "lines": "42"
+        },
+        {
+            "label": "2026-03-21_01-25-57",
+            "content": "@@ -120,26 +120,8 @@\n os%22%0A\n-%09var topo int = 0%0A\n %09var\n@@ -137,12 +137,8 @@\n  int\n- = 0\n %0A%0A%09f\n@@ -237,20 +237,24 @@\n j %3C \n-topo\n+len(vet)\n ; j++ %7B%0A\n %09%09%09i\n@@ -249,16 +249,17 @@\n ; j++ %7B%0A\n+%0A\n %09%09%09if ve\n@@ -302,16 +302,18 @@\n eak%0A%09%09%09%7D\n+ %0A\n %0A%09%09%7D%0A%0A%09%09\n@@ -327,16 +327,17 @@\n != -1 %7B%0A\n+%0A\n %09%09%09for k\n@@ -349,20 +349,24 @@\n os; k %3C \n-topo\n+len(vet)\n -1; k++ \n@@ -401,14 +401,30 @@\n %0A%09%09%09\n-topo--\n+vet = vet%5B:len(vet)-1%5D\n %0A%09%09%09\n@@ -455,33 +455,30 @@\n %09vet\n-%5Btopo%5D = animal%0A%09%09%09topo++\n+ = append(vet, animal)\n %0A%09%09%7D\n",
+            "lines": "41"
+        },
+        {
+            "label": "2026-03-21_01-29-22",
+            "content": "@@ -1,8 +1,29 @@\n+@@ -1,327 +1,277 @@%0A-\n package \n@@ -30,40 +30,60 @@\n main\n-%0A%0A\n+%250A%250A\n import \n-%22fmt%22%0A%0Afunc main() %7B%0A%0A%09\n+%2522fmt%2522%250A%250Afunc main() %257B%250A%250A%2509\n var \n@@ -87,18 +87,22 @@\n ar n int\n-%0A%09\n+%250A%2509\n fmt.Scan\n@@ -111,18 +111,22 @@\n (&n)\n-%0A%09\n+%250A%2509\n var vet \n %5B%5Din\n@@ -125,10 +125,14 @@\n vet \n-%5B%5D\n+%255B%255D\n int \n@@ -145,17 +145,19 @@\n zena os \n-%22\n+%2522\n descasad\n@@ -162,11 +162,17 @@\n ados\n-%22%0A%09\n+%2522%250A%2509\n var \n@@ -183,19 +183,25 @@\n ares int\n-%0A%0A%09\n+%250A%250A%2509\n for i :=\n@@ -210,17 +210,19 @@\n ; i \n-%3C\n+%253C\n  n; i++ \n %7B%0A%0A%09\n@@ -221,13 +221,23 @@\n i++ \n-%7B%0A%0A%09%09\n+%257B%250A%250A%2509%2509\n var \n@@ -246,19 +246,25 @@\n imal int\n-%0A%09%09\n+%250A%2509%2509\n fmt.Scan\n@@ -278,25 +278,41 @@\n mal)\n-%0A%0A%09%09pos := -1%0A%0A%09%09\n+%250A%250A%2509%2509pos := -1%250A%250A%2509%2509\n for \n@@ -325,9 +325,11 @@\n ; j \n-%3C\n+%253C\n  len\n@@ -343,211 +343,1063 @@\n j++ \n-%7B%0A%09%09%09if vet%5Bj%5D == -animal %7B%0A%09%09%09%09pos = j%0A%09%09%09%09break%0A%09%09%09%7D%0A%09%09%7D%0A%0A%09%09if pos != -1 %7B%0A%09%09%09vet = app\n+%257B%250A%2509%2509%2509if vet%255Bj%255D == -animal %257B%250A%2509%2509%2509%2509pos = j%250A%2509%2509%2509%2509break%250A%2509%2509%2509%257D%250A%2509%2509%257D%250A%250A%2509%2509if pos != -1 %257B%250A%2509%2509%2509%0A+@@ -76,13 +76,24 @@%250A vet %250A+= make(%250A %25255B%25255Dint%250A+, 0)%250A  //a%250A@@ -116,16 +116,34 @@%250A asados%252522%25250A%250A+%252509var topo int = 0%25250A%250A %252509var qtd%250A@@ -151,16 +151,20 @@%250A ares int%250A+ = 0%250A %25250A%25250A%252509for i%250A@@ -259,16 +259,12 @@%250A j %25253C %250A-l\n en\n-d\n (vet\n-%5B:pos%5D, vet%5Bpos+1:%5D...)%0A%09%09%09qtdPares++%0A%09%09%7D else %7B%0A%09%09%09vet = append(vet, animal)%0A%09%09%7D%0A%09%7D%0A%0A%09fmt.Println(qtdPares)%0A%7D\n+)%250A+topo%250A ; j+%250A@@ -349,47 +349,76 @@%250A %25250A%252509%252509%252509%250A-%0A vet %0A@@ -286,63 +286,195 @@%0A (vet%0A-%255B%0A+%25255B%0A :pos%0A-%255D%0A+%25255D%0A , vet%0A-%255B%0A+%25255B%0A pos+1:%0A-%255D%0A+%25255D%0A ...)%250A%0A-%2509%2509%2509qtdPares++%250A%2509%2509%257D else %257B%250A%2509%2509%2509%0A++for k := pos; k %25253C topo-1; k++ %25257B%25250A%252509%252509%252509%252509vet%25255Bk%25255D = vet%25255Bk+1%25255D%25250A%252509%252509%252509%25257D%25250A%252509%252509%252509topo--%250A %25250A%252509%252509%252509%250A@@ -449,30 +449,33 @@%250A %252509%0A vet%0A+%250A-%0A  = a%0A@@ -496,37 +496,57 @@%0A al)%250A%0A-%2509%2509%257D%250A%2509%257D%250A%250A%2509fmt.Println(qtdPares)%250A%257D%0A++%25255Btopo%25255D = animal%25250A%252509%252509%252509topo++%250A %25250A%252509%252509%25257D%0A %250A\n %0A\n",
+            "lines": "28"
+        },
+        {
+            "label": "2026-03-21_01-34-10",
+            "content": "@@ -81,26 +81,35 @@\n %5Dint\n-%0A%09var usado %5B%5Dbool\n+ //armazena os %22descasados%22\n %0A%09va\n@@ -247,21 +247,8 @@\n %09%09if\n- !usado%5Bj%5D &&\n  vet\n@@ -320,25 +320,47 @@\n %0A%09%09%09\n-usado%5Bpos%5D = true\n+vet = append(vet%5B:pos%5D, vet%5Bpos+1:%5D...)\n %0A%09%09%09\n@@ -414,40 +414,8 @@\n al)%0A\n-%09%09%09usado = append(usado, false)%0A\n %09%09%7D%0A\n",
+            "lines": "35"
+        },
+        {
+            "label": "2026-03-21_01-38-17",
+            "content": "@@ -68,517 +68,367 @@\n n)%0A%09\n-animais := make(%5B%5Dint, n)%0A%0A%09max := 0%0A%0A%09for i := 0; i %3C n; i++ %7B%0A%09%09fmt.Scanln(&animais%5Bi%5D)%0A%0A%09%09valor := animais%5Bi%5D%0A%09%09if valor %3C 0 %7B%0A%09%09%09valor = -valor%0A%09%09%7D%0A%0A%09%09if valor %3E max %7B%0A%09%09%09max = valor%0A%09%09%7D%0A%09%7D%0A%0A%09machos := make(%5B%5Dint, max+1)%0A%09femeas := make(%5B%5Dint, max+1)%0A%0A\n+var vet %5B%5Dint%0A%09var usado %5B%5Dbool%0A%09var qtdPares int%0A%0A%09for i := 0; i %3C n; i++ %7B%0A%0A%09%09var animal int%0A%09%09fmt.Scanln(&animal)%0A%0A%09%09pos := -1%0A%0A%09\n %09for \n-i\n+j\n  := 0; \n-i %3C n; i\n+j %3C len(vet); j\n ++ %7B%0A%09%09\n+%09\n if \n-animais%5Bi%5D %3E 0 %7B%0A%09%09%09machos%5Banimais%5Bi%5D%5D++%0A%09%09%7D else %7B%0A%09%09%09femeas%5B-animais%5Bi%5D%5D++%0A\n+!usado%5Bj%5D && vet%5Bj%5D == -animal %7B%0A%09%09%09%09pos = j%0A%09%09%09%09break%0A%09\n %09%09%7D%0A\n+%09\n %09%7D%0A%0A%09\n-var qtdPares int%0A%0A%09for i := 0; i %3C= max; i++ %7B%0A%09%09if machos%5Bi%5D %3C femeas%5Bi%5D %7B%0A%09%09%09qtdPares += machos%5Bi%5D%0A%09%09%7D else %7B%0A%09%09%09qtdPares += femeas%5Bi%5D\n+%09if pos != -1 %7B%0A%09%09%09usado%5Bpos%5D = true%0A%09%09%09qtdPares++%0A%09%09%7D else %7B%0A%09%09%09vet = append(vet, animal)%0A%09%09%09usado = append(usado, false)\n %0A%09%09%7D\n@@ -456,8 +456,9 @@\n Pares)%0A%7D\n+%0A\n",
+            "lines": "37"
+        },
+        {
+            "label": "2026-03-21_02-02-28",
+            "content": "@@ -68,367 +68,517 @@\n n)%0A%09\n-var vet %5B%5Dint%0A%09var usado %5B%5Dbool%0A%09var qtdPares int%0A%0A%09for i := 0; i %3C n; i++ %7B%0A%0A%09%09var animal int%0A%09%09fmt.Scanln(&animal)%0A%0A%09%09pos := -1\n+animais := make(%5B%5Dint, n)%0A%0A%09max := 0%0A%0A%09for i := 0; i %3C n; i++ %7B%0A%09%09fmt.Scanln(&animais%5Bi%5D)%0A%0A%09%09valor := animais%5Bi%5D%0A%09%09if valor %3C 0 %7B%0A%09%09%09valor = -valor%0A%09%09%7D%0A%0A%09%09if valor %3E max %7B%0A%09%09%09max = valor%0A%09%09%7D%0A%09%7D%0A%0A%09machos := make(%5B%5Dint, max+1)%0A%09femeas := make(%5B%5Dint, max+1)\n %0A%0A\n-%09\n %09for \n-j\n+i\n  := 0; \n-j %3C len(vet); j\n+i %3C n; i\n ++ %7B%0A%09%09\n-%09\n if \n-!usado%5Bj%5D && vet%5Bj%5D == -animal %7B%0A%09%09%09%09pos = j%0A%09%09%09%09break%0A%09\n+animais%5Bi%5D %3E 0 %7B%0A%09%09%09machos%5Banimais%5Bi%5D%5D++%0A%09%09%7D else %7B%0A%09%09%09femeas%5B-animais%5Bi%5D%5D++%0A\n %09%09%7D%0A\n-%09\n %09%7D%0A%0A%09\n-%09if pos != -1\n+var qtdPares int%0A%0A%09for i := 0; i %3C= max; i++\n  %7B%0A%09%09\n-%09usado%5Bpos%5D = true%0A%09%09%09qtdPares++%0A%09%09%7D else %7B%0A%09%09%09vet = append(vet, animal)%0A%09%09%09usado = append(usado, false)\n+if machos%5Bi%5D %3C femeas%5Bi%5D %7B%0A%09%09%09qtdPares += machos%5Bi%5D%0A%09%09%7D else %7B%0A%09%09%09qtdPares += femeas%5Bi%5D\n %0A%09%09%7D\n@@ -606,9 +606,8 @@\n Pares)%0A%7D\n-%0A\n",
+            "lines": "48"
+        },
+        {
+            "label": "2026-03-21_02-03-20",
+            "content": "package main\n\nimport \"fmt\"\n\nfunc main() {\n\n\tvar n int\n\tfmt.Scanln(&n)\n\tvar vet []int\n\tvar usado []bool\n\tvar qtdPares int\n\n\tfor i := 0; i < n; i++ {\n\n\t\tvar animal int\n\t\tfmt.Scanln(&animal)\n\n\t\tpos := -1\n\n\t\tfor j := 0; j < len(vet); j++ {\n\t\t\tif !usado[j] && vet[j] == -animal {\n\t\t\t\tpos = j\n\t\t\t\tbreak\n\t\t\t}\n\t\t}\n\n\t\tif pos != -1 {\n\t\t\tusado[pos] = true\n\t\t\tqtdPares++\n\t\t} else {\n\t\t\tvet = append(vet, animal)\n\t\t\tusado = append(usado, false)\n\t\t}\n\t}\n\n\tfmt.Println(qtdPares)\n}\n",
+            "lines": "37"
+        }
+    ]
+}
