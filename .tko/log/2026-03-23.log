@@ -3,3 +3,7 @@
 2026-03-23 01:50:48, EXEC, v:1, k:ed@baruel, mode:FREE, size:68
 2026-03-23 02:27:15, MOVE, v:1, k:ed@baruel, mode:PICK
 2026-03-23 02:27:25, EXEC, v:1, k:ed@baruel, mode:FULL, rate:100
+2026-03-23 02:28:19, MOVE, v:1, k:ed@baruel, mode:BACK
+2026-03-23 02:28:23, MOVE, v:1, k:ed@gomos, mode:PICK
+2026-03-23 02:56:28, EXEC, v:1, k:ed@gomos, mode:FREE, size:39
+2026-03-23 02:57:11, EXEC, v:1, k:ed@gomos, mode:FULL, rate:100

@@ -1,0 +1,9 @@
+{
+    "patches": [
+        {
+            "label": "2026-03-23_02-56-28",
+            "content": "package main\n\nimport \"fmt\"\n\ntype Ponto struct {\n\tX int\n\tY int\n}\n\nfunc main() {\n\tvar q int\n\tvar direcao string\n\n\tfmt.Scan(&q, &direcao)\n\tcobra := make([]Ponto, q)\n\n\tfor i := 0; i < q; i++ {\n\t\tfmt.Scan(&cobra[i].X, &cobra[i].Y)\n\t}\n\n\tfor i := q - 1; i > 0; i-- {\n\t\tcobra[i] = cobra[i-1]\n\t}\n\n\tswitch direcao {\n\tcase \"L\":\n\t\tcobra[0].X--\n\tcase \"R\":\n\t\tcobra[0].X++\n\tcase \"U\":\n\t\tcobra[0].Y--\n\tcase \"D\":\n\t\tcobra[0].Y++\n\t}\n\n\tfor i := 0; i < q; i++ {\n\t\tfmt.Printf(\"%d %d\\n\", cobra[i].X, cobra[i].Y)\n\t}\n}",
+            "lines": "39"
+        }
+    ]
+}
