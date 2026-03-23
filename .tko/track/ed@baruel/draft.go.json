@@ -1,0 +1,9 @@
+{
+    "patches": [
+        {
+            "label": "2026-03-23_01-50-48",
+            "content": "package main\nimport \"fmt\"\n\ntype Colecao struct {\n\tTotalAlbum int\n\tPossuidas  []int\n}\n\nfunc main() {\n\tvar c Colecao\n\tvar qtdPossui int\n\n\tfmt.Scan(&c.TotalAlbum)\n\tfmt.Scan(&qtdPossui)\n\n\tfor i := 0; i < qtdPossui; i++ {\n\t\tvar fig int\n\t\tfmt.Scan(&fig)\n\t\tc.Possuidas = append(c.Possuidas, fig)\n\t}\n\n\tteveRepetida := false\n\tprimeiraRepetida := true\n\n\tfor i := 1; i < len(c.Possuidas); i++ {\n\t\tif c.Possuidas[i] == c.Possuidas[i-1] {\n\t\t\tif !primeiraRepetida {\n\t\t\t\tfmt.Print(\" \")\n\t\t\t}\n\t\t\tfmt.Print(c.Possuidas[i])\n\t\t\tteveRepetida = true\n\t\t\tprimeiraRepetida = false\n\t\t}\n\t}\n\n\tif !teveRepetida {\n\t\tfmt.Print(\"N\")\n\t}\n\tfmt.Println() \n\n\tteveFaltante := false\n\tprimeiraFaltante := true\n\n\tfor i := 1; i <= c.TotalAlbum; i++ {\n\t\tencontrou := false\n\t\tfor _, fig := range c.Possuidas {\n\t\t\tif fig == i {\n\t\t\t\tencontrou = true\n\t\t\t\tbreak\n\t\t\t}\n\t\t}\n\n\t\tif !encontrou {\n\t\t\tif !primeiraFaltante {\n\t\t\t\tfmt.Print(\" \")\n\t\t\t}\n\t\t\tfmt.Print(i)\n\t\t\tteveFaltante = true\n\t\t\tprimeiraFaltante = false\n\t\t}\n\t}\n\n\tif !teveFaltante {\n\t\tfmt.Print(\"N\")\n\t}\n\tfmt.Println()\n}\n\n",
+            "lines": "68"
+        }
+    ]
+}
