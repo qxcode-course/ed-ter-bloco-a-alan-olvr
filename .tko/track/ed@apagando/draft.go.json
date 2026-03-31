@@ -1,0 +1,34 @@
+{
+    "patches": [
+        {
+            "label": "2026-03-31_01-40-56",
+            "content": "@@ -455,16 +455,17 @@\n .Print(%22\n+ \n %22)%0A%09%09%7D%0A%09\n",
+            "lines": "36"
+        },
+        {
+            "label": "2026-03-31_01-41-46",
+            "content": "@@ -455,17 +455,16 @@\n .Print(%22\n- \n %22)%0A%09%09%7D%0A%09\n",
+            "lines": "36"
+        },
+        {
+            "label": "2026-03-31_01-42-20",
+            "content": "@@ -481,13 +481,8 @@\n t(id\n- + %22%22\n )%0A%09%7D\n",
+            "lines": "36"
+        },
+        {
+            "label": "2026-03-31_01-42-43",
+            "content": "@@ -481,17 +481,16 @@\n t(id + %22\n- \n %22)%0A%09%7D%0A%09f\n",
+            "lines": "36"
+        },
+        {
+            "label": "2026-03-31_01-42-55",
+            "content": "@@ -477,16 +477,22 @@\n Print(id\n+ + %22 %22\n )%0A%09%7D%0A%09fm\n@@ -501,15 +501,12 @@\n Println(\n-%22 %22\n )%0A%7D%0A\n",
+            "lines": "36"
+        },
+        {
+            "label": "2026-03-31_01-43-13",
+            "content": "package main\nimport \"fmt\"\nfunc main() {\n\tvar n int\n\tfmt.Scan(&n)\n\n\tfila := make([]string, n)\n\tfor i := 0; i < n; i++ {\n\t\tfmt.Scan(&fila[i])\n\t}\n\n\tvar m int\n\tfmt.Scan(&m)\n\n\tsaindo := make(map[string]bool) \n\tfor i := 0; i < m; i++ {\n\t\tvar id string\n\t\tfmt.Scan(&id)\n\t\tsaindo[id] = true\n\t}\n\n\tresultado  := []string{}\n\tfor _, id := range fila {\n\t\tif !saindo[id] {\n\t\t\tresultado = append(resultado, id)\n\t\t}\n\t}\n\n\tfor i, id := range resultado {\n\t\tif i > 0 {\n\t\t\tfmt.Print(\" \")\n\t\t}\n\t\tfmt.Print(id)\n\t}\n\tfmt.Println(\" \")\n}\n",
+            "lines": "36"
+        }
+    ]
+}
