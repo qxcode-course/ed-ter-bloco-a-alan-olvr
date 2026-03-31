@@ -1,0 +1,24 @@
+{
+    "patches": [
+        {
+            "label": "2026-03-29_21-28-37",
+            "content": "@@ -51,16 +51,17 @@\n  int) %7B%0A\n+%09\n %0A%09elemen\n@@ -306,17 +306,16 @@\n intf(%22%25d\n- \n %22, eleme\n",
+            "lines": "58"
+        },
+        {
+            "label": "2026-03-29_21-29-01",
+            "content": "@@ -305,16 +305,17 @@\n intf(%22%25d\n+ \n %22, eleme\n",
+            "lines": "58"
+        },
+        {
+            "label": "2026-03-29_23-53-39",
+            "content": "@@ -780,11 +780,10 @@\n s(n, e)%0A\n-%0A\n %7D%0A\n",
+            "lines": "58"
+        },
+        {
+            "label": "2026-03-30_00-36-09",
+            "content": "package main\n\nimport \"fmt\"\n\nfunc josephus(n int, e int) {\n\n\telementos := make([]int, n)\n\tvivos := make([]bool, n)\n\tfor i := 0; i < n; i++ {\n\t\telementos[i] = i + 1\n\t\tvivos[i] = true\n\t}\n\n\tespada := e - 1\n\tcount := n\n\n\tfor count > 1 {\n\t\tfmt.Print(\"[ \")\n\t\tfor i := 0; i < n; i++ {\n\t\t\tif vivos[i] {\n\t\t\t\tfmt.Printf(\"%d\", elementos[i])\n\t\t\t\tif i == espada {\n\t\t\t\t\tfmt.Print(\">\")\n\t\t\t\t}\n\t\t\t\tfmt.Print(\" \")\n\t\t\t}\n\t\t}\n\t\tfmt.Println(\"]\")\n\n\t\talvo := (espada + 1) % n\n\t\tfor !vivos[alvo] {\n\t\t\talvo = (alvo + 1) % n\n\t\t}\n\n\t\tvivos[alvo] = false\n\t\tcount--\n\n\t\tespada = (alvo + 1) % n\n\t\tfor !vivos[espada] {\n\t\t\tespada = (espada + 1) % n\n\t\t}\n\t}\n\n\tfor i := 0; i < n; i++ {\n\t\tif vivos[i] {\n\t\t\tfmt.Printf(\"[ %d> ]\\n\", elementos[i])\n\t\t\tbreak\n\t\t}\n\t}\n}\n\nfunc main() {\n\n\tvar n, e int\n\tfmt.Scan(&n, &e)\n\n\tjosephus(n, e)\n\n}\n",
+            "lines": "59"
+        }
+    ]
+}

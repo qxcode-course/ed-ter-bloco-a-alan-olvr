@@ -1,0 +1,7 @@
+2026-03-29 21:28:32, MOVE, v:1, k:ed@princesa, mode:PICK
+2026-03-29 21:28:37, EXEC, v:1, k:ed@princesa, mode:FULL, rate:100, size:58
+2026-03-29 21:29:01, EXEC, v:1, k:ed@princesa, mode:FULL, rate:0, size:58
+2026-03-29 23:53:23, MOVE, v:1, k:ed@princesa, mode:PICK
+2026-03-29 23:53:27, EXEC, v:1, k:ed@princesa, mode:FULL, rate:0
+2026-03-29 23:53:39, EXEC, v:1, k:ed@princesa, mode:FULL, rate:100, size:58
+2026-03-29 23:53:43, MOVE, v:1, k:ed@princesa, mode:BACK
