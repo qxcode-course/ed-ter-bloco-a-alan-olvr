@@ -26,3 +26,8 @@
 2026-03-31 04:07:42, MOVE, v:1, k:ed@manipulacao, mode:BACK
 2026-03-31 04:08:32, SELF, v:1, k:ed@princesa, self:1, rate:100, study:50, concept:1, code:1
 2026-03-31 13:34:35, SELF, v:1, k:ed@apagando, self:1, rate:100, study:40, concept:1, code:1
+2026-03-31 13:35:25, SELF, v:1, k:ed@apagando, self:1, rate:100, study:40, concept:1, code:1
+2026-03-31 13:35:28, MOVE, v:1, k:ed@manipulacao, mode:PICK
+2026-03-31 13:35:30, MOVE, v:1, k:ed@manipulacao, mode:BACK
+2026-03-31 13:35:41, SELF, v:1, k:ed@manipulacao, self:1, rate:100, study:40, concept:1, code:1
+2026-03-31 14:19:16, MOVE, v:1, k:ed@triangulo, mode:DOWN
