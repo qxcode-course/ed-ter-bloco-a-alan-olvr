@@ -29,3 +29,8 @@
 2026-04-07 03:00:20, MOVE, v:1, k:ed@labirinto, mode:PICK
 2026-04-07 03:00:21, EXEC, v:1, k:ed@labirinto, mode:FULL, rate:100
 2026-04-07 03:00:23, MOVE, v:1, k:ed@labirinto, mode:BACK
+2026-04-07 13:23:03, MOVE, v:1, k:ed@eh_primo, mode:DOWN
+2026-04-07 13:33:39, MOVE, v:1, k:ed@fractais_png, mode:DOWN
+2026-04-07 13:34:34, MOVE, v:1, k:ed@fractais_png, mode:PICK
+2026-04-07 13:34:39, MOVE, v:1, k:ed@fractais_png, mode:BACK
+2026-04-07 13:39:56, EXEC, v:1, k:src@go, mode:FREE, size:136

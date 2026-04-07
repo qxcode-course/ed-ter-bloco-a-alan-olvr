@@ -16,8 +16,8 @@ sources:
   tasks: null
 expanded:
 - ed@map_set
-- ed@rec
 - ed@vector
+- ed@rec
 flags:
   inbox: inbox
   panel: help
@@ -25,4 +25,4 @@ flags:
   task_graph_mode: executions
   show_time: 'true'
 lang: go
-selected: ed@labirinto
+selected: ed@fractais_png
