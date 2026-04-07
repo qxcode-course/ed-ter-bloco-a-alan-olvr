@@ -3,3 +3,15 @@
 2026-04-07 00:02:11, MOVE, v:1, k:ed@treinando, mode:BACK
 2026-04-07 00:03:01, SELF, v:1, k:ed@treinando, self:1, rate:100, study:40, code:1
 2026-04-07 00:03:28, MOVE, v:1, k:ed@resto, mode:DOWN
+2026-04-07 00:04:21, MOVE, v:1, k:ed@resto, mode:PICK
+2026-04-07 00:04:21, EXEC, v:1, k:ed@resto, mode:FULL, rate:0, size:5
+2026-04-07 00:11:53, EXEC, v:1, k:ed@resto, mode:FULL, rate:100, size:17
+2026-04-07 00:11:59, MOVE, v:1, k:ed@resto, mode:BACK
+2026-04-07 00:19:11, MOVE, v:1, k:ed@resto, mode:PICK
+2026-04-07 00:19:12, EXEC, v:1, k:ed@resto, mode:FULL, rate:100, size:17
+2026-04-07 00:19:14, MOVE, v:1, k:ed@resto, mode:BACK
+2026-04-07 00:19:43, SELF, v:1, k:ed@resto, self:1, rate:100, study:10
+2026-04-07 00:19:51, MOVE, v:1, k:ed@mdc, mode:DOWN
+2026-04-07 00:29:02, MOVE, v:1, k:ed@mdc, mode:PICK
+2026-04-07 00:29:04, EXEC, v:1, k:ed@mdc, mode:FULL, rate:100, size:19
+2026-04-07 00:29:05, MOVE, v:1, k:ed@mdc, mode:BACK

@@ -1,0 +1,19 @@
+{
+    "patches": [
+        {
+            "label": "2026-04-07_00-04-21",
+            "content": "@@ -23,35 +23,26 @@\n mt%22%0A\n-%0A\n func \n-divisao(n int\n+main(\n ) %7B%0A    \n if n\n@@ -41,154 +41,35 @@\n     \n-if n == 0 %7B%0A        return%0A    %7D %0A    %0A    divisao(n / 2) %0A    fmt.Println(n/2, n%252)%0A%7D%0A%0Afunc main() %7B%0A    var n int%0A    fmt.Scan(&n)%0A    divisao(n\n+fmt.Println(%22Hello, World!%22\n )%0A%7D%0A\n",
+            "lines": "5"
+        },
+        {
+            "label": "2026-04-07_00-11-53",
+            "content": "@@ -80,16 +80,20 @@\n %0A    %7D %0A\n+    \n %0A    div\n",
+            "lines": "17"
+        },
+        {
+            "label": "2026-04-07_00-19-12",
+            "content": "package main\nimport \"fmt\"\n\nfunc divisao(n int) {\n    if n == 0 {\n        return\n    } \n\n    divisao(n / 2) \n    fmt.Println(n/2, n%2)\n}\n\nfunc main() {\n    var n int\n    fmt.Scan(&n)\n    divisao(n)\n}\n",
+            "lines": "17"
+        }
+    ]
+}
