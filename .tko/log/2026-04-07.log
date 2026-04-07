@@ -15,3 +15,17 @@
 2026-04-07 00:29:02, MOVE, v:1, k:ed@mdc, mode:PICK
 2026-04-07 00:29:04, EXEC, v:1, k:ed@mdc, mode:FULL, rate:100, size:19
 2026-04-07 00:29:05, MOVE, v:1, k:ed@mdc, mode:BACK
+2026-04-07 00:31:24, SELF, v:1, k:ed@mdc, self:1, rate:100, study:10
+2026-04-07 00:31:43, MOVE, v:1, k:ed@queimada, mode:DOWN
+2026-04-07 01:19:12, MOVE, v:1, k:ed@queimada, mode:PICK
+2026-04-07 01:19:22, EXEC, v:1, k:ed@queimada, mode:FULL, rate:100, size:44
+2026-04-07 01:19:25, MOVE, v:1, k:ed@queimada, mode:BACK
+2026-04-07 01:20:20, SELF, v:1, k:ed@queimada, self:1, rate:100, study:30, problem:1, debug:1
+2026-04-07 01:20:27, MOVE, v:1, k:ed@labirinto, mode:DOWN
+2026-04-07 02:46:47, MOVE, v:1, k:ed@labirinto, mode:PICK
+2026-04-07 02:46:48, EXEC, v:1, k:ed@labirinto, mode:FULL, rate:100, size:82
+2026-04-07 02:46:51, MOVE, v:1, k:ed@labirinto, mode:BACK
+2026-04-07 02:47:51, SELF, v:1, k:ed@labirinto, self:1, rate:100, study:40, code:1
+2026-04-07 03:00:20, MOVE, v:1, k:ed@labirinto, mode:PICK
+2026-04-07 03:00:21, EXEC, v:1, k:ed@labirinto, mode:FULL, rate:100
+2026-04-07 03:00:23, MOVE, v:1, k:ed@labirinto, mode:BACK
