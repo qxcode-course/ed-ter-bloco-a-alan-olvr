@@ -9,18 +9,39 @@ func randInt(min, max int) int {
 	return min + rand.Intn(max-min+1)
 }
 
+func arvore(pen *Pen, dist float64) {
+	if dist < 10 {
+		return
+	}
+	ang := 30.0
+	fator := 0.9
+	pen.SetLineWidth(dist / 5)
+	pen.Walk(dist)
+	pen.Right(ang)
+	arvore(pen, dist*fator)
+	pen.Right(-2 * ang)
+	arvore(pen, dist*fator)
+	pen.Right(ang)
+	pen.Walk(-dist)
+}
+
 func main() {
-	pen := NewPen(500, 500)   // cria um canvas de 500 de largura por 500 de altura
+	pen := NewPen(600, 500)   // cria um canvas de 500 de largura por 500 de altura
 	pen.SetRGB(255, 0, 0)     // muda a cor do pincel para vermelho
 	pen.SetPosition(250, 500) // move o pincel para x 250, y 500
-	pen.SetHeading(90)        // coloca o pincel apontando para cima
-	pen.Walk(100)             // anda 100 pixels
+	pen.SetHeading(90)
+	arvore(pen, 150)
+
+	// coloca o pincel apontando para cima
+	/*pen.Walk(100)             // anda 100 pixels
 	pen.Left(30)              // dobra 30 graus para esquerda
 	pen.Walk(100)             // anda 100 pixels
 	pen.DrawCircle(50)        // desenha um círculo de raio 50
 	pen.Right(60)             // gira para direita 60 graus
 	pen.Walk(150)
-	for range 10 {
+	*/
+
+	/*for range 10 {
 		pen.Up()
 		pen.Walk(30) // anda sem riscar
 		pen.Down()
@@ -32,7 +53,7 @@ func main() {
 		pen.Down()
 
 		pen.Left(36) // gira
-	}
+	}*/
 
 	pen.SavePNG("tree.png")
 	fmt.Println("PNG file created successfully.")

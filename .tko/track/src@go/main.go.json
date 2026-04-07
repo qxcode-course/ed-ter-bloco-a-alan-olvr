@@ -2,8 +2,28 @@
     "patches": [
         {
             "label": "2026-04-07_13-39-56",
-            "content": "package main\n\nimport (\n\t\"fmt\"\n\t\"math/rand\"\n)\n\nfunc randInt(min, max int) int {\n\treturn min + rand.Intn(max-min+1)\n}\n\nfunc main() {\n\tpen := NewPen(500, 500)   // cria um canvas de 500 de largura por 500 de altura\n\tpen.SetRGB(255, 0, 0)     // muda a cor do pincel para vermelho\n\tpen.SetPosition(250, 500) // move o pincel para x 250, y 500\n\tpen.SetHeading(90)        // coloca o pincel apontando para cima\n\tpen.Walk(100)             // anda 100 pixels\n\tpen.Left(30)              // dobra 30 graus para esquerda\n\tpen.Walk(100)             // anda 100 pixels\n\tpen.DrawCircle(50)        // desenha um c\u00edrculo de raio 50\n\tpen.Right(60)             // gira para direita 60 graus\n\tpen.Walk(150)\n\tfor range 10 {\n\t\tpen.Up()\n\t\tpen.Walk(30) // anda sem riscar\n\t\tpen.Down()\n\n\t\tpen.DrawCircle(10) //desenha um circulo pequeno\n\n\t\tpen.Up()\n\t\tpen.Walk(-30) // volta sem riscar\n\t\tpen.Down()\n\n\t\tpen.Left(36) // gira\n\t}\n\n\tpen.SavePNG(\"tree.png\")\n\tfmt.Println(\"PNG file created successfully.\")\n}\n",
+            "content": "@@ -222,24 +222,20 @@\n GB(255, \n-255, 255\n+0, 0\n )     //\n",
             "lines": "39"
+        },
+        {
+            "label": "2026-04-07_13-58-53",
+            "content": "@@ -227,17 +227,19 @@\n 5, 255, \n-0\n+255\n )     //\n",
+            "lines": "39"
+        },
+        {
+            "label": "2026-04-07_13-59-15",
+            "content": "@@ -222,17 +222,19 @@\n GB(255, \n-0\n+255\n , 0)    \n",
+            "lines": "39"
+        },
+        {
+            "label": "2026-04-07_14-20-31",
+            "content": "@@ -114,241 +114,8 @@\n %0A%7D%0A%0A\n-func  arvore(pen *Pen, dist float64) %7B%0A%09if dist %3C 10 %7B%0A%09%09return%0A%09%7D%0A%09ang := 30.0%0A%09fator := 0.9%0A%09pen.Walk(dist)%0A%09pen.Right(ang)%0A%09arvore(pen, dist*fator)%0A%09pen.Right(-2 * ang)%0A%09arvore(pen, dist*fator)%0A%09pen.Right(ang)%0A%09pen.Walk(-dist)%0A%7D%0A%0A\n func\n@@ -356,26 +356,8 @@\n 90) \n-%0A%09arvore(pen, 150)\n     \n",
+            "lines": "39"
+        },
+        {
+            "label": "2026-04-07_14-28-27",
+            "content": "package main\n\nimport (\n\t\"fmt\"\n\t\"math/rand\"\n)\n\nfunc randInt(min, max int) int {\n\treturn min + rand.Intn(max-min+1)\n}\n\nfunc  arvore(pen *Pen, dist float64) {\n\tif dist < 10 {\n\t\treturn\n\t}\n\tang := 30.0\n\tfator := 0.9\n\tpen.Walk(dist)\n\tpen.Right(ang)\n\tarvore(pen, dist*fator)\n\tpen.Right(-2 * ang)\n\tarvore(pen, dist*fator)\n\tpen.Right(ang)\n\tpen.Walk(-dist)\n}\n\nfunc main() {\n\tpen := NewPen(500, 500)   // cria um canvas de 500 de largura por 500 de altura\n\tpen.SetRGB(255, 0, 0)     // muda a cor do pincel para vermelho\n\tpen.SetPosition(250, 500) // move o pincel para x 250, y 500\n\tpen.SetHeading(90) \n\tarvore(pen, 150)       // coloca o pincel apontando para cima\n\tpen.Walk(100)             // anda 100 pixels\n\tpen.Left(30)              // dobra 30 graus para esquerda\n\tpen.Walk(100)             // anda 100 pixels\n\tpen.DrawCircle(50)        // desenha um c\u00edrculo de raio 50\n\tpen.Right(60)             // gira para direita 60 graus\n\tpen.Walk(150)\n\tfor range 10 {\n\t\tpen.Up()\n\t\tpen.Walk(30) // anda sem riscar\n\t\tpen.Down()\n\n\t\tpen.DrawCircle(10) //desenha um circulo pequeno\n\n\t\tpen.Up()\n\t\tpen.Walk(-30) // volta sem riscar\n\t\tpen.Down()\n\n\t\tpen.Left(36) // gira\n\t}\n\n\tpen.SavePNG(\"tree.png\")\n\tfmt.Println(\"PNG file created successfully.\")\n}\n",
+            "lines": "55"
         }
     ]
 }

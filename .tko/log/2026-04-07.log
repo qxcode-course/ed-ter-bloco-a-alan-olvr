@@ -34,3 +34,7 @@
 2026-04-07 13:34:34, MOVE, v:1, k:ed@fractais_png, mode:PICK
 2026-04-07 13:34:39, MOVE, v:1, k:ed@fractais_png, mode:BACK
 2026-04-07 13:39:56, EXEC, v:1, k:src@go, mode:FREE, size:136
+2026-04-07 13:58:53, EXEC, v:1, k:src@go, mode:FREE, size:136
+2026-04-07 13:59:15, EXEC, v:1, k:src@go, mode:FREE, size:136
+2026-04-07 14:20:31, EXEC, v:1, k:src@go, mode:FREE, size:136
+2026-04-07 14:28:27, EXEC, v:1, k:src@go, mode:FREE, size:152
