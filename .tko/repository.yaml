@@ -15,8 +15,8 @@ sources:
   quests: null
   tasks: null
 expanded:
-- ed@vector
 - ed@rec
+- ed@vector
 - ed@map_set
 flags:
   inbox: inbox
@@ -25,4 +25,4 @@ flags:
   task_graph_mode: executions
   show_time: 'true'
 lang: go
-selected: ed@treinando
+selected: ed@resto

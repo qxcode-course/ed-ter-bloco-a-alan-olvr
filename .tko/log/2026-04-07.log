@@ -1,0 +1,5 @@
+2026-04-07 00:02:03, MOVE, v:1, k:ed@treinando, mode:PICK
+2026-04-07 00:02:04, EXEC, v:1, k:ed@treinando, mode:FULL, rate:100, size:121
+2026-04-07 00:02:11, MOVE, v:1, k:ed@treinando, mode:BACK
+2026-04-07 00:03:01, SELF, v:1, k:ed@treinando, self:1, rate:100, study:40, code:1
+2026-04-07 00:03:28, MOVE, v:1, k:ed@resto, mode:DOWN
