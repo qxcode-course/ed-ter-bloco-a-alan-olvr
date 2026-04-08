@@ -15,9 +15,9 @@ sources:
   quests: null
   tasks: null
 expanded:
-- ed@map_set
-- ed@vector
 - ed@rec
+- ed@vector
+- ed@map_set
 flags:
   inbox: inbox
   panel: help
