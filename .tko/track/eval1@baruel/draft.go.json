@@ -1,0 +1,159 @@
+{
+    "patches": [
+        {
+            "label": "2026-04-14_13-55-09",
+            "content": "@@ -220,39 +220,38 @@\n   %0A    for i := \n-1\n+0\n ; i %3C\n-=\n  n; i++ %7B%0A      \n@@ -353,23 +353,22 @@\n or i := \n-1\n+0\n ; i %3C\n-=\n  n; i++ \n",
+            "lines": "62"
+        },
+        {
+            "label": "2026-04-14_13-57-13",
+            "content": "@@ -232,14 +232,15 @@\n  := \n-0\n+1\n ; i %3C\n+=\n  n; \n",
+            "lines": "62"
+        },
+        {
+            "label": "2026-04-14_13-57-49",
+            "content": "@@ -399,10 +399,8 @@\n as%5Bi\n--1\n %5D ==\n@@ -413,16 +413,18 @@\n suidas%5Bi\n+-1\n %5D %7B%0A    \n",
+            "lines": "62"
+        },
+        {
+            "label": "2026-04-14_14-00-46",
+            "content": "@@ -345,38 +345,39 @@\n ue%0A    for i := \n-0\n+1\n ; i %3C\n+=\n  n; i++ %7B%0A%0A     \n@@ -395,16 +395,18 @@\n suidas%5Bi\n+-1\n %5D == c.P\n@@ -419,10 +419,8 @@\n as%5Bi\n-+1\n %5D %7B%0A\n",
+            "lines": "62"
+        },
+        {
+            "label": "2026-04-14_14-02-54",
+            "content": "@@ -373,19 +373,8 @@\n + %7B%0A\n-        i++\n %0A   \n@@ -416,9 +416,9 @@\n as%5Bi\n--\n++\n 1%5D %7B\n",
+            "lines": "62"
+        },
+        {
+            "label": "2026-04-14_14-03-25",
+            "content": "@@ -340,17 +340,16 @@\n := true%0A\n-%0A\n     for \n@@ -381,41 +381,12 @@\n     \n-for j := i + 1; j %3C n; j++ %7B%0A    \n+i++%0A\n     \n@@ -426,53 +426,15 @@\n das%5B\n-j\n+i-1\n %5D %7B%0A\n-                teveRepetida = true%0A    \n     \n@@ -472,36 +472,32 @@\n                 \n-    \n fmt.Println(%22 %22)\n@@ -501,37 +501,34 @@\n  %22)%0A            \n-  \n-  \n %7D\n+%0A\n %0A               \n@@ -524,28 +524,20 @@\n         \n-    primeira\n+teve\n Repetida\n@@ -539,24 +539,21 @@\n etida = \n-false%0A  \n+true%0A\n         \n@@ -556,37 +556,40 @@\n         \n-  break%0A            %7D\n+primeiraRepetida = false\n %0A       \n@@ -652,20 +652,16 @@\n )%0A    %7D%0A\n-    \n %0A    tem\n",
+            "lines": "62"
+        },
+        {
+            "label": "2026-04-14_14-05-37",
+            "content": "@@ -632,50 +632,8 @@\n lse%0A\n-                fmt.Print(c.Possuidas%5Bi%5D)%0A\n     \n@@ -731,24 +731,28 @@\n (%22N%22)%0A    %7D%0A\n+    \n %0A    temFalt\n",
+            "lines": "64"
+        },
+        {
+            "label": "2026-04-14_14-07-41",
+            "content": "@@ -666,24 +666,46 @@\n ssuidas%5Bi%5D)%0A\n+                break%0A\n             \n",
+            "lines": "65"
+        },
+        {
+            "label": "2026-04-14_14-07-56",
+            "content": "@@ -684,34 +684,16 @@\n       %7D%0A\n-            break%0A\n         \n",
+            "lines": "64"
+        },
+        {
+            "label": "2026-04-14_14-08-11",
+            "content": "@@ -354,23 +354,22 @@\n or i := \n-1\n+0\n ; i %3C\n-=\n  n; i++ \n@@ -379,33 +379,37 @@\n        for j := \n-0\n+i + 1\n ; j %3C n; j++ %7B%0A \n@@ -644,35 +644,73 @@\n         \n-break%0A            %7D\n+fmt.Print(c.Possuidas%5Bi%5D)%0A            %7D%0A            break\n %0A       \n",
+            "lines": "65"
+        },
+        {
+            "label": "2026-04-14_14-09-20",
+            "content": "@@ -346,38 +346,39 @@\n e%0A%0A    for i := \n-0\n+1\n ; i %3C\n+=\n  n; i++ %7B%0A      \n@@ -392,13 +392,9 @@\n  := \n-i + 1\n+0\n ; j \n@@ -570,56 +570,8 @@\n  %22)%0A\n-                    fmt.Println(c.Possuidas%5Bi%5D)%0A\n     \n",
+            "lines": "64"
+        },
+        {
+            "label": "2026-04-14_14-10-52",
+            "content": "@@ -564,30 +564,19 @@\n Println(\n-c.Possuidas%5Bi%5D\n+%22 %22\n )%0A      \n@@ -593,35 +593,46 @@\n     fmt.Println(\n-%22 %22\n+c.Possuidas%5Bi%5D\n )%0A              \n",
+            "lines": "65"
+        },
+        {
+            "label": "2026-04-14_14-11-16",
+            "content": "@@ -6,17 +6,16 @@\n ge main%0A\n-%0A\n import %22\n@@ -42,17 +42,20 @@\n truct %7B%0A\n-%09\n+    \n TotalAlb\n@@ -61,17 +61,20 @@\n bum int%0A\n-%09\n+    \n Possuida\n@@ -78,12 +78,11 @@\n idas\n-  \n %5B%5D\n+ \n int%0A\n@@ -99,17 +99,20 @@\n in() %7B%0A%0A\n-%09\n+    \n var c Co\n@@ -117,17 +117,20 @@\n Colecao%0A\n-%09\n+    \n fmt.Scan\n@@ -146,17 +146,20 @@\n Album)%0A%0A\n-%09\n+    \n var n in\n@@ -160,17 +160,20 @@\n r n int%0A\n-%09\n+    \n fmt.Scan\n@@ -177,17 +177,20 @@\n can(&n)%0A\n-%09\n+    \n c.Possui\n@@ -210,18 +210,25 @@\n int, n)%0A\n-%0A%09\n+    %0A    \n for i :=\n@@ -244,18 +244,24 @@\n ; i++ %7B%0A\n-%09%09\n+        \n fmt.Scan\n@@ -278,21 +278,27 @@\n das%5Bi%5D)%0A\n-%09%7D%0A%0A%09\n+    %7D%0A%0A    \n teveRepe\n@@ -303,33 +303,36 @@\n petida := false%0A\n-%09\n+    \n primeiraRepetida\n@@ -341,17 +341,20 @@\n = true%0A%0A\n-%09\n+    \n for i :=\n@@ -370,18 +370,24 @@\n ; i++ %7B%0A\n-%09%09\n+        \n for j :=\n@@ -399,35 +399,44 @@\n 1; j %3C n; j++ %7B%0A\n-%09%09%09\n+            \n if c.Possuidas%5Bi\n@@ -457,20 +457,32 @@\n as%5Bj%5D %7B%0A\n-%09%09%09%09\n+                \n teveRepe\n@@ -493,20 +493,32 @@\n  = true%0A\n-%09%09%09%09\n+                \n if !prim\n@@ -532,21 +532,36 @@\n etida %7B%0A\n-%09%09%09%09%09\n+                    \n fmt.Prin\n@@ -584,89 +584,161 @@\n i%5D)%0A\n-%09%09%09%09%09fmt.Println(%22 %22)%0A%09%09%09%09%7D%0A%09%09%09%09primeiraRepetida = false%0A%09%09%09%09break%0A%09%09%09%7D%0A%09%09%7D%0A%09%7D%0A%0A%09\n+                    fmt.Println(%22 %22)%0A                %7D%0A                primeiraRepetida = false%0A                break%0A            %7D%0A        %7D%0A    %7D%0A%0A    \n if !\n@@ -752,18 +752,24 @@\n etida %7B%0A\n-%09%09\n+        \n fmt.Prin\n@@ -777,21 +777,27 @@\n ln(%22N%22)%0A\n-%09%7D%0A%0A%09\n+    %7D%0A%0A    \n temFalta\n@@ -809,17 +809,20 @@\n = false%0A\n-%09\n+    \n primeira\n@@ -838,17 +838,20 @@\n := true%0A\n-%09\n+    \n for i :=\n@@ -879,18 +879,24 @@\n ; i++ %7B%0A\n-%09%09\n+        \n temFalta\n@@ -906,18 +906,24 @@\n  = true%0A\n-%09%09\n+        \n for j :=\n@@ -939,19 +939,28 @@\n ; j++ %7B%0A\n-%09%09%09\n+            \n if c.Pos\n@@ -976,20 +976,32 @@\n  == i %7B%0A\n-%09%09%09%09\n+                \n temFalta\n@@ -1016,29 +1016,62 @@\n lse%0A\n-%09%09%09%09break%0A%09%09%09%7D%0A%09%09%7D%0A%09%09\n+                break%0A            %7D%0A        %7D%0A        \n if t\n@@ -1083,19 +1083,28 @@\n tante %7B%0A\n-%09%09%09\n+            \n if !prim\n@@ -1122,56 +1122,67 @@\n e %7B%0A\n-%09%09%09%09fmt.Println(i)%0A%09%09%09%09fmt.Println(%22 %22)%0A%09%09%09%7D%0A%09%09%09\n+                fmt.Println(%22 %22)%0A            %7D%0A            \n prim\n@@ -1206,17 +1206,29 @@\n lse%0A\n-%09%09%7D%0A%09%7D%0A%0A%09\n+        %7D%0A    %7D%0A%0A    \n if !\n@@ -1245,10 +1245,16 @@\n e %7B%0A\n-%09%09\n+        \n fmt.\n@@ -1270,9 +1270,12 @@\n N%22)%0A\n-%09\n+    \n %7D%0A%0A%7D\n",
+            "lines": "65"
+        },
+        {
+            "label": "2026-04-14_14-11-49",
+            "content": "@@ -426,24 +426,40 @@\n rue%0A\n-                \n+%09%09%09%09if !primeiraRepetida %7B%0A%09%09%09%09%09\n fmt.\n@@ -463,16 +463,18 @@\n mt.Print\n+ln\n (c.Possu\n@@ -486,35 +486,8 @@\n i%5D)%0A\n-%09%09%09%09if !primeiraRepetida %7B%0A\n %09%09%09%09\n@@ -855,16 +855,35 @@\n tante %7B%0A\n+%09%09%09%09fmt.Println(i)%0A\n %09%09%09%09fmt.\n",
+            "lines": "67"
+        },
+        {
+            "label": "2026-04-14_14-17-50",
+            "content": "@@ -422,16 +422,58 @@\n  = true%0A\n+                fmt.Print(c.Possuidas%5Bi%5D)%0A\n %09%09%09%09if !\n@@ -523,50 +523,8 @@\n %09%09%7D%0A\n-                fmt.Print(c.Possuidas%5Bi%5D)%0A\n %09%09%09%09\n",
+            "lines": "66"
+        },
+        {
+            "label": "2026-04-14_14-18-29",
+            "content": "@@ -455,32 +455,34 @@\n %7B%0A%09%09%09%09%09fmt.Print\n+ln\n (%22 %22)%0A%09%09%09%09%7D%0A    \n@@ -877,16 +877,18 @@\n mt.Print\n+ln\n (%22 %22)%0A%09%09\n",
+            "lines": "66"
+        },
+        {
+            "label": "2026-04-14_14-19-43",
+            "content": "@@ -600,16 +600,18 @@\n mt.Print\n+ln\n (%22N%22)%0A%09%7D\n",
+            "lines": "66"
+        },
+        {
+            "label": "2026-04-14_14-19-52",
+            "content": "@@ -573,16 +573,17 @@\n %09%7D%0A%0A%09if \n+!\n teveRepe\n",
+            "lines": "66"
+        },
+        {
+            "label": "2026-04-14_14-20-03",
+            "content": "@@ -573,17 +573,16 @@\n %09%7D%0A%0A%09if \n-!\n teveRepe\n",
+            "lines": "66"
+        },
+        {
+            "label": "2026-04-14_14-20-10",
+            "content": "@@ -398,16 +398,40 @@\n as%5Bj%5D %7B%0A\n+%09%09%09%09teveRepetida = true%0A\n %09%09%09%09if !\n",
+            "lines": "66"
+        },
+        {
+            "label": "2026-04-14_14-20-35",
+            "content": "@@ -497,44 +497,8 @@\n i%5D)%0A\n-                teveRepetida = true%0A\n %09%09%09%09\n",
+            "lines": "65"
+        },
+        {
+            "label": "2026-04-14_14-21-08",
+            "content": "@@ -577,24 +577,21 @@\n %09%09%7D%0A%09%09%7D%0A\n-        \n+%09%7D%0A%0A%09\n if !teve\n@@ -603,20 +603,16 @@\n ida %7B%0A%09%09\n-    \n fmt.Prin\n@@ -622,23 +622,12 @@\n N%22)%0A\n-        %7D%0A\n %09%7D%0A%0A\n-%0A\n %09tem\n",
+            "lines": "66"
+        },
+        {
+            "label": "2026-04-14_14-22-49",
+            "content": "@@ -441,16 +441,17 @@\n .Print(%22\n+ \n %22)%0A%09%09%09%09%7D\n@@ -577,17 +577,16 @@\n %09%09%7D%0A%09%09%7D%0A\n-%0A\n         \n",
+            "lines": "66"
+        },
+        {
+            "label": "2026-04-14_14-23-17",
+            "content": "@@ -437,25 +437,24 @@\n %09fmt.Print(%22\n- \n %22)%0A%09%09%09%09%7D%0A   \n",
+            "lines": "67"
+        },
+        {
+            "label": "2026-04-14_14-23-36",
+            "content": "@@ -919,33 +919,8 @@\n %09%09%7D%0A\n-            fmt.Print(i)%0A\n %09%09%09p\n",
+            "lines": "67"
+        },
+        {
+            "label": "2026-04-14_14-24-15",
+            "content": "@@ -936,18 +936,16 @@\n mt.Print\n-ln\n (i)%0A%09%09%09p\n",
+            "lines": "68"
+        },
+        {
+            "label": "2026-04-14_14-24-24",
+            "content": "@@ -904,18 +904,16 @@\n mt.Print\n-ln\n (%22 %22)%0A%09%09\n",
+            "lines": "68"
+        },
+        {
+            "label": "2026-04-14_14-24-40",
+            "content": "@@ -938,16 +938,18 @@\n mt.Print\n+ln\n (i)%0A%09%09%09p\n",
+            "lines": "68"
+        },
+        {
+            "label": "2026-04-14_14-24-57",
+            "content": "@@ -917,16 +917,41 @@\n %22)%0A%09%09%09%7D%0A\n+            fmt.Print(i)%0A\n %09%09%09prime\n",
+            "lines": "68"
+        },
+        {
+            "label": "2026-04-14_14-25-08",
+            "content": "@@ -577,20 +577,21 @@\n %09%09%7D%0A%09%09%7D%0A\n-%09%7D%0A%0A\n+%0A    \n     if !\n@@ -605,16 +605,17 @@\n etida %7B%0A\n+%09\n %09    fmt\n@@ -630,16 +630,23 @@\n N%22)%0A    \n+    %7D%0A%09\n %7D%0A%0A%0A%09tem\n",
+            "lines": "67"
+        },
+        {
+            "label": "2026-04-14_14-26-19",
+            "content": "package main\n\nimport \"fmt\"\n\ntype Colecao struct {\n\tTotalAlbum int\n\tPossuidas  []int\n}\n\nfunc main() {\n\n\tvar c Colecao\n\tfmt.Scan(&c.TotalAlbum)\n\n\tvar n int\n\tfmt.Scan(&n)\n\tc.Possuidas = make([]int, n)\n\n\tfor i := 0; i < n; i++ {\n\t\tfmt.Scan(&c.Possuidas[i])\n\t}\n\n\tteveRepetida := false\n\tprimeiraRepetida := true\n\n\tfor i := 0; i < n; i++ {\n\t\tfor j := i + 1; j < n; j++ {\n\t\t\tif c.Possuidas[i] == c.Possuidas[j] {\n\t\t\t\tif !primeiraRepetida {\n\t\t\t\t\tfmt.Print(\" \")\n\t\t\t\t}\n                fmt.Print(c.Possuidas[i])\n                teveRepetida = true\n\t\t\t\tprimeiraRepetida = false\n\t\t\t\tbreak\n\t\t\t}\n\t\t}\n\t}\n\n    if !teveRepetida {\n\t    fmt.Print(\"N\")\n    }\n\n\n\ttemFaltante := false\n\tprimeiraFaltante := true\n\tfor i := 1; i <= c.TotalAlbum; i++ {\n\t\ttemFaltante = true\n\t\tfor j := 0; j < n; j++ {\n\t\t\tif c.Possuidas[j] == i {\n\t\t\t\ttemFaltante = false\n\t\t\t\tbreak\n\t\t\t}\n\t\t}\n\t\tif temFaltante {\n\t\t\tif !primeiraFaltante {\n\t\t\t\tfmt.Println(\" \")\n\t\t\t}\n\t\t\tprimeiraFaltante = false\n\t\t}\n\t}\n\n\tif !temFaltante {\n\t\tfmt.Println(\"N\")\n\t}\n\n}\n",
+            "lines": "67"
+        }
+    ]
+}

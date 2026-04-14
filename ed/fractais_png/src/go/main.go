@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	"math"
 	"math/rand"
 )
 
@@ -10,62 +9,64 @@ func randInt(min, max int) int {
 	return min + rand.Intn(max-min+1)
 }
 
-func pentagono(pen *Pen, x, y, tamanho float64, steps int, angBase float64) {
-	//ponto de parada
-	if steps == 0 {
+func carpet(pen *Pen, x, y, size float64, depth int) {
+
+	if depth == 0 {
+		drawLeaf(pen, x, y, size)
 		return
 	}
 
-	const rad = math.Pi / 180.0
-	const escala = 0.36
+	cell := size / 4.0
 
 	pen.SetRGB(255, 255, 255)
-	pen.SetLineWidth(2.0)
+	pen.SetLineWidth(1.0)
 
-	for i := 0; i < 5; i++ {
-		angulo := angBase + float64(i)*72.0
+	drawRect(pen, x, y, size, size)
 
-		distancia := tamanho * (1 - escala) * 2.2
+	for row := 0; row < 4; row++ {
+		for col := 0; col < 4; col++ {
+			if row >= 1 && row <= 2 && col >= 1 && col <= 2 {
+				continue
+			}
 
-		newX := x + distancia*math.Cos(angulo*rad)
-		newY := y - distancia*math.Sin(angulo*rad)
-
-		pen.Up()
-		pen.SetPosition(x, y)
-
-		pen.Down()
-		pen.Goto(newX, newY)
-		pen.Up()
-
-		if steps == 1 {
-			estrela(pen, newX, newY, tamanho*0.15, angulo)
-		} else {
-			pentagono(pen, newX, newY, tamanho*escala, steps-1, angulo)
+			cx := x + float64(col)*cell
+			cy := y + float64(row)*cell
+			carpet(pen, cx, cy, cell, depth-1)
 		}
 	}
 }
 
-func estrela(pen *Pen, x, y, r float64, angBase float64) {
-	const rad = math.Pi / 180
+func drawLeaf(pen *Pen, x, y, size float64) {
+	pen.SetRGB(255, 255, 255)
+	pen.SetLineWidth(1.0)
 
-	for i := 0; i < 5; i++ {
-		angulo1 := angBase + float64(i)*72
-		angulo2 := angBase + float64((i+2)%5)*72
+	half := size / 2.0
+	quarter := size / 4.0
 
-		destX1 := x + r*math.Cos(angulo1*rad)
-		destY1 := y - r*math.Sin(angulo1*rad)
-
-		destX2 := x + r*math.Cos(angulo2*rad)
-		destY2 := y - r*math.Sin(angulo2*rad)
-
-		pen.Down()
-		pen.Goto(destX1, destY1)
-		pen.Goto(destX2, destY2)
-		pen.Up()
+	for row := 0; row < 2; row++ {
+		for col := 0; col < 2; col++ {
+			mx := x + float64(col)*half + quarter*0.15
+			my := y + float64(row)*half + quarter*0.15
+			s := half * 0.7
+			drawRect(pen, mx, my, s, s)
+			inner := s * 0.45
+			ox := mx + quarter*0.15
+			oy := my + quarter*0.15
+			drawRect(pen, ox, oy, inner, inner)
+		}
 	}
-	pen.Up()
 }
 
+func drawRect(pen *Pen, x, y, w, h float64) {
+	pen.Up()
+	pen.SetPosition(x, y)
+	pen.Down()
+	pen.Goto(x+w, y)
+	pen.Goto(x+w, y+h)
+	pen.Goto(x, y+h)
+	pen.Goto(x, y)
+	pen.Up()
+}
 func main() {
 	pen := NewPen(1000.0, 1000.0)
 
@@ -73,9 +74,9 @@ func main() {
 	pen.SetRGB(0, 0, 0)
 	pen.FillSquare(1000.0, 1000.0)
 
-	pen.SetPosition(500, 500)
-	pentagono(pen, 500.0, 550.0, 220, 7, -90)
+	const margin = 20.0
+	carpet(pen, margin, margin, 1000.0-2*margin, 4)
 
-	pen.SavePNG("pentagono.png")
+	pen.SavePNG("carpet.png")
 	fmt.Println("PNG file created successfully.")
 }

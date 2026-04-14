@@ -14,15 +14,22 @@ sources:
   writeable: false
   quests: null
   tasks: null
+- name: eval1
+  target: https://github.com/senapk/eval_26_ed_1
+  index: README.md
+  type: git
+  writeable: false
+  quests: null
+  tasks: null
 expanded:
-- ed@map_set
+- eval1@teste-1
 - ed@vector
-- ed@rec
+- ed@map_set
 flags:
   inbox: inbox
-  panel: help
+  panel: skills
   show_panel: 'true'
   task_graph_mode: executions
   show_time: 'true'
 lang: go
-selected: ed@fractais_png
+selected: eval1@triangulo
