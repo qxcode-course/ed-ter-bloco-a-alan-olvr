@@ -1,0 +1,52 @@
+package main
+
+import (
+	"fmt"
+	"math/rand"
+)
+
+func randInt(min, max int) int {
+	return min + rand.Intn(max-min+1)
+}
+
+func arvore(pen *Pen, tamanho float64, steps int) {
+	//ponto de parada
+	if steps == 0 {
+		return
+	}
+
+	//desenhando o tronco
+	pen.SetRGB(255, 255, 255)
+	pen.SetLineWidth(1.0)
+
+	pen.Down()
+	pen.Walk(tamanho)
+
+	//criando galho da direita
+	pen.Right(30.0)
+	arvore(pen, tamanho*0.69, steps-1)
+	pen.Left(30.0)
+
+	//criando galho da esquerda
+	pen.Left(30.0)
+	arvore(pen, tamanho*0.69, steps-1)
+	pen.Right(30.0)
+
+	pen.Up()
+	pen.Walk(-tamanho)
+}
+
+func main() {
+	pen := NewPen(1000.0, 1000.0)
+
+	pen.SetPosition(0, 0)
+	pen.SetRGB(0, 0, 0)
+	pen.FillSquare(1000.0, 1000.0)
+
+	pen.SetPosition(500, 1000)
+	pen.SetHeading(90)
+	arvore(pen, 320, 12)
+
+	pen.SavePNG("arvore.png")
+	fmt.Println("PNG file created successfully.")
+}
