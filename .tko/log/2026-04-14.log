@@ -86,3 +86,5 @@
 2026-04-14 14:50:03, MOVE, v:1, k:eval1@triangulo, mode:BACK
 2026-04-14 14:50:22, MOVE, v:1, k:eval1@triangulo, mode:PICK
 2026-04-14 14:50:23, EXEC, v:1, k:eval1@triangulo, mode:FULL, rate:0, size:58
+2026-04-14 14:50:23, MOVE, v:1, k:eval1@triangulo, mode:EDIT
+2026-04-14 14:49:50, MOVE, v:1, k:eval1@triangulo, mode:EDIT

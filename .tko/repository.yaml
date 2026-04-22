@@ -22,14 +22,14 @@ sources:
   quests: null
   tasks: null
 expanded:
-- eval1@teste-1
 - ed@vector
 - ed@map_set
 flags:
-  inbox: inbox
+  inbox: all
   panel: skills
-  show_panel: 'true'
+  show_panel: 'false'
   task_graph_mode: executions
   show_time: 'true'
 lang: go
-selected: eval1@triangulo
+selected: ed@vetbuild
+selected_index: 13
