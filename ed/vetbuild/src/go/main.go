@@ -52,6 +52,14 @@ func (vec *Vector) PushBack(value int) {
 	vec.size++
 }
 
+func (vec *Vector) Get(index int) int {
+	return vec.data[index]
+}
+
+func (vec *Vector) At(index int) (int, error) {
+	if i
+}
+
 func Join(slice []int, sep string) string {
 	if len(slice) == 0 {
 		return ""
@@ -131,13 +139,13 @@ func main() {
 		case "capacity":
 			// fmt.Println(v.Capacity())
 		case "get":
-			// index, _ := strconv.Atoi(parts[1])
-			// value, err := v.At(index)
-			// if err != nil {
-			// 	fmt.Println(err)
-			// } else {
-			// 	fmt.Println(value)
-			// }
+			 index, _ := strconv.Atoi(parts[1])
+			 value, err := v.At(index)
+			 if err != nil {
+			 	fmt.Println(err)
+			 } else {
+			 	fmt.Println(value)
+			 }
 		case "set":
 			// index, _ := strconv.Atoi(parts[1])
 			// value, _ := strconv.Atoi(parts[2])
