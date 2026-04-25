@@ -30,6 +30,28 @@ func (vec *Vector) Status() string {
 	return fmt.Sprintf("size:%d capacity:%d", vec.size, vec.capacity)
 }
 
+func (vec *Vector) PushBack(value int) {
+
+	if(vec.size == vec.capacity){
+		newCapacity := vec.capacity * 2
+
+		if(newCapacity == 0) {
+			newCapacity = 1
+		}
+
+		newData := make([]int, newCapacity)
+		for i := 0; i < vec.size; i++ {
+			newData[i] = vec.data[i]
+		}
+
+		vec.data = newData
+		vec.capacity = newCapacity
+	} 
+
+	vec.data[vec.size] = value
+	vec.size++
+}
+
 func Join(slice []int, sep string) string {
 	if len(slice) == 0 {
 		return ""
@@ -67,10 +89,10 @@ func main() {
 			value, _ := strconv.Atoi(parts[1])
 			v = NewVector(value)
 		case "push":
-			// for _, part := range parts[1:] {
-			// 	value, _ := strconv.Atoi(part)
-			// 	v.PushBack(value)
-			// }
+			 for _, part := range parts[1:] {
+			 	value, _ := strconv.Atoi(part)
+				v.PushBack(value)
+			}
 		case "show":
 			fmt.Println(v)
 		case "status":
