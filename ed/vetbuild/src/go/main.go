@@ -2,6 +2,7 @@ package main
 
 import (
 	"bufio"
+	"errors"
 	"fmt"
 	"os"
 	"strconv"
@@ -32,10 +33,10 @@ func (vec *Vector) Status() string {
 
 func (vec *Vector) PushBack(value int) {
 
-	if(vec.size == vec.capacity){
+	if vec.size == vec.capacity {
 		newCapacity := vec.capacity * 2
 
-		if(newCapacity == 0) {
+		if newCapacity == 0 {
 			newCapacity = 1
 		}
 
@@ -46,7 +47,7 @@ func (vec *Vector) PushBack(value int) {
 
 		vec.data = newData
 		vec.capacity = newCapacity
-	} 
+	}
 
 	vec.data[vec.size] = value
 	vec.size++
@@ -57,7 +58,21 @@ func (vec *Vector) Get(index int) int {
 }
 
 func (vec *Vector) At(index int) (int, error) {
-	if i
+	if index < 0 || index >= vec.size {
+		return 0, errors.New("index out of range")
+	}
+
+	value := vec.Get(index)
+	return value, nil
+}
+
+func (vec *Vector) Set(index int, value int) error {
+	if index < 0 || index >= vec.size {
+		return errors.New("index out of range")
+	}
+
+	vec.data[index] = value
+	return nil
 }
 
 func Join(slice []int, sep string) string {
@@ -97,8 +112,8 @@ func main() {
 			value, _ := strconv.Atoi(parts[1])
 			v = NewVector(value)
 		case "push":
-			 for _, part := range parts[1:] {
-			 	value, _ := strconv.Atoi(part)
+			for _, part := range parts[1:] {
+				value, _ := strconv.Atoi(part)
 				v.PushBack(value)
 			}
 		case "show":
@@ -139,21 +154,20 @@ func main() {
 		case "capacity":
 			// fmt.Println(v.Capacity())
 		case "get":
+			index, _ := strconv.Atoi(parts[1])
+			value, err := v.At(index)
+			if err != nil {
+				fmt.Println(err)
+			} else {
+				fmt.Println(value)
+			}
+		case "set":
 			 index, _ := strconv.Atoi(parts[1])
-			 value, err := v.At(index)
+			 value, _ := strconv.Atoi(parts[2])
+			 err := v.Set(index, value)
 			 if err != nil {
 			 	fmt.Println(err)
-			 } else {
-			 	fmt.Println(value)
 			 }
-		case "set":
-			// index, _ := strconv.Atoi(parts[1])
-			// value, _ := strconv.Atoi(parts[2])
-			// err := v.Set(index, value)
-			// if err != nil {
-			// 	fmt.Println(err)
-			// }
-			// 
 		case "reserve":
 			// newCapacity, _ := strconv.Atoi(parts[1])
 			// v.Reserve(newCapacity)
