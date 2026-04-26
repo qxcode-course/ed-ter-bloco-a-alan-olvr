@@ -73,6 +73,15 @@ func (vec *Vector) Set(index int, value int) error {
 
 	vec.data[index] = value
 	return nil
+
+}
+
+func (vec *Vector) Clear() {
+	vec.size = 0
+}
+
+func (vec *Vector) Reserve(newCapacity int) {
+	vec.capacity = newCapacity
 }
 
 func Join(slice []int, sep string) string {
@@ -150,7 +159,7 @@ func main() {
 			// 	fmt.Println("false")
 			// }
 		case "clear":
-			// v.Clear()
+			v.Clear()
 		case "capacity":
 			// fmt.Println(v.Capacity())
 		case "get":
@@ -169,8 +178,8 @@ func main() {
 			 	fmt.Println(err)
 			 }
 		case "reserve":
-			// newCapacity, _ := strconv.Atoi(parts[1])
-			// v.Reserve(newCapacity)
+			newCapacity, _ := strconv.Atoi(parts[1])
+			v.Reserve(newCapacity)
 		case "slice":
 			// start, _ := strconv.Atoi(parts[1])
 			// end, _ := strconv.Atoi(parts[2])
