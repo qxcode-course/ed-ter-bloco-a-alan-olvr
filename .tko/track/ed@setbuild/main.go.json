@@ -1,0 +1,59 @@
+{
+    "patches": [
+        {
+            "label": "2026-04-27_01-03-23",
+            "content": "@@ -47,23 +47,23 @@\n %22str\n-conv\n+ings\n %22%0A%09%22str\n-ings\n+conv\n %22%0A)%0A\n@@ -82,17 +82,16 @@\n ruct\n- \n %7B%0A%09data \n     \n@@ -86,20 +86,16 @@\n %7B%0A%09data \n-    \n %5B%5Dint%0A%09s\n@@ -98,20 +98,16 @@\n t%0A%09size \n-    \n int%0A%09cap\n@@ -173,21 +173,17 @@\n %0A%09%09data:\n-     \n+%09\n make(%5B%5Di\n@@ -208,13 +208,9 @@\n ize:\n-     \n+%09\n 0,%0A%09\n@@ -219,17 +219,17 @@\n apacity:\n- \n+%09\n capacity\n@@ -240,112 +240,8 @@\n %0A%7D%0A%0A\n-func (set *Set) Status() string %7B%0A%09return fmt.Sprintf(%22size:%25d capacity:%25d%22, set.size, set.capacity)%0A%7D%0A%0A\n func\n",
+            "lines": "60"
+        },
+        {
+            "label": "2026-04-27_01-05-49",
+            "content": "@@ -271,20 +271,20 @@\n *Set) St\n-ring\n+atus\n () strin\n@@ -292,165 +292,77 @@\n  %7B%0A%09\n-str := %22%5B%22%0A%09for i := 0; i %3C set.size; i++ %7B%0A%09%09str += fmt.Sprintf(%22%25d%22, set.data%5Bi%5D)%0A%09%09if i %3C set.size-1 %7B%0A%09%09%09str += %22, %22%0A%09%09%7D%0A%09%7D%0A%0A%09str += %22%5D%22%0A%09return str\n+return fmt.Sprintf(%22size:%25d capacity:%25d%22, set.size, set.capacity)\n %0A%7D%0A%0A\n-%0A\n func\n@@ -754,20 +754,19 @@\n rt%22:%0A%09%09%09\n- \n //\n-%09\n+ \n for _, p\n@@ -793,19 +793,19 @@\n :%5D %7B%0A%09%09%09\n- \n //\n+ \n %09value, \n@@ -835,12 +835,11 @@\n %0A%09%09%09\n- \n //\n-%09\n+ \n %7D%0A%09%09\n",
+            "lines": "64"
+        },
+        {
+            "label": "2026-04-27_01-25-58",
+            "content": "@@ -198,19 +198,16 @@\n e(%5B%5Dint,\n- 0,\n  capacit\n@@ -448,1579 +448,8 @@\n %0A%7D%0A%0A\n-func (set *Set) reserve(newCapacity int) %7B%0A%09if newCapacity %3C= set.capacity %7B%0A%09%09return%0A%09%7D%0A%0A%09newData := make(%5B%5Dint, set.size, newCapacity)%0A%09for i := 0; i %3C set.size; i++ %7B%0A%09%09newData%5Bi%5D = set.data%5Bi%5D%0A%09%7D%0A%0A%09set.data = newData%0A%09set.capacity = newCapacity%0A%7D%0A%0Afunc (set *Set) binarySearch(value int) int %7B%0A%09left, right := 0, set.size-1%0A%0A%09for left %3C= right %7B%0A%09%09mid := (left + right) / 2%0A%0A%09%09if set.data%5Bmid%5D == value %7B%0A%09%09%09return mid%0A%09%09%7D else if set.data%5Bmid%5D %3C value %7B%0A%09%09%09left = mid + 1%0A%09%09%7D else %7B%0A%09%09%09right = mid - 1%0A%09%09%7D%0A%09%7D%0A%0A%09return -1%0A%7D%0A%0Afunc (set *Set) insert(value int, index int) error %7B%0A%09if index %3C 0 %7C%7C index %3E set.size %7B%0A%09%09return fmt.Errorf(%22fail: indice invalido%22)%0A%09%7D%0A%0A%09if set.size == set.capacity %7B%0A%09%09newCap := set.capacity * 2%0A%09%09if newCap == 0 %7B%0A%09%09%09newCap = 1%0A%09%09%7D%0A%09%09set.reserve(newCap)%0A%09%7D%0A%0A%09set.data = append(set.data, 0)%0A%09copy(set.data%5Bindex+1:%5D, set.data%5Bindex:%5D)%0A%09set.data%5Bindex%5D = value%0A%09set.size++%0A%0A%09return nil%0A%7D%0A%0Afunc (set *Set) erase(index int) error %7B%0A%09if index %3C 0 %7C%7C index %3E= set.size %7B%0A%09%09return fmt.Errorf(%22fail: indice invalido%22)%0A%09%7D%0A%0A%09copy(set.data%5Bindex:%5D, set.data%5Bindex+1:%5D)%0A%09set.data = set.data%5B:set.size-1%5D%0A%09set.size--%0A%0A%09return nil%0A%7D%0A%0Afunc (set *Set) Insert(value int) %7B%0A%09if set.binarySearch(value) != -1 %7B%0A%09%09return%0A%09%7D%0A%0A%09index := 0%0A%09for index %3C set.size && set.data%5Bindex%5D %3C value %7B%0A%09%09index++%0A%09%7D%0A%0A%09set.insert(value, index)%0A%7D%0A%0Afunc (set *Set) Contains(value int) bool %7B%0A%09return set.binarySearch(value) != -1%0A%7D%0A%0Afunc (set *Set) Erase(value int) bool %7B%0A%09index := set.binarySearch(value)%0A%09if index == -1 %7B%0A%09%09return false%0A%09%7D%0A%0A%09set.erase(index)%0A%09return true%0A%7D%0A\n %0Afun\n@@ -842,16 +842,17 @@\n rt%22:%0A%09%09%09\n+ \n //%09for _\n@@ -878,24 +878,25 @@\n ts%5B1:%5D %7B%0A%09%09%09\n+ \n //%09value, _ \n@@ -920,16 +920,17 @@\n art)%0A%09%09%09\n+ \n //%09%7D%0A%09%09c\n@@ -945,35 +945,8 @@\n w%22:%0A\n-%09%09%09fmt.Println(v.String())%0A\n %09%09ca\n@@ -954,33 +954,33 @@\n e %22erase%22:%0A%09%09%09//\n-%09\n+ \n value, _ := strc\n@@ -1022,17 +1022,17 @@\n %22:%0A%09%09%09//\n-%09\n+ \n value, _\n",
+            "lines": "74"
+        },
+        {
+            "label": "2026-04-27_01-38-05",
+            "content": "@@ -2415,16 +2415,19 @@\n ert%22:%0A%09%09\n+%09//\n %09for _, \n@@ -2454,16 +2454,19 @@\n 1:%5D %7B%0A%09%09\n+%09//\n %09value, \n@@ -2496,26 +2496,10 @@\n %0A%09%09%09\n-v.Insert(value)%0A%09%09\n+//\n %09%7D%0A%09\n",
+            "lines": "166"
+        },
+        {
+            "label": "2026-04-27_01-38-45",
+            "content": "@@ -2623,24 +2623,27 @@\n ontains%22:%0A%09%09\n+%09//\n %09value, _ :=\n@@ -2670,29 +2670,8 @@\n 1%5D)%0A\n-%09%09%09v.Contains(value)%0A\n %09%09ca\n",
+            "lines": "167"
+        },
+        {
+            "label": "2026-04-27_01-39-23",
+            "content": "@@ -2666,28 +2666,16 @@\n %5B1%5D)%0A%09%09%09\n-fmt.Println(\n v.Contai\n@@ -2683,17 +2683,16 @@\n s(value)\n-)\n %0A%09%09case \n",
+            "lines": "168"
+        },
+        {
+            "label": "2026-04-27_01-39-40",
+            "content": "@@ -2563,24 +2563,27 @@\n  %22erase%22:%0A%09%09\n+%09//\n %09value, _ :=\n@@ -2610,72 +2610,8 @@\n 1%5D)%0A\n-%09%09%09if !v.Erase(value) %7B%0A%09%09%09%09fmt.Println(%22value not found%22)%0A%09%09%09%7D%0A\n %09%09ca\n",
+            "lines": "168"
+        },
+        {
+            "label": "2026-04-27_01-40-37",
+            "content": "@@ -1086,34 +1086,37 @@\n Errorf(%22\n-index out of range\n+fail: indice invalido\n %22)%0A%09%7D%0A%0A%09\n@@ -1274,46 +1274,13 @@\n 0)%0A%09\n-for i := set.size; i %3E index; i-- %7B%0A%09%09\n+copy(\n set.\n@@ -1281,27 +1281,33 @@\n y(set.data%5Bi\n-%5D =\n+ndex+1:%5D,\n  set.data%5Bi-\n@@ -1309,16 +1309,15 @@\n ta%5Bi\n--1%5D%0A%09%7D%0A%09\n+ndex:%5D)\n %0A%09se\n@@ -1469,26 +1469,29 @@\n rf(%22\n-index out of range\n+fail: indice invalido\n %22)%0A%09\n@@ -2452,17 +2452,16 @@\n :%5D %7B%0A%09%09%09\n-%09\n value, _\n@@ -2483,17 +2483,16 @@\n i(part)%0A\n-%09\n %09%09%09v.Ins\n",
+            "lines": "171"
+        },
+        {
+            "label": "2026-04-27_01-42-26",
+            "content": "@@ -1332,24 +1332,25 @@\n ata%5Bi-1%5D%0A%09%7D%0A\n+%09\n %0A%09set.data%5Bi\n@@ -1520,48 +1520,13 @@\n %7D%0A%0A%09\n-for i := index; i %3C set.size-1; i++ %7B%0A%09%09\n+copy(\n set.\n@@ -1523,35 +1523,39 @@\n %09copy(set.data%5Bi\n-%5D =\n+ndex:%5D,\n  set.data%5Bi+1%5D%0A%09\n@@ -1553,16 +1553,17 @@\n ta%5Bi\n-+1%5D%0A%09%7D%0A%09\n+ndex+1:%5D)\n %0A%09se\n",
+            "lines": "174"
+        },
+        {
+            "label": "2026-04-27_01-43-09",
+            "content": "@@ -1582,24 +1582,25 @@\n ata%5Bi+1%5D%0A%09%7D%0A\n+%09\n %0A%09set.data =\n",
+            "lines": "177"
+        },
+        {
+            "label": "2026-04-27_02-35-58",
+            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n\t\"strconv\"\n\t\"strings\"\n)\n\ntype Set struct {\n\tdata     []int\n\tsize     int\n\tcapacity int\n}\n\nfunc NewSet(capacity int) *Set {\n\treturn &Set{\n\t\tdata:     make([]int, 0, capacity),\n\t\tsize:     0,\n\t\tcapacity: capacity,\n\t}\n}\n\nfunc (set *Set) String() string {\n\tstr := \"[\"\n\tfor i := 0; i < set.size; i++ {\n\t\tstr += fmt.Sprintf(\"%d\", set.data[i])\n\t\tif i < set.size-1 {\n\t\t\tstr += \", \"\n\t\t}\n\t}\n\n\tstr += \"]\"\n\treturn str\n}\n\nfunc (set *Set) reserve(newCapacity int) {\n\tif newCapacity <= set.capacity {\n\t\treturn\n\t}\n\n\tnewData := make([]int, set.size, newCapacity)\n\tfor i := 0; i < set.size; i++ {\n\t\tnewData[i] = set.data[i]\n\t}\n\n\tset.data = newData\n\tset.capacity = newCapacity\n}\n\nfunc (set *Set) binarySearch(value int) int {\n\tleft, right := 0, set.size-1\n\n\tfor left <= right {\n\t\tmid := (left + right) / 2\n\n\t\tif set.data[mid] == value {\n\t\t\treturn mid\n\t\t} else if set.data[mid] < value {\n\t\t\tleft = mid + 1\n\t\t} else {\n\t\t\tright = mid - 1\n\t\t}\n\t}\n\n\treturn -1\n}\n\nfunc (set *Set) insert(value int, index int) error {\n\tif index < 0 || index > set.size {\n\t\treturn fmt.Errorf(\"index out of range\")\n\t}\n\n\tif set.size == set.capacity {\n\t\tnewCap := set.capacity * 2\n\t\tif newCap == 0 {\n\t\t\tnewCap = 1\n\t\t}\n\t\tset.reserve(newCap)\n\t}\n\n\tset.data = append(set.data, 0)\n\tfor i := set.size; i > index; i-- {\n\t\tset.data[i] = set.data[i-1]\n\t}\n\n\tset.data[index] = value\n\tset.size++\n\n\treturn nil\n}\n\nfunc (set *Set) erase(index int) error {\n\tif index < 0 || index >= set.size {\n\t\treturn fmt.Errorf(\"index out of range\")\n\t}\n\n\tfor i := index; i < set.size-1; i++ {\n\t\tset.data[i] = set.data[i+1]\n\t}\n\n\tset.data = set.data[:set.size-1]\n\tset.size--\n\n\treturn nil\n}\n\nfunc (set *Set) Insert(value int) {\n\tif set.binarySearch(value) != -1 {\n\t\treturn\n\t}\n\n\tindex := 0\n\tfor index < set.size && set.data[index] < value {\n\t\tindex++\n\t}\n\n\tset.insert(value, index)\n}\n\nfunc (set *Set) Contains(value int) bool {\n\treturn set.binarySearch(value) != -1\n}\n\nfunc (set *Set) Erase(value int) bool {\n\tindex := set.binarySearch(value)\n\tif index == -1 {\n\t\treturn false\n\t}\n\n\tset.erase(index)\n\treturn true\n}\n\nfunc main() {\n\tvar line, cmd string\n\tscanner := bufio.NewScanner(os.Stdin)\n\n\tv := NewSet(0)\n\tfor scanner.Scan() {\n\t\tfmt.Print(\"$\")\n\t\tline = scanner.Text()\n\t\tfmt.Println(line)\n\t\tparts := strings.Fields(line)\n\t\tif len(parts) == 0 {\n\t\t\tcontinue\n\t\t}\n\t\tcmd = parts[0]\n\n\t\tswitch cmd {\n\t\tcase \"end\":\n\t\t\treturn\n\t\tcase \"init\":\n\t\t\tvalue, _ := strconv.Atoi(parts[1])\n\t\t\tv = NewSet(value)\n\t\tcase \"insert\":\n\t\t\tfor _, part := range parts[1:] {\n\t\t\t\tvalue, _ := strconv.Atoi(part)\n\t\t\t\tv.Insert(value)\n\t\t\t}\n\t\tcase \"show\":\n\t\t\tfmt.Println(v.String())\n\t\tcase \"erase\":\n\t\t\tvalue, _ := strconv.Atoi(parts[1])\n\t\t\tif !v.Erase(value) {\n\t\t\t\tfmt.Println(\"value not found\")\n\t\t\t}\n\t\tcase \"contains\":\n\t\t\tvalue, _ := strconv.Atoi(parts[1])\n\t\t\tfmt.Println(v.Contains(value))\n\t\tcase \"clear\":\n\t\tdefault:\n\t\t\tfmt.Println(\"fail: comando invalido\")\n\t\t}\n\t}\n}\n",
+            "lines": "177"
+        }
+    ]
+}
