@@ -84,6 +84,106 @@ func (vec *Vector) Reserve(newCapacity int) {
 	vec.capacity = newCapacity
 }
 
+func (vec *Vector) PopBack() error {
+	if(vec.size == 0) {
+		return errors.New("vector is empty")
+	}
+	vec.size--
+
+	return nil
+}
+
+func (vec *Vector) Insert(index int, value int) error {
+	if(index > vec.size) {
+		return errors.New("index out of range")
+	}
+
+	if (vec.size == vec.capacity) {
+		newCapacity := vec.capacity * 2
+		if newCapacity == 0 {
+			newCapacity = 1
+		}
+
+		newData := make([]int, newCapacity)
+		for i := 0; i < vec.size; i++ {
+			newData[i] = vec.data[i]
+		}
+
+		vec.data = newData
+		vec.capacity = newCapacity
+	}
+
+	for i := vec.size; i > index; i-- {
+		vec.data[i] = vec.data[i-1]
+	}
+
+	vec.data[index] = value
+	vec.size++
+
+	return nil
+}
+
+func (vec *Vector) Erase(index int) error{
+	if index >= vec.size {
+		return errors.New("index out of range")
+	}
+
+	for i := index; i < vec.size-1; i++{
+		vec.data[i] = vec.data[i+1]
+	}
+	vec.size--
+
+	return nil
+}
+
+func (vec *Vector) IndexOf(value int) int {
+	for i := 0; i < vec.size; i++{
+		if vec.data[i] == value {
+			return i
+		}
+	}
+	return -1
+}
+
+func (vec *Vector) Contains(value int) bool {
+	return vec.IndexOf(value) != 1
+}
+
+func (vec *Vector) Capacity() int {
+	return vec.capacity
+}
+
+func (vec *Vector) Slice(start int, end int) *Vector{
+	if vec.size == 0 {
+        return &Vector{data: vec.data, size: 0, capacity: 0}
+    }
+
+    start = (start%vec.size + vec.size) % vec.size
+    end = (end%vec.size + vec.size) % vec.size
+
+    var newSize int
+
+    if start <= end {
+        newSize = end - start
+    } else {
+        newSize = vec.size - start + end
+    }
+
+    if start < end {
+        return &Vector{
+            data:     vec.data[start:end],
+            size:     newSize,
+            capacity: len(vec.data[start:]),
+        }
+    }
+
+    return &Vector{
+        data:     vec.data[start:],
+        size:     newSize,
+        capacity: len(vec.data[start:]),
+    }
+}
+
 func Join(slice []int, sep string) string {
 	if len(slice) == 0 {
 		return ""
@@ -130,38 +230,38 @@ func main() {
 		case "status":
 			fmt.Println(v.Status())
 		case "pop":
-			// err := v.PopBack()
-			// if err != nil {
-			// 	fmt.Println(err)
-			// }
+			err := v.PopBack()
+			if err != nil {
+				fmt.Println(err)
+			}
 		case "insert":
-			// index, _ := strconv.Atoi(parts[1])
-			// value, _ := strconv.Atoi(parts[2])
-			// err := v.Insert(index, value)
-			// if err != nil {
-			// 	fmt.Println(err)
-			// }
+			 index, _ := strconv.Atoi(parts[1])
+			 value, _ := strconv.Atoi(parts[2])
+			 err := v.Insert(index, value)
+			 if err != nil {
+		 		fmt.Println(err)
+			}
 		case "erase":
-			// index, _ := strconv.Atoi(parts[1])
-			// err := v.Erase(index)
-			// if err != nil {
-			// 	fmt.Println(err)
-			// }
+			 index, _ := strconv.Atoi(parts[1])
+			 err := v.Erase(index)
+			 if err != nil {
+			 	fmt.Println(err)
+			 }
 		case "indexOf":
-			// value, _ := strconv.Atoi(parts[1])
-			// index := v.IndexOf(value)
-			// fmt.Println(index)
+			 value, _ := strconv.Atoi(parts[1])
+			 index := v.IndexOf(value)
+			 fmt.Println(index)
 		case "contains":
-			// value, _ := strconv.Atoi(parts[1])
-			// if v.Contains(value) {
-			// 	fmt.Println("true")
-			// } else {
-			// 	fmt.Println("false")
-			// }
+			 value, _ := strconv.Atoi(parts[1])
+			 if v.Contains(value) {
+			 	fmt.Println("true")
+			 } else {
+			 	fmt.Println("false")
+			 }
 		case "clear":
 			v.Clear()
 		case "capacity":
-			// fmt.Println(v.Capacity())
+			fmt.Println(v.Capacity())
 		case "get":
 			index, _ := strconv.Atoi(parts[1])
 			value, err := v.At(index)
@@ -181,10 +281,10 @@ func main() {
 			newCapacity, _ := strconv.Atoi(parts[1])
 			v.Reserve(newCapacity)
 		case "slice":
-			// start, _ := strconv.Atoi(parts[1])
-			// end, _ := strconv.Atoi(parts[2])
-			// slice := v.Slice(start, end)
-			// fmt.Println(slice)
+			 start, _ := strconv.Atoi(parts[1])
+			 end, _ := strconv.Atoi(parts[2])
+			 slice := v.Slice(start, end)
+			 fmt.Println(slice)
 		default:
 			fmt.Println("fail: comando invalido")
 		}
