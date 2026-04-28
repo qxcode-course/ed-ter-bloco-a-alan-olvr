@@ -115,6 +115,32 @@ func (ms *MultiSet) Erase(value int) bool {
 	return false
 }
 
+func (ms *MultiSet) Count(value int) int {
+	qtdOcurrence := 0
+	for i := 0; i < ms.size; i++ {
+		if ms.data[i] == value {
+			qtdOcurrence++
+		}
+	}
+
+	return qtdOcurrence
+}
+
+func (ms *MultiSet) Unique() int {
+	if ms.size == 0 {
+		return 0
+	}
+
+	cnt := 1
+	for i := 1; i < ms.size; i++ {
+		if ms.data[i] != ms.data[i-1] {
+			cnt++
+		}
+	}
+
+	return cnt
+}
+
 func Join(slice []int, sep string) string {
 	if len(slice) == 0 {
 		return ""
@@ -170,7 +196,9 @@ func main() {
 			value, _ := strconv.Atoi(args[1])
 			fmt.Println(ms.Count(value))
 		case "unique":
+			fmt.Println(ms.Unique())
 		case "clear":
+			
 		default:
 			fmt.Println("fail: comando invalido")
 		}
