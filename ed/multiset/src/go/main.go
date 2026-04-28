@@ -4,8 +4,76 @@ import (
 	"bufio"
 	"fmt"
 	"os"
+	"strconv"
 	"strings"
 )
+
+type MultiSet struct {
+	data     []int
+	size     int
+	capacity int
+}
+
+func NewMultiSet(capacity int) *MultiSet {
+	return &MultiSet{
+		data:     make([]int, 0, capacity),
+		size:     0,
+		capacity: capacity,
+	}
+}
+
+func (ms *MultiSet) String() string {
+	str := "["
+
+	for i := 0; i < ms.size; i++ {
+		str += fmt.Sprintf("%d", ms.data[i])
+		if i < ms.size-1 {
+			str += ", "
+		}
+	}
+
+	str += "]"
+	return str
+}
+
+func (ms *MultiSet) insert(index int, value int) error {
+	if index < 0 || index > ms.size {
+		return fmt.Errorf("index out of range")
+	}
+
+	if ms.size == ms.capacity {
+		newCap := ms.capacity * 2
+		if newCap == 0 {
+			newCap = 1
+		}
+
+		newData := make([]int, ms.size, newCap)
+		for i := 0; i < ms.size; i++ {
+			newData[i] = ms.data[i]
+		}
+
+		ms.data = newData
+		ms.capacity = newCap
+	}
+
+	ms.data = append(ms.data, 0)
+	for i := ms.size; i > index; i-- {
+		ms.data[i] = ms.data[i-1]
+	}
+
+	ms.data[index] = value
+	ms.size++
+	return nil
+}
+
+func (ms *MultiSet) Insert(value int) {
+	index := 0
+	for index < ms.size && ms.data[index] < value {
+		index++
+	}
+
+	ms.insert(index, value)
+}
 
 func Join(slice []int, sep string) string {
 	if len(slice) == 0 {
@@ -21,7 +89,7 @@ func Join(slice []int, sep string) string {
 func main() {
 	var line, cmd string
 	scanner := bufio.NewScanner(os.Stdin)
-	// ms := NewMultiSet(0)
+	ms := NewMultiSet(0)
 
 	for scanner.Scan() {
 		fmt.Print("$")
@@ -37,17 +105,20 @@ func main() {
 		case "end":
 			return
 		case "init":
-			// value, _ := strconv.Atoi(args[1])
-			// ms = NewMultiSet(value)
+			value, _ := strconv.Atoi(args[1])
+			ms = NewMultiSet(value)
 		case "insert":
-			// for _, part := range args[1:] {
-			// 	value, _ := strconv.Atoi(part)
-			// }
+			for _, part := range args[1:] {
+				value, _ := strconv.Atoi(part)
+				ms.Insert(value)
+			}
 		case "show":
+			fmt.Println(ms.String())
 		case "erase":
 			// value, _ := strconv.Atoi(args[1])
 		case "contains":
-			// value, _ := strconv.Atoi(args[1])
+			value, _ := strconv.Atoi(args[1])
+			ms.Contains(value)
 		case "count":
 			// value, _ := strconv.Atoi(args[1])
 		case "unique":
