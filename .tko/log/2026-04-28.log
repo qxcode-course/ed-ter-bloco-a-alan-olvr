@@ -43,3 +43,5 @@
 2026-04-28 01:53:14, MOVE, v:1, k:ed@multiset, mode:BACK
 2026-04-28 01:53:39, MOVE, v:1, k:ed@multiset, mode:PICK
 2026-04-28 01:53:40, EXEC, v:1, k:ed@multiset, mode:FULL, rate:100
+2026-04-28 01:53:58, MOVE, v:1, k:ed@multiset, mode:BACK
+2026-04-28 01:54:35, SELF, v:1, k:ed@multiset, self:1, rate:100, study:140, concept:1, problem:1, code:1
