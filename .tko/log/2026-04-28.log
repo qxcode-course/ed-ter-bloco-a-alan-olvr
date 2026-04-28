@@ -35,3 +35,11 @@
 2026-04-28 01:37:13, EXEC, v:1, k:ed@multiset, mode:FULL, rate:83, size:205
 2026-04-28 01:37:23, MOVE, v:1, k:ed@multiset, mode:EDIT
 2026-04-28 01:37:13, MOVE, v:1, k:ed@multiset, mode:EDIT
+2026-04-28 01:42:53, MOVE, v:1, k:ed@multiset, mode:EDIT
+2026-04-28 01:48:06, MOVE, v:1, k:ed@multiset, mode:EDIT
+2026-04-28 01:52:56, EXEC, v:1, k:ed@multiset, mode:FULL, rate:100, size:227
+2026-04-28 01:52:50, MOVE, v:1, k:ed@multiset, mode:EDIT
+2026-04-28 01:52:56, MOVE, v:1, k:ed@multiset, mode:EDIT
+2026-04-28 01:53:14, MOVE, v:1, k:ed@multiset, mode:BACK
+2026-04-28 01:53:39, MOVE, v:1, k:ed@multiset, mode:PICK
+2026-04-28 01:53:40, EXEC, v:1, k:ed@multiset, mode:FULL, rate:100

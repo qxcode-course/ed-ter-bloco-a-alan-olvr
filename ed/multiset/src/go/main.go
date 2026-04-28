@@ -66,6 +66,38 @@ func (ms *MultiSet) insert(index int, value int) error {
 	return nil
 }
 
+func (ms *MultiSet) expand() {
+	newCap := ms.capacity * 2
+	ms.capacity = newCap
+}
+
+func (ms *MultiSet) search(value int) (bool, int) {
+	low := 0
+	high := ms.size - 1
+	found := false
+	result := 0
+
+	for low <= high {
+		mid := low + (high-low)/2
+
+		if ms.data[mid] == value {
+			found = true
+			result = mid
+			low = mid + 1
+		} else if ms.data[mid] < value {
+			low = mid + 1
+		} else {
+			high = mid - 1
+		}
+	}
+
+	if found {
+		return true, result
+	}
+
+	return false, low
+}
+
 func (ms *MultiSet) erase(index int) error {
 	if index < 0 || index >= ms.size {
 		return nil
@@ -82,36 +114,21 @@ func (ms *MultiSet) erase(index int) error {
 }
 
 func (ms *MultiSet) Insert(value int) {
-	index := 0
-	for index < ms.size && ms.data[index] < value {
-		index++
-	}
-
+	_, index := ms.search(value)
 	ms.insert(index, value)
 }
 
 func (ms *MultiSet) Contains(value int) bool {
-	for i := 0; i < ms.size; i++ {
-		if ms.data[i] == value {
-			return true
-		}
-	}
-
-	return false
+	found, _ := ms.search(value)
+	return found
 }
 
 func (ms *MultiSet) Erase(value int) bool {
-	for i := 0; i < ms.size; i++ {
-		if ms.data[i] == value {
-			ms.erase(i)
-			return true
-		}
-
-		if ms.data[i] > value {
-			return false
-		}
+	found, index := ms.search(value)
+	if found {
+		ms.erase(index)
+		return true
 	}
-
 	return false
 }
 
@@ -139,6 +156,10 @@ func (ms *MultiSet) Unique() int {
 	}
 
 	return cnt
+}
+
+func (ms *MultiSet) Clear() {
+	ms.size = 0
 }
 
 func Join(slice []int, sep string) string {
@@ -198,7 +219,7 @@ func main() {
 		case "unique":
 			fmt.Println(ms.Unique())
 		case "clear":
-			
+			ms.Clear()
 		default:
 			fmt.Println("fail: comando invalido")
 		}
