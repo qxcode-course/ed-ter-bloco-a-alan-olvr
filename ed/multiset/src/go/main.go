@@ -66,6 +66,21 @@ func (ms *MultiSet) insert(index int, value int) error {
 	return nil
 }
 
+func (ms *MultiSet) erase(index int) error {
+	if index < 0 || index >= ms.size {
+		return nil
+	}
+
+	for i := index; i < ms.size-1; i++ {
+		ms.data[i] = ms.data[i+1]
+	}
+
+	ms.data = ms.data[:ms.size-1]
+	ms.size--
+
+	return nil
+}
+
 func (ms *MultiSet) Insert(value int) {
 	index := 0
 	for index < ms.size && ms.data[index] < value {
@@ -73,6 +88,31 @@ func (ms *MultiSet) Insert(value int) {
 	}
 
 	ms.insert(index, value)
+}
+
+func (ms *MultiSet) Contains(value int) bool {
+	for i := 0; i < ms.size; i++ {
+		if ms.data[i] == value {
+			return true
+		}
+	}
+
+	return false
+}
+
+func (ms *MultiSet) Erase(value int) bool {
+	for i := 0; i < ms.size; i++ {
+		if ms.data[i] == value {
+			ms.erase(i)
+			return true
+		}
+
+		if ms.data[i] > value {
+			return false
+		}
+	}
+
+	return false
 }
 
 func Join(slice []int, sep string) string {
@@ -115,12 +155,20 @@ func main() {
 		case "show":
 			fmt.Println(ms.String())
 		case "erase":
-			// value, _ := strconv.Atoi(args[1])
+			value, _ := strconv.Atoi(args[1])
+			if !ms.Erase(value) {
+				fmt.Println("value not found")
+			}
 		case "contains":
 			value, _ := strconv.Atoi(args[1])
-			ms.Contains(value)
+			if ms.Contains(value) {
+				fmt.Println(true)
+			} else {
+				fmt.Println(false)
+			}
 		case "count":
-			// value, _ := strconv.Atoi(args[1])
+			value, _ := strconv.Atoi(args[1])
+			fmt.Println(ms.Count(value))
 		case "unique":
 		case "clear":
 		default:
