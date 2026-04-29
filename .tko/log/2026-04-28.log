@@ -45,3 +45,10 @@
 2026-04-28 01:53:40, EXEC, v:1, k:ed@multiset, mode:FULL, rate:100
 2026-04-28 01:53:58, MOVE, v:1, k:ed@multiset, mode:BACK
 2026-04-28 01:54:35, SELF, v:1, k:ed@multiset, self:1, rate:100, study:140, concept:1, problem:1, code:1
+2026-04-28 13:28:17, MOVE, v:1, k:ed@controlz, mode:DOWN
+2026-04-28 13:28:17, MOVE, v:1, k:ed@controlz, mode:PICK
+2026-04-28 13:28:21, EXEC, v:1, k:ed@controlz, mode:FULL, rate:0, size:5
+2026-04-28 13:28:38, MOVE, v:1, k:ed@controlz, mode:BACK
+2026-04-28 13:28:17, MOVE, v:1, k:ed@controlz, mode:EDIT
+2026-04-28 13:28:17, MOVE, v:1, k:ed@controlz, mode:EDIT
+2026-04-28 13:28:20, MOVE, v:1, k:ed@controlz, mode:EDIT
