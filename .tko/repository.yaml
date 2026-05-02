@@ -22,14 +22,14 @@ sources:
   quests: null
   tasks: null
 expanded:
-- ed@rec
 - eval1@eval1
 - ed@linear
+- ed@rec
 - ed@list
-- ed@dfs
+- ed@vector
 - ed@map_set
 - ed@tree
-- ed@vector
+- ed@dfs
 flags:
   inbox: all
   panel: skills
