@@ -20,3 +20,4 @@
 2026-05-02 00:31:53, EXEC, v:1, k:ed@lista_d1, mode:FULL, rate:85, size:153
 2026-05-02 00:34:15, EXEC, v:1, k:ed@lista_d1, mode:FULL, rate:100
 2026-05-02 00:34:27, MOVE, v:1, k:ed@lista_d1, mode:BACK
+2026-05-02 00:36:06, SELF, v:1, k:ed@lista_d1, self:1, rate:100, study:230, guided:1, problem:1
