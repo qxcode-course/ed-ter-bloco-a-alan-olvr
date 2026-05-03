@@ -1,0 +1,33 @@
+2026-05-03 13:47:16, MOVE, v:1, k:ed@lista_d2, mode:DOWN
+2026-05-03 13:47:16, MOVE, v:1, k:ed@lista_d2, mode:EDIT
+2026-05-03 13:47:16, MOVE, v:1, k:ed@lista_d2, mode:EDIT
+2026-05-03 13:47:16, MOVE, v:1, k:ed@lista_d2, mode:EDIT
+2026-05-03 13:52:08, MOVE, v:1, k:ed@lista_d2, mode:EDIT
+2026-05-03 13:56:15, MOVE, v:1, k:ed@lista_d2, mode:EDIT
+2026-05-03 14:07:12, MOVE, v:1, k:ed@lista_d2, mode:EDIT
+2026-05-03 14:11:49, MOVE, v:1, k:ed@lista_d2, mode:EDIT
+2026-05-03 14:17:10, MOVE, v:1, k:ed@lista_d2, mode:EDIT
+2026-05-03 14:21:45, MOVE, v:1, k:ed@lista_d2, mode:PICK
+2026-05-03 14:21:48, EXEC, v:1, k:ed@lista_d2, mode:FULL, rate:0, size:167
+2026-05-03 14:21:45, MOVE, v:1, k:ed@lista_d2, mode:EDIT
+2026-05-03 14:21:48, MOVE, v:1, k:ed@lista_d2, mode:EDIT
+2026-05-03 14:27:10, MOVE, v:1, k:ed@lista_d2, mode:EDIT
+2026-05-03 14:29:54, EXEC, v:1, k:ed@lista_d2, mode:FULL, rate:0, size:195
+2026-05-03 14:31:52, MOVE, v:1, k:ed@lista_d2, mode:EDIT
+2026-05-03 14:29:52, MOVE, v:1, k:ed@lista_d2, mode:EDIT
+2026-05-03 14:32:28, EXEC, v:1, k:ed@lista_d2, mode:FULL, rate:0, size:195
+2026-05-03 14:33:47, EXEC, v:1, k:ed@lista_d2, mode:FULL, rate:20, size:195
+2026-05-03 14:37:00, EXEC, v:1, k:ed@lista_d2, mode:FULL, size:203, fail:COMP
+2026-05-03 14:33:47, MOVE, v:1, k:ed@lista_d2, mode:EDIT
+2026-05-03 14:36:57, MOVE, v:1, k:ed@lista_d2, mode:EDIT
+2026-05-03 14:38:48, EXEC, v:1, k:ed@lista_d2, mode:FULL, size:203, fail:COMP
+2026-05-03 14:39:04, EXEC, v:1, k:ed@lista_d2, mode:FULL, rate:40, size:203
+2026-05-03 14:41:59, EXEC, v:1, k:ed@lista_d2, mode:FULL, rate:60, size:213
+2026-05-03 14:41:56, MOVE, v:1, k:ed@lista_d2, mode:EDIT
+2026-05-03 14:41:59, MOVE, v:1, k:ed@lista_d2, mode:EDIT
+2026-05-03 14:46:15, EXEC, v:1, k:ed@lista_d2, mode:FULL, rate:80, size:231
+2026-05-03 14:46:51, MOVE, v:1, k:ed@lista_d2, mode:EDIT
+2026-05-03 14:46:15, MOVE, v:1, k:ed@lista_d2, mode:EDIT
+2026-05-03 14:52:15, MOVE, v:1, k:ed@lista_d2, mode:EDIT
+2026-05-03 14:56:44, EXEC, v:1, k:ed@lista_d2, mode:FULL, rate:100, size:277
+2026-05-03 14:56:54, MOVE, v:1, k:ed@lista_d2, mode:BACK
