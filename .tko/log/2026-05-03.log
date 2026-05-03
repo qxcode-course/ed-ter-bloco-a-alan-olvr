@@ -50,3 +50,4 @@
 2026-05-03 16:10:21, EXEC, v:1, k:ed@lista_d4, mode:FULL, rate:66, size:169
 2026-05-03 16:11:17, EXEC, v:1, k:ed@lista_d4, mode:FULL, rate:100, size:169
 2026-05-03 16:11:24, MOVE, v:1, k:ed@lista_d4, mode:BACK
+2026-05-03 16:12:33, SELF, v:1, k:ed@lista_d4, self:1, rate:100, study:72
