@@ -23,13 +23,13 @@ sources:
   tasks: null
 expanded:
 - ed@linear
-- ed@dfs
-- ed@rec
 - ed@list
-- eval1@eval1
-- ed@map_set
 - ed@vector
 - ed@tree
+- eval1@eval1
+- ed@map_set
+- ed@rec
+- ed@dfs
 flags:
   inbox: all
   panel: skills
@@ -37,5 +37,5 @@ flags:
   task_graph_mode: executions
   show_time: 'true'
 lang: go
-selected: ed@lista_d2
-selected_index: 45
+selected: ed@lista_d4
+selected_index: 46
