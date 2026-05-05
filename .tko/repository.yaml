@@ -22,13 +22,13 @@ sources:
   quests: null
   tasks: null
 expanded:
-- ed@tree
-- ed@rec
-- ed@linear
 - ed@vector
 - ed@dfs
+- ed@rec
+- ed@linear
 - eval1@eval1
 - ed@map_set
+- ed@tree
 - ed@list
 flags:
   inbox: all
@@ -37,5 +37,5 @@ flags:
   task_graph_mode: executions
   show_time: 'true'
 lang: go
-selected: ed@lista_d4
-selected_index: 46
+selected: ed@prin_list1
+selected_index: 47
