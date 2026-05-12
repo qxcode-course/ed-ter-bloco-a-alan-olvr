@@ -31,3 +31,26 @@
 2026-05-05 02:10:41, MOVE, v:1, k:ed@prin_list1, mode:BACK
 2026-05-05 02:11:10, MOVE, v:1, k:ed@prin_list1, mode:PICK
 2026-05-05 02:11:11, EXEC, v:1, k:ed@prin_list1, mode:FULL, rate:100
+2026-05-05 02:11:31, MOVE, v:1, k:ed@prin_list1, mode:BACK
+2026-05-05 02:11:58, SELF, v:1, k:ed@prin_list1, self:1, rate:100, study:60, code:1
+2026-05-05 02:11:11, MOVE, v:1, k:ed@prin_list1, mode:EDIT
+2026-05-05 13:25:06, MOVE, v:1, k:ed@editorint, mode:DOWN
+2026-05-05 13:26:21, MOVE, v:1, k:ed@editorint, mode:PICK
+2026-05-05 13:28:12, MOVE, v:1, k:ed@editorint, mode:BACK
+2026-05-05 13:29:40, EXEC, v:1, k:NONE@STANDALONE, mode:FREE
+2026-05-05 13:30:11, EXEC, v:1, k:NONE@STANDALONE, mode:FREE
+2026-05-05 13:30:57, EXEC, v:1, k:NONE@STANDALONE, mode:FREE
+2026-05-05 13:33:45, MOVE, v:1, k:ed@editorint, mode:DOWN
+2026-05-05 13:35:11, EXEC, v:1, k:NONE@STANDALONE, mode:FREE
+2026-05-05 13:36:22, EXEC, v:1, k:NONE@STANDALONE, mode:FREE
+2026-05-05 13:38:26, EXEC, v:1, k:ed@editorint, mode:FREE
+2026-05-05 14:04:16, EXEC, v:1, k:ed@editorint, mode:FREE
+2026-05-05 14:12:36, EXEC, v:1, k:ed@editorint, mode:FREE
+2026-05-05 14:14:22, EXEC, v:1, k:ed@editorint, mode:FREE
+2026-05-05 14:20:07, EXEC, v:1, k:ed@editorint, mode:FREE
+2026-05-05 14:22:33, EXEC, v:1, k:ed@editorint, mode:FREE
+2026-05-05 14:23:56, EXEC, v:1, k:ed@editorint, mode:FREE
+2026-05-05 14:28:20, EXEC, v:1, k:ed@editorint, mode:FREE
+2026-05-05 14:28:57, EXEC, v:1, k:NONE@STANDALONE, mode:FREE
+2026-05-05 14:31:03, EXEC, v:1, k:ed@editorint, mode:FREE
+2026-05-05 14:32:38, EXEC, v:1, k:ed@editorint, mode:FREE
