@@ -1,0 +1,15 @@
+2026-05-26 00:15:01, MOVE, v:1, k:ed@distancia, mode:PICK
+2026-05-26 00:15:04, EXEC, v:1, k:ed@distancia, mode:FULL, rate:28, size:59
+2026-05-26 00:16:25, EXEC, v:1, k:ed@distancia, mode:FULL, rate:100, size:59
+2026-05-26 00:16:35, MOVE, v:1, k:ed@distancia, mode:BACK
+2026-05-26 00:16:19, MOVE, v:1, k:ed@distancia, mode:EDIT
+2026-05-26 00:16:24, MOVE, v:1, k:ed@distancia, mode:EDIT
+2026-05-26 00:17:03, SELF, v:1, k:ed@distancia, self:1, rate:100, study:130, code:1
+2026-05-26 00:18:28, MOVE, v:1, k:ed@editorint, mode:PICK
+2026-05-26 00:18:38, EXEC, v:1, k:ed@editorint, mode:LOCK, rate:0, size:331
+2026-05-26 00:20:05, MOVE, v:1, k:ed@editorint, mode:BACK
+2026-05-26 00:20:49, MOVE, v:1, k:ed@editorint, mode:PICK
+2026-05-26 00:21:23, EXEC, v:1, k:ed@editorint, mode:FREE
+2026-05-26 00:21:23, MOVE, v:1, k:ed@editorint, mode:EDIT
+2026-05-26 00:25:11, MOVE, v:1, k:ed@editorint, mode:EDIT
+2026-05-26 00:26:32, EXEC, v:1, k:ed@editorint, mode:FREE

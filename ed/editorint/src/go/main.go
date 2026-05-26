@@ -56,34 +56,44 @@ func (e *Editor) KeyRight() {
 	}
 
 	if e.it_line != e.texto.End() { // Se não está na primeira linha
-		e.it_line = e.it_line.Next()      // Move para a linha anterior
+		e.it_line = e.it_line.Next()        // Move para a linha anterior
 		e.it_char = e.it_line.Value.Front() // Move o cursor para o final da linha
 	}
 }
 
 func (e *Editor) KeyUp() {
-	prev := e.it_line.Prev()
-	if prev == nil {
+	if e.it_line == e.texto.Front() {
 		return
 	}
-	e.it_line = prev
+
+	col := e.it_line.Value.IndexOf(e.it_char)
+	e.it_line = e.it_line.Prev()
 	e.it_char = e.it_line.Value.Front()
+
+	for i := 0; i < col && e.it_char != e.it_line.Value.End(); i++ {
+		e.it_char = e.it_char.Next()
+	}
 }
 
 func (e *Editor) KeyDown() {
-	next := e.it_line.Next()
-	if next == nil {
-		return 
+	if e.it_line.Next() == e.texto.End() {
+		return
 	}
-	e.it_line = next
+
+	col := e.it_line.Value.IndexOf(e.it_char)
+	e.it_line = e.it_line.Next()
 	e.it_char = e.it_line.Value.Front()
+	
+	for i := 0; i < col && e.it_char != e.it_line.Value.End(); i++ {
+		e.it_char = e.it_char.Next()
+	}
 }
 
 func (e *Editor) KeyBackspace() {
 	if e.it_char.Prev() != e.it_line.Value.End() {
 		e.it_char = e.it_line.Value.Erase(e.it_char.Prev())
 		return
-	} 
+	}
 
 	if e.it_line.Prev() != e.texto.End() {
 		prevLine := e.it_line.Prev()
