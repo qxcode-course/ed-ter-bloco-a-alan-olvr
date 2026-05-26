@@ -1,0 +1,24 @@
+{
+    "patches": [
+        {
+            "label": "2026-05-26_02-06-34",
+            "content": "@@ -226,10 +226,8 @@\n ndex\n-+1\n , ta\n",
+            "lines": "30"
+        },
+        {
+            "label": "2026-05-26_02-06-45",
+            "content": "@@ -109,20 +109,19 @@\n  return \n-fals\n+tru\n e%0A    %7D%0A\n@@ -169,35 +169,36 @@\n %0A        return \n-tru\n+fals\n e%0A    %7D%0A%0A    ret\n@@ -277,34 +277,32 @@\n tSum(nums, index\n-+1\n , target)%0A%7D%0A%0Afun\n",
+            "lines": "30"
+        },
+        {
+            "label": "2026-05-26_02-07-14",
+            "content": "@@ -109,19 +109,20 @@\n  return \n-tru\n+fals\n e%0A    %7D%0A\n@@ -170,36 +170,35 @@\n %0A        return \n-fals\n+tru\n e%0A    %7D%0A%0A    ret\n",
+            "lines": "30"
+        },
+        {
+            "label": "2026-05-26_02-11-20",
+            "content": "package main\nimport \"fmt\"\n\nfunc subsetSum(nums []int, index, target int) bool {\n    if target == 0 {\n        return true\n    }\n    if index == len(nums) || target < 0 {\n        return false\n    }\n\n    return subsetSum(nums, index+1, target-nums[index]) || \n              subsetSum(nums, index+1, target)\n}\n\nfunc main() {\n    var n, k int\n    fmt.Scan(&n, &k) \n\n    nums := make([]int, n)\n    for i := range nums {\n        fmt.Scan(&nums[i])\n    }\n\n    if subsetSum(nums, 0, k) {\n        fmt.Println(\"true\")\n    } else {\n        fmt.Println(\"false\")\n    }\n}\n",
+            "lines": "30"
+        }
+    ]
+}

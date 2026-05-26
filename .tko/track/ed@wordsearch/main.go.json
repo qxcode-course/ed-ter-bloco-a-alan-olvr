@@ -1,0 +1,34 @@
+{
+    "patches": [
+        {
+            "label": "2026-05-26_00-41-40",
+            "content": "@@ -168,168 +168,25 @@\n  %7B%0A%09\n-rows := len(grid)%0A%09cols := len(grid%5B0%5D)%0A%0A%09var dfs func(r, c, index int) bool%0A%09dfs = func(r, c, index int) bool %7B%0A%09%09if index == len(word) %7B%0A%09%09%09return true%0A%09%09%7D%0A%09%7D\n+_, _ = grid, word\n %0A%09re\n",
+            "lines": "29"
+        },
+        {
+            "label": "2026-05-26_00-43-54",
+            "content": "@@ -326,427 +326,8 @@\n %09%09%7D%0A\n-%09%09if r %3C 0 %7C%7C r %3C= rows %7C%7C c %3C 0 %7C%7C c %3E= cols %7B%0A%09%09%09return false%0A%09%09%7D%0A%09%09if grid%5Br%5D%5Bc%5D != word%5Bindex%5D %7B%0A%09%09%09return false%0A%09%09%7D%0A%0A%09%09tmp := grid%5Br%5D%5Bc%5D%0A%09%09grid%5Br%5D%5Bc%5D = '#'%0A%0A%09%09found := dfs(r+1, c, index+1) %7C%7C%0A%09%09%09dfs(r-1, c, index+1) %7C%7C%0A%09%09%09dfs(r, c+1, index+1) %7C%7C%0A%09%09%09dfs(r, c-1, index+1)%0A%0A%09%09grid%5Br%5D%5Bc%5D = tmp%0A%09%09return found%0A%09%7D%0A%0A%09for r := 0; r %3C rows; r++ %7B%0A%09%09for c := 0; c %3C cols; c++ %7B%0A%09%09%09if dfs(r, c, 0) %7B%0A%09%09%09%09return true%0A%09%09%09%7D%0A%09%09%7D%0A\n %09%7D%0A%09\n",
+            "lines": "37"
+        },
+        {
+            "label": "2026-05-26_00-48-51",
+            "content": "@@ -338,17 +338,17 @@\n  0 %7C%7C r \n-%3E\n+%3C\n = rows %7C\n@@ -557,17 +557,17 @@\n dfs(r, c\n--\n++\n 1, index\n@@ -576,33 +576,33 @@\n ) %7C%7C%0A%09%09%09dfs(r, c\n-+\n+-\n 1, index+1)%0A%0A%09%09g\n",
+            "lines": "62"
+        },
+        {
+            "label": "2026-05-26_00-49-35",
+            "content": "@@ -338,17 +338,17 @@\n  0 %7C%7C r \n-%3C\n+%3E\n = rows %7C\n",
+            "lines": "62"
+        },
+        {
+            "label": "2026-05-26_00-49-45",
+            "content": "@@ -338,17 +338,17 @@\n  0 %7C%7C r \n-%3E\n+%3C\n = rows %7C\n",
+            "lines": "62"
+        },
+        {
+            "label": "2026-05-26_01-41-25",
+            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n)\n\n// N\u00e3o mude a assinatura desta fun\u00e7\u00e3o, ela \u00e9 a fun\u00e7\u00e3o chamada pelo LeetCode\nfunc exist(grid [][]byte, word string) bool {\n\trows := len(grid)\n\tcols := len(grid[0])\n\n\tvar dfs func(r, c, index int) bool\n\tdfs = func(r, c, index int) bool {\n\t\tif index == len(word) {\n\t\t\treturn true\n\t\t}\n\t\tif r < 0 || r >= rows || c < 0 || c >= cols {\n\t\t\treturn false\n\t\t}\n\t\tif grid[r][c] != word[index] {\n\t\t\treturn false\n\t\t}\n\n\t\ttmp := grid[r][c]\n\t\tgrid[r][c] = '#'\n\n\t\tfound := dfs(r+1, c, index+1) ||\n\t\t\tdfs(r-1, c, index+1) ||\n\t\t\tdfs(r, c-1, index+1) ||\n\t\t\tdfs(r, c+1, index+1)\n\n\t\tgrid[r][c] = tmp\n\t\treturn found\n\t}\n\n\tfor r := 0; r < rows; r++ {\n\t\tfor c := 0; c < cols; c++ {\n\t\t\tif dfs(r, c, 0) {\n\t\t\t\treturn true\n\t\t\t}\n\t\t}\n\t}\n\treturn false\n}\n\nfunc main() {\n\tscanner := bufio.NewScanner(os.Stdin)\n\tscanner.Scan()\n\tvar word string\n\tfmt.Sscanf(scanner.Text(), \"%s\", &word)\n\tgrid := make([][]byte, 0)\n\tfor scanner.Scan() {\n\t\tgrid = append(grid, []byte(scanner.Text()))\n\t}\n\tif exist(grid, word) {\n\t\tfmt.Println(\"true\")\n\t} else {\n\t\tfmt.Println(\"false\")\n\t}\n}\n",
+            "lines": "62"
+        }
+    ]
+}
