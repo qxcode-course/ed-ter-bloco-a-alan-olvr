@@ -20,7 +20,7 @@ func (e *Editor) InsertChar(r rune) {
 }
 
 func (e *Editor) KeyLeft() {
-	if e.it_char.Prev() != e.it_line.Value.End() { // Se o cursor não está no início da linha
+	if e.it_char != e.it_line.Value.Front() { // Se o cursor não está no início da linha
 		e.it_char = e.it_char.Prev() // Move o cursor para a esquerda
 		return
 	}
@@ -32,30 +32,28 @@ func (e *Editor) KeyLeft() {
 }
 
 func (e *Editor) KeyEnter() {
-	new := NewList[rune]()
-
-	e.texto.Insert(e.it_line.Next(), new)
-
-	insertedLine := e.it_line.Next()
+	newLine := NewList[rune]()
 
 	for n := e.it_char; n != e.it_line.Value.End(); {
 		next := n.Next()
-		insertedLine.Value.Insert(insertedLine.Value.End(), n.Value)
+		newLine.Insert(newLine.End(), n.Value)
 		e.it_line.Value.Erase(n)
 		n = next
 	}
 
-	e.it_line = insertedLine
+	e.texto.Insert(e.it_line.Next(), newLine)
+
+	e.it_line = e.it_line.Next()
 	e.it_char = e.it_line.Value.Front()
 }
 
 func (e *Editor) KeyRight() {
-	if e.it_char.Next() != e.it_line.Value.End() {
+	if e.it_char != e.it_line.Value.End() {
 		e.it_char = e.it_char.Next()
 		return
 	}
 
-	if e.it_line != e.texto.End() { // Se não está na primeira linha
+	if e.it_line.Next() != e.texto.End() { // Se não está na primeira linha
 		e.it_line = e.it_line.Next()        // Move para a linha anterior
 		e.it_char = e.it_line.Value.Front() // Move o cursor para o final da linha
 	}
