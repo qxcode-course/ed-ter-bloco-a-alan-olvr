@@ -83,33 +83,34 @@ func (e *Editor) KeyDown() {
 	col := e.it_line.Value.IndexOf(e.it_char)
 	e.it_line = e.it_line.Next()
 	e.it_char = e.it_line.Value.Front()
-	
+
 	for i := 0; i < col && e.it_char != e.it_line.Value.End(); i++ {
 		e.it_char = e.it_char.Next()
 	}
 }
 
 func (e *Editor) KeyBackspace() {
-	if e.it_char.Prev() != e.it_line.Value.End() {
-		e.it_char = e.it_line.Value.Erase(e.it_char.Prev())
+	if e.it_char != e.it_line.Value.Front() {
+		prev := e.it_char.Prev()
+		e.it_line.Value.Erase(prev)
 		return
 	}
 
-	if e.it_line.Prev() != e.texto.End() {
-		prevLine := e.it_line.Prev()
-		oldLine := e.it_line
-
-		e.it_char = prevLine.Value.End()
-
-		for n := oldLine.Value.Front(); n != oldLine.Value.End(); {
-			next := n.Next()
-			prevLine.Value.Insert(prevLine.Value.End(), n.Value)
-			n = next
-		}
-
-		e.texto.Erase(oldLine)
-		e.it_line = prevLine
+	if e.it_line == e.texto.Front() {
+		return
 	}
+
+	prevLine := e.it_line.Prev()
+	e.it_char = prevLine.Value.End()
+
+	for n := e.it_line.Value.Front(); n != e.it_line.Value.End(); {
+		next := n.Next()
+		prevLine.Value.Insert(prevLine.Value.End(), n.Value)
+		n = next
+	}
+
+	e.texto.Erase(e.it_line)
+	e.it_line = prevLine
 }
 
 func (e *Editor) KeyDelete() {
