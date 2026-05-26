@@ -1,0 +1,104 @@
+{
+    "patches": [
+        {
+            "label": "2026-05-18_23-20-08",
+            "content": "@@ -400,17 +400,16 @@\n = 0; i %3C\n-=\n  L; i++ \n",
+            "lines": "24"
+        },
+        {
+            "label": "2026-05-18_23-21-46",
+            "content": "@@ -411,16 +411,65 @@\n ; i++ %7B%0A\n+        for j := 0; j %3C len(sequence); j++ %7B%0A    \n         \n@@ -480,17 +480,17 @@\n equence%5B\n-i\n+j\n %5D == '.'\n@@ -496,32 +496,36 @@\n ' %7B%0A            \n+    \n fmt.Print(i)%0A   \n@@ -529,16 +529,20 @@\n         \n+   \n+ \n %7D else %7B\n@@ -542,16 +542,20 @@\n  else %7B%0A\n+    \n         \n@@ -584,17 +584,17 @@\n equence%5B\n-i\n+j\n %5D))%0A    \n@@ -597,17 +597,53 @@\n         \n-%7D\n+    %7D%0A        %7D%0A        fmt.Println()\n %0A    %7D%0A%7D\n",
+            "lines": "24"
+        },
+        {
+            "label": "2026-05-18_23-26-15",
+            "content": "@@ -385,38 +385,8 @@\n L)%0A%0A\n-    seq := %5B%5Dbyte(sequence) %0A%0A\n     \n@@ -404,17 +404,11 @@\n  i %3C\n- len(seq)\n+= L\n ; i+\n@@ -421,24 +421,29 @@\n       if seq\n+uence\n %5Bi%5D == '.' %7B\n@@ -443,17 +443,16 @@\n = '.' %7B%0A\n-%0A\n         \n@@ -460,659 +460,89 @@\n    f\n-or k := 0; k %3C= L; k++ %7B%0A                valido := true%0A                candidato := byte('0' + k)%0A%0A                for j := 1; j %3C= L; j++ %7B%0A                    if seq%5Bj%5D == candidato %7B%0A                        dist := i - j%0A%0A                        if dist %3C 0 %7B%0A                            dist = -dist%0A                        %7D%0A%0A                        if dist %3C L %7B%0A                            valido = false %0A                            break%0A                        %7D%0A                    %7D%0A                %7D%0A%0A                if valido %7B%0A                    seq%5Bi%5D = candidato%0A                    break%0A                %7D%0A%0A            %7D%0A        %7D%0A\n+mt.Print(i)%0A        %7D else %7B%0A            fmt.Print(string(sequence%5Bi%5D))%0A        %7D\n %0A   \n",
+            "lines": "21"
+        },
+        {
+            "label": "2026-05-18_23-41-47",
+            "content": "@@ -1106,32 +1106,33 @@\n               %7D%0A\n+%0A\n             %7D%0A  \n@@ -1143,42 +1143,13 @@\n   %7D%0A\n+%0A\n     %7D\n-%0A%0A    fmt.Println(string(seq))\n %0A%7D%0A\n",
+            "lines": "47"
+        },
+        {
+            "label": "2026-05-18_23-42-15",
+            "content": "@@ -619,25 +619,19 @@\n = 1; j %3C\n- len(seq)\n+= L\n ; j++ %7B%0A\n",
+            "lines": "47"
+        },
+        {
+            "label": "2026-05-18_23-48-48",
+            "content": "@@ -613,17 +613,17 @@\n or j := \n-0\n+1\n ; j %3C le\n",
+            "lines": "47"
+        },
+        {
+            "label": "2026-05-18_23-49-27",
+            "content": "@@ -37,41 +37,303 @@\n ) %7B%0A\n-var sequence string%0A%09var L int%0A%0A%09\n+%0A    /*o problema principal aqui %C3%A9 que eu somente posso usar digitos de 0 at%C3%A9 L, ou seja, se meu L %C3%A9 3%0A    para substituir os %22.%22 eu s%C3%B3 posso usar os digitos 0, 1, 2 e 3, al%C3%A9m disso, se caso algum n%C3%BAmero se repita,%0A    ele deve ficar a uma dist%C3%A2ncia L dele mesmo*/%0A%0A    var sequence string %0A    \n fmt.\n@@ -348,17 +348,35 @@\n quence)%0A\n-%09\n+    var L int %0A    \n fmt.Scan\n@@ -381,17 +381,20 @@\n an(&L)%0A%0A\n-%09\n+    \n seq := %5B\n@@ -408,19 +408,23 @@\n equence)\n+ \n %0A%0A\n-%09\n+    \n for i :=\n@@ -447,18 +447,24 @@\n ; i++ %7B%0A\n-%09%09\n+        \n if seq%5Bi\n@@ -475,19 +475,28 @@\n  '.' %7B%0A%0A\n-%09%09%09\n+            \n for k :=\n@@ -517,31 +517,55 @@\n + %7B%0A\n-%09%09%09%09valido := true%0A%09%09%09%09\n+                valido := true%0A                \n cand\n@@ -588,20 +588,32 @@\n ' + k)%0A%0A\n-%09%09%09%09\n+                \n for j :=\n@@ -640,25 +640,30 @@\n + %7B%0A\n-%09%09%09%09%09if j != i &&\n+                    if\n  seq\n@@ -685,226 +685,482 @@\n o %7B%0A\n-%0A%09%09%09%09%09%09dist := i - j%0A%09%09%09%09%09%09if dist %3C 0 %7B%0A%09%09%09%09%09%09%09dist = -dist%0A%09%09%09%09%09%09%7D%0A%0A%09%09%09%09%09%09if dist %3C L %7B%0A%09%09%09%09%09%09%09valido = false%0A%09%09%09%09%09%09%09break%0A%09%09%09%09%09%09%7D%0A%09%09%09%09%09%7D%0A%09%09%09%09%7D%0A%0A%09%09%09%09if valido %7B%0A%09%09%09%09%09seq%5Bi%5D = candidato%0A%09%09%09%09%09break%0A%09%09%09%09%7D%0A%09%09%09%7D%0A%09%09%7D%0A%09%7D%0A%0A%09\n+                        dist := i - j%0A%0A                        if dist %3C 0 %7B%0A                            dist = -dist%0A                        %7D%0A%0A                        if dist %3C L %7B%0A                            valido = false %0A                            break%0A                        %7D%0A                    %7D%0A                %7D%0A%0A                if valido %7B%0A                    seq%5Bi%5D = candidato%0A                    break%0A                %7D%0A            %7D%0A        %7D%0A    %7D%0A%0A    \n fmt.\n",
+            "lines": "47"
+        },
+        {
+            "label": "2026-05-18_23-55-35",
+            "content": "@@ -6,17 +6,16 @@\n ge main%0A\n-%0A\n import %22\n@@ -23,67 +23,254 @@\n mt%22%0A\n-%0A\n func \n-valido(seq %5B%5Dbyte, pos int, char byte, L int) bool %7B%0A\n+main() %7B%0Avar sequence string%0A%09var L int%0A%0A%09fmt.Scan(&sequence)%0A%09fmt.Scan(&L)%0A%0A%09seq := %5B%5Dbyte(sequence)%0A%0A%09for i := 0; i %3C len(seq); i++ %7B%0A%09%09if seq%5Bi%5D == '.' %7B%0A%0A%09%09%09for k := 0; k %3C= L; k++ %7B%0A%09%09%09%09valido := true%0A%09%09%09%09candidato := byte('0' + k)%0A%0A%09%09%09\n %09for\n@@ -294,24 +294,27 @@\n seq); j++ %7B%0A\n+%09%09%09\n %09%09if j != po\n@@ -311,19 +311,17 @@\n if j != \n-pos\n+i\n  && seq%5B\n@@ -331,25 +331,34 @@\n == c\n-har %7B%0A\n+andidato %7B%0A%0A%09%09\n %09%09%09\n+%09\n dist := \n pos \n@@ -357,19 +357,17 @@\n  := \n-pos\n+i\n  - j%0A%09%09%09\n if d\n@@ -358,24 +358,27 @@\n := i - j%0A%09%09%09\n+%09%09%09\n if dist %3C 0 \n@@ -379,16 +379,19 @@\n t %3C 0 %7B%0A\n+%09%09%09\n %09%09%09%09dist\n@@ -402,18 +402,25 @@\n dist%0A%09%09%09\n-%7D%0A\n+%09%09%09%7D%0A%0A%09%09%09\n %09%09%09if di\n@@ -436,518 +436,129 @@\n %09%09%09%09\n-return false%0A%09%09%09%7D%0A%09%09%7D%0A%09%7D%0A%09return true%0A%7D%0A%0Afunc resolver(seq %5B%5Dbyte, pos int, L int) bool %7B%0A%09if pos == len(seq) %7B%0A%09%09return true%0A%09%7D%0A%0A%09if seq%5Bpos%5D != '.' %7B%0A%09%09return resolver(seq, pos+1, L)%0A%09%7D%0A%0A%09for k := 0; k %3C= L; k++ %7B%0A%09%09char := byte('0' + k)%0A%0A%09%09if valido(seq, pos, char, L)\n+%09%09%09valido = false%0A%09%09%09%09%09%09%09break%0A%09%09%09%09%09%09%7D%0A%09%09%09%09%09%7D%0A%09%09%09%09%7D%0A%0A%09%09%09%09if valido\n  %7B%0A\n+%09%09\n %09%09%09seq%5B\n-pos\n+i\n %5D = c\n-har%0A%0A%09%09%09if resolver(seq, pos+1, L) %7B%0A%09%09%09%09return true%0A\n+andidato%0A%09%09%09%09%09break%0A%09\n %09%09%09%7D%0A\n-%0A\n %09%09%09\n-seq%5Bpos%5D = '.'%0A%09%09%7D%0A%09%7D%0A%0A%09return false%0A%7D%0A%0Afunc main() %7B%0A%09var sequence string%0A%09var L int%0A%0A%09fmt.Scan(&sequence, &L)%0A%0A%09seq := %5B%5Dbyte(sequence)%0A%0A%09resolver(seq, 0, L)\n+%7D%0A%09%09%7D%0A%09%7D\n %0A%0A%09f\n",
+            "lines": "43"
+        },
+        {
+            "label": "2026-05-18_23-59-18",
+            "content": "@@ -48,16 +48,267 @@\n yte, pos\n+ int, char byte, L int) bool %7B%0A%09for j := 0; j %3C len(seq); j++ %7B%0A%09%09if j != pos && seq%5Bj%5D == char %7B%0A%09%09%09dist := pos - j%0A%09%09%09if dist %3C 0 %7B%0A%09%09%09%09dist = -dist%0A%09%09%09%7D%0A%09%09%09if dist %3C L %7B%0A%09%09%09%09return false%0A%09%09%09%7D%0A%09%09%7D%0A%09%7D%0A%09return true%0A%7D%0A%0Afunc resolver(seq %5B%5Dbyte, pos int\n , L int)\n@@ -386,22 +386,24 @@\n %09return \n-valido\n+resolver\n (seq, po\n@@ -469,221 +469,39 @@\n  k)%0A\n-%09%09ok := true%0A%0A%09%09for j := 0; j %3C len(seq); j++ %7B%0A%09%09%09if j != pos && seq%5Bj%5D == char %7B%0A%09%09%09%09dist := pos - j%0A%09%09%09%09if dist %3C 0 %7B%0A%09%09%09%09%09dist = -dist%0A%09%09%09%09%7D%0A%09%09%09%09if dist %3C L %7B%0A%09%09%09%09%09ok = false%0A%09%09%09%09%09break%0A%09%09%09%09%7D%0A%09%09%09%7D%0A%09%09%7D%0A%0A%09%09if ok\n+%0A%09%09if valido(seq, pos, char, L)\n  %7B%0A%09\n@@ -521,30 +521,32 @@\n char%0A%0A%09%09%09if \n-valido\n+resolver\n (seq, pos+1,\n@@ -686,20 +686,10 @@\n ence\n-)%0A%09fmt.Scan(\n+, \n &L)%0A\n@@ -716,22 +716,24 @@\n ence)%0A%0A%09\n-valido\n+resolver\n (seq, 0,\n",
+            "lines": "57"
+        },
+        {
+            "label": "2026-05-19_00-01-16",
+            "content": "@@ -375,19 +375,9 @@\n t %3C \n-int(seq%5B0%5D)\n+L\n  %7B%0A%09\n",
+            "lines": "57"
+        },
+        {
+            "label": "2026-05-20_13-43-09",
+            "content": "@@ -371,17 +371,27 @@\n  dist %3C \n-L\n+int(seq%5B0%5D)\n  %7B%0A%09%09%09%09%09\n",
+            "lines": "57"
+        },
+        {
+            "label": "2026-05-20_13-43-20",
+            "content": "@@ -315,11 +315,11 @@\n pos \n-+ 1\n+- j\n %0A%09%09%09\n",
+            "lines": "57"
+        },
+        {
+            "label": "2026-05-20_13-46-11",
+            "content": "@@ -315,11 +315,11 @@\n pos \n-- j\n++ 1\n %0A%09%09%09\n",
+            "lines": "57"
+        },
+        {
+            "label": "2026-05-20_13-46-20",
+            "content": "@@ -365,52 +365,19 @@\n %09%09%09%09\n-distMinima := k + 1%0A%09%09%09%09if dist %3C distMinima\n+if dist %3C L\n  %7B%0A%09\n",
+            "lines": "57"
+        },
+        {
+            "label": "2026-05-20_13-48-11",
+            "content": "@@ -365,23 +365,52 @@\n %09%09%09%09\n-if \n dist\n- %3C k + 1\n+Minima := k + 1%0A%09%09%09%09if dist %3C distMinima\n  %7B%0A%09\n",
+            "lines": "58"
+        },
+        {
+            "label": "2026-05-20_13-48-49",
+            "content": "@@ -215,139 +215,8 @@\n + k)\n-%0A%0A%09%09count := 0%0A%09%09for i := 0; i %3C len(seq); i++ %7B%0A%09%09%09if seq%5Bi%5D == char %7B%0A%09%09%09%09count++%0A%09%09%09%7D%0A%09%09%7D%0A%0A%09%09if count %3E= 2 %7B%0A%09%09%09continue %0A%09%09%7D%0A%09%09\n %0A%09%09o\n",
+            "lines": "57"
+        },
+        {
+            "label": "2026-05-20_14-19-19",
+            "content": "@@ -175,22 +175,22 @@\n  := \n-L\n+0\n ; k \n-%3E= 0; k--\n+%3C= L; k++\n  %7B%0A%09\n@@ -334,22 +334,25 @@\n continue\n+ \n %0A%09%09%7D%0A\n+%09%09\n %0A\n-\n %09%09ok := \n@@ -488,17 +488,16 @@\n t%0A%09%09%09%09%7D%0A\n-%0A\n %09%09%09%09if d\n@@ -503,17 +503,19 @@\n dist %3C k\n-+\n+ + \n 1 %7B%0A%09%09%09%09\n",
+            "lines": "69"
+        },
+        {
+            "label": "2026-05-20_14-21-46",
+            "content": "@@ -175,22 +175,22 @@\n  := \n-0\n+L\n ; k \n-%3C= L; k++\n+%3E= 0; k--\n  %7B%0A%09\n@@ -213,16 +213,143 @@\n ' + k)%0A%0A\n+%09%09count := 0%0A%09%09for i := 0; i %3C len(seq); i++ %7B%0A%09%09%09if seq%5Bi%5D == char %7B%0A%09%09%09%09count++%0A%09%09%09%7D%0A%09%09%7D%0A%0A%09%09if count %3E= 2 %7B%0A%09%09%09continue%0A%09%09%7D%0A%0A\n %09%09ok := \n@@ -389,24 +389,36 @@\n  j++ %7B%0A%09%09%09if\n+ j != pos &&\n  seq%5Bj%5D == c\n@@ -500,17 +500,19 @@\n  dist %3C \n-L\n+k+1\n  %7B%0A%09%09%09%09%09\n",
+            "lines": "70"
+        },
+        {
+            "label": "2026-05-26_00-15-04",
+            "content": "@@ -364,18 +364,14 @@\n st %3C\n-=\n  L %7B%0A\n-    \n+%09\n %09%09%09%09\n@@ -385,11 +385,8 @@\n lse%0A\n-   \n %09%09%09%09\n",
+            "lines": "59"
+        },
+        {
+            "label": "2026-05-26_00-16-24",
+            "content": "package main\n\nimport \"fmt\"\n\nfunc valido(seq []byte, pos, L int) bool {\n\tif pos == len(seq) {\n\t\treturn true\n\t}\n\n\tif seq[pos] != '.' {\n\t\treturn valido(seq, pos+1, L)\n\t}\n\n\tfor k := 0; k <= L; k++ {\n\t\tchar := byte('0' + k)\n\n\t\tok := true\n\n\t\tfor j := 0; j < len(seq); j++ {\n\t\t\tif seq[j] == char {\n\t\t\t\tdist := pos - j\n\t\t\t\tif dist < 0 {\n\t\t\t\t\tdist = -dist\n\t\t\t\t}\n\n\t\t\t\tif dist <= L {\n    \t\t\t\tok = false\n   \t\t\t\t\tbreak\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\n\t\tif ok {\n\t\t\tseq[pos] = char\n\n\t\t\tif valido(seq, pos+1, L) {\n\t\t\t\treturn true\n\t\t\t}\n\n\t\t\tseq[pos] = '.'\n\t\t}\n\t}\n\n\treturn false\n}\n\nfunc main() {\n\tvar sequence string\n\tvar L int\n\n\tfmt.Scan(&sequence)\n\tfmt.Scan(&L)\n\n\tseq := []byte(sequence)\n\n\tvalido(seq, 0, L)\n\n\tfmt.Println(string(seq))\n}\n",
+            "lines": "59"
+        }
+    ]
+}
