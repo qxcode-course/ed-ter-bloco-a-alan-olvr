@@ -119,17 +119,18 @@ func (e *Editor) KeyDelete() {
 		return
 	}
 
-	if e.it_line.Next() != e.texto.End() {
-		nextLine := e.it_line.Next()
-
-		for n := nextLine.Value.Front(); n != nextLine.Value.End(); {
-			next := n.Next()
-			e.it_line.Value.Insert(e.it_line.Value.End(), n.Value)
-			n = next
-		}
-
-		e.texto.Erase(nextLine)
+	if e.it_line.Next() == e.texto.End() {
+		return
 	}
+
+	nextLine := e.it_line.Next()
+	for n := nextLine.Value.Front(); n != nextLine.Value.End(); {
+		next := n.Next()
+		e.it_line.Value.Insert(e.it_line.Value.End(), n.Value)
+		n = next
+	}
+
+	e.texto.Erase(nextLine)
 }
 
 func main() {
