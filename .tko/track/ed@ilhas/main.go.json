@@ -1,0 +1,29 @@
+{
+    "patches": [
+        {
+            "label": "2026-05-26_13-23-59",
+            "content": "@@ -385,17 +385,17 @@\n %0A%09%09dfs(i\n-+\n+-\n 1, j)%0A%09%09\n",
+            "lines": "51"
+        },
+        {
+            "label": "2026-05-26_13-36-20",
+            "content": "@@ -377,33 +377,33 @@\n j%5D = '0'%0A%09%09dfs(i\n--\n++\n 1, j)%0A%09%09dfs(i-1,\n",
+            "lines": "51"
+        },
+        {
+            "label": "2026-05-26_13-36-31",
+            "content": "@@ -556,20 +556,20 @@\n %09%09%09%09dfs(\n-i, j\n+j, i\n )%0A%09%09%09%7D%0A%09\n",
+            "lines": "51"
+        },
+        {
+            "label": "2026-05-26_13-36-54",
+            "content": "@@ -385,17 +385,17 @@\n %0A%09%09dfs(i\n-+\n+-\n 1, j)%0A%09%09\n",
+            "lines": "51"
+        },
+        {
+            "label": "2026-05-26_13-43-51",
+            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n)\n\n// N\u00e3o modifique a assinatura da fun\u00e7\u00e3o numIslands\n// Ela \u00e9 a fun\u00e7\u00e3o que ser\u00e1 chamada no LeetCode para resolver o problema\nfunc numIslands(grid [][]byte) int {\n\tcount := 0\n\n\tvar dfs func(i, j int) \n\tdfs = func(i, j int) {\n\t\tif i < 0 || i >= len(grid) || j < 0 || j >= len(grid[0]) || grid[i][j] != '1' {\n\t\t\treturn\n\t\t}\n\t\tgrid[i][j] = '0'\n\t\tdfs(i+1, j)\n\t\tdfs(i-1, j)\n\t\tdfs(i, j+1)\n\t\tdfs(i, j-1)\n\t}\n\n\tfor i := 0; i < len(grid); i++ {\n\t\tfor j := 0; j < len(grid[0]); j++ {\n\t\t\tif grid[i][j] == '1' {\n\t\t\t\tcount++\n\t\t\t\tdfs(i, j)\n\t\t\t}\n\t\t}\n\t}\n\treturn count\n}\n\n// N\u00e3o modifique a fun\u00e7\u00e3o main\nfunc main() {\n\tscanner := bufio.NewScanner(os.Stdin)\n\tscanner.Scan()\n\tline := scanner.Text()\n\tvar nl, nc int\n\tfmt.Sscanf(line, \"%d %d\", &nl, &nc)\n\tgrid := make([][]byte, nl)\n\tfor i := 0; i < nl; i++ {\n\t\tscanner.Scan()\n\t\tgrid[i] = []byte(scanner.Text())\n\t}\n\tresult := numIslands(grid)\n\tfmt.Println(result)\n}\n",
+            "lines": "51"
+        }
+    ]
+}
