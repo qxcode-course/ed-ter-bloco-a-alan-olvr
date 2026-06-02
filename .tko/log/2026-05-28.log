@@ -1,0 +1,64 @@
+2026-05-28 02:27:08, MOVE, v:1, k:ed@queimando, mode:PICK
+2026-05-28 02:27:11, EXEC, v:1, k:ed@queimando, mode:FULL, rate:20
+2026-05-28 02:27:23, EXEC, v:1, k:ed@queimando, mode:FULL, rate:20
+2026-05-28 02:27:51, EXEC, v:1, k:ed@queimando, mode:FULL, rate:20
+2026-05-28 02:27:57, EXEC, v:1, k:ed@queimando, mode:FULL, rate:20
+2026-05-28 02:28:06, EXEC, v:1, k:ed@queimando, mode:FULL, rate:20
+2026-05-28 02:28:12, EXEC, v:1, k:ed@queimando, mode:FULL, rate:20
+2026-05-28 02:28:18, EXEC, v:1, k:ed@queimando, mode:FULL, rate:20
+2026-05-28 02:29:08, EXEC, v:1, k:ed@queimando, mode:FULL, rate:20
+2026-05-28 02:29:13, EXEC, v:1, k:ed@queimando, mode:FULL, rate:20
+2026-05-28 02:29:21, EXEC, v:1, k:ed@queimando, mode:FULL, rate:20
+2026-05-28 02:29:34, EXEC, v:1, k:ed@queimando, mode:FULL, rate:20
+2026-05-28 02:29:51, EXEC, v:1, k:ed@queimando, mode:FULL, rate:20
+2026-05-28 02:29:58, EXEC, v:1, k:ed@queimando, mode:FULL, rate:20
+2026-05-28 02:30:06, EXEC, v:1, k:ed@queimando, mode:FULL, rate:20
+2026-05-28 02:30:21, EXEC, v:1, k:ed@queimando, mode:FULL, rate:20
+2026-05-28 02:30:30, EXEC, v:1, k:ed@queimando, mode:FULL, rate:20
+2026-05-28 02:30:42, EXEC, v:1, k:ed@queimando, mode:FULL, rate:20
+2026-05-28 02:30:53, EXEC, v:1, k:ed@queimando, mode:FULL, rate:20
+2026-05-28 02:31:30, EXEC, v:1, k:ed@queimando, mode:FULL, rate:20
+2026-05-28 02:31:33, EXEC, v:1, k:ed@queimando, mode:FULL, rate:20
+2026-05-28 02:31:41, EXEC, v:1, k:ed@queimando, mode:FULL, rate:20
+2026-05-28 02:31:48, EXEC, v:1, k:ed@queimando, mode:FULL, rate:20
+2026-05-28 02:31:48, MOVE, v:1, k:ed@queimando, mode:EDIT
+2026-05-28 02:32:02, EXEC, v:1, k:ed@queimando, mode:FULL, rate:20
+2026-05-28 02:32:09, EXEC, v:1, k:ed@queimando, mode:FULL, rate:20
+2026-05-28 02:32:17, EXEC, v:1, k:ed@queimando, mode:FULL, rate:20
+2026-05-28 02:32:31, EXEC, v:1, k:ed@queimando, mode:FULL, rate:20
+2026-05-28 02:32:45, EXEC, v:1, k:ed@queimando, mode:FULL, rate:20
+2026-05-28 02:33:18, EXEC, v:1, k:ed@queimando, mode:FULL, rate:20
+2026-05-28 02:33:46, EXEC, v:1, k:ed@queimando, mode:FULL, rate:20
+2026-05-28 02:33:54, EXEC, v:1, k:ed@queimando, mode:FULL, rate:20
+2026-05-28 02:33:58, EXEC, v:1, k:ed@queimando, mode:FULL, rate:20
+2026-05-28 02:34:10, EXEC, v:1, k:ed@queimando, mode:FULL, rate:20
+2026-05-28 02:37:01, EXEC, v:1, k:ed@queimando, mode:FULL, rate:20
+2026-05-28 02:37:00, MOVE, v:1, k:ed@queimando, mode:EDIT
+2026-05-28 02:40:10, EXEC, v:1, k:ed@queimando, mode:FULL, rate:20
+2026-05-28 02:40:13, EXEC, v:1, k:ed@queimando, mode:FULL, rate:20
+2026-05-28 02:40:16, EXEC, v:1, k:ed@queimando, mode:FULL, rate:20
+2026-05-28 02:40:16, EXEC, v:1, k:ed@queimando, mode:FULL, rate:20
+2026-05-28 02:40:25, EXEC, v:1, k:ed@queimando, mode:FULL, rate:20
+2026-05-28 02:40:27, EXEC, v:1, k:ed@queimando, mode:FULL, rate:20
+2026-05-28 02:40:30, EXEC, v:1, k:ed@queimando, mode:FULL, rate:20
+2026-05-28 02:40:37, EXEC, v:1, k:ed@queimando, mode:FULL, rate:20
+2026-05-28 02:40:37, MOVE, v:1, k:ed@queimando, mode:EDIT
+2026-05-28 02:43:06, EXEC, v:1, k:ed@queimando, mode:FULL, rate:20
+2026-05-28 02:43:07, EXEC, v:1, k:ed@queimando, mode:FULL, rate:20
+2026-05-28 02:46:25, EXEC, v:1, k:ed@queimando, mode:FULL, rate:20
+2026-05-28 02:46:26, EXEC, v:1, k:ed@queimando, mode:FULL, rate:20
+2026-05-28 02:46:52, EXEC, v:1, k:ed@queimando, mode:FULL, rate:20
+2026-05-28 02:46:53, EXEC, v:1, k:ed@queimando, mode:FULL, rate:20
+2026-05-28 02:46:53, MOVE, v:1, k:ed@queimando, mode:EDIT
+2026-05-28 02:47:29, EXEC, v:1, k:ed@queimando, mode:FULL, rate:20
+2026-05-28 02:47:31, EXEC, v:1, k:ed@queimando, mode:FULL, rate:20
+2026-05-28 02:47:32, EXEC, v:1, k:ed@queimando, mode:FULL, rate:20
+2026-05-28 02:47:35, EXEC, v:1, k:ed@queimando, mode:FULL, rate:20
+2026-05-28 02:47:37, EXEC, v:1, k:ed@queimando, mode:FULL, rate:20
+2026-05-28 02:47:53, EXEC, v:1, k:ed@queimando, mode:FULL, rate:20
+2026-05-28 02:48:08, EXEC, v:1, k:ed@queimando, mode:FULL, rate:20
+2026-05-28 02:50:03, EXEC, v:1, k:ed@queimando, mode:FULL, rate:20
+2026-05-28 02:50:11, EXEC, v:1, k:ed@queimando, mode:FULL, rate:100, size:96
+2026-05-28 02:50:14, MOVE, v:1, k:ed@queimando, mode:BACK
+2026-05-28 02:50:35, SELF, v:1, k:ed@queimando, self:1, rate:100, study:60, code:1
+2026-05-28 02:50:50, SELF, v:1, k:ed@queimando, self:1, rate:100, study:60, code:1

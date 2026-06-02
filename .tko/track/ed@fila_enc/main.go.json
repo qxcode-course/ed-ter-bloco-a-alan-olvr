@@ -1,0 +1,29 @@
+{
+    "patches": [
+        {
+            "label": "2026-05-27_18-26-44",
+            "content": "@@ -1587,16 +1587,19 @@\n op%22:%0A%09%09%09\n+// \n if _, ok\n@@ -1628,16 +1628,19 @@\n ok %7B%0A%09%09%09\n+// \n %09fmt.Pri\n@@ -1664,24 +1664,27 @@\n  vazia%22)%0A%09%09%09\n+// \n %7D%0A%09%09case %22pe\n",
+            "lines": "123"
+        },
+        {
+            "label": "2026-05-27_18-27-27",
+            "content": "@@ -47,208 +47,26 @@\n %22str\n-conv%22%0A%09%22strings%22%0A)%0A%0Atype Node%5BT any%5D struct %7B%0A%09Value T%0A%09next  *Node%5BT%5D%0A%7D%0A%0Atype Queue%5BT any%5D struct %7B%0A%09head *Node%5BT%5D%0A%09tail *Node%5BT%5D%0A%09size int%0A%7D%0A%0Afunc NewQueue%5BT any%5D() *Queue%5BT%5D %7B%0A%09return &Queue%5BT%5D%7B%7D%0A%7D\n+ings%22%0A%09%22strconv%22%0A)\n %0A%0Afu\n@@ -144,17 +144,17 @@\n  q.tail \n-=\n+!\n = nil %7B%0A\n@@ -748,24 +748,207 @@\n il = nil%0A%7D%0A%0A\n+%0Atype Node%5BT any%5D struct %7B%0A%09Value T%0A%09next  *Node%5BT%5D%0A%7D%0A%0Atype Queue%5BT any%5D struct %7B%0A%09head *Node%5BT%5D%0A%09tail *Node%5BT%5D%0A%09size int%0A%7D%0A%0Afunc NewQueue%5BT any%5D() *Queue%5BT%5D %7B%0A%09return &Queue%5BT%5D%7B%7D%0A%7D%0A%0A\n func (q *Que\n",
+            "lines": "123"
+        },
+        {
+            "label": "2026-05-27_18-42-42",
+            "content": "@@ -326,17 +326,17 @@\n  q.tail \n-!\n+=\n = nil %7B%0A\n",
+            "lines": "122"
+        },
+        {
+            "label": "2026-05-27_18-43-04",
+            "content": "@@ -1681,16 +1681,19 @@\n ek%22:%0A%09%09%09\n+// \n if value\n@@ -1714,32 +1714,35 @@\n Peek(); ok %7B%0A%09%09%09\n+// \n %09fmt.Println(val\n@@ -1748,16 +1748,19 @@\n lue)%0A%09%09%09\n+// \n %7D else %7B\n@@ -1759,24 +1759,27 @@\n %7D else %7B%0A%09%09%09\n+// \n %09fmt.Println\n@@ -1799,24 +1799,27 @@\n  vazia%22)%0A%09%09%09\n+// \n %7D%0A%09%09default:\n",
+            "lines": "122"
+        },
+        {
+            "label": "2026-05-27_18-59-47",
+            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n\t\"strconv\"\n\t\"strings\"\n)\n\ntype Node[T any] struct {\n\tValue T\n\tnext  *Node[T]\n}\n\ntype Queue[T any] struct {\n\thead *Node[T]\n\ttail *Node[T]\n\tsize int\n}\n\nfunc NewQueue[T any]() *Queue[T] {\n\treturn &Queue[T]{}\n}\n\nfunc (q *Queue[T]) Enqueue(value T) {\n\tnode := &Node[T]{Value: value}\n\tif q.tail != nil {\n\t\tq.tail.next = node\n\t}\n\tq.tail = node\n\tif q.head == nil {\n\t\tq.head = node\n\t}\n\tq.size++\n}\n\nfunc (q *Queue[T]) Dequeue() (T, bool) {\n\tif q.head == nil {\n\t\tvar zero T\n\t\treturn zero, false\n\t}\n\tvalue := q.head.Value\n\tq.head = q.head.next\n\tif q.head == nil {\n\t\tq.tail = nil\n\t}\n\tq.size--\n\treturn value, true\n}\n\nfunc (q *Queue[T]) Peek() (T, bool) {\n\tif q.head == nil {\n\t\tvar zero T\n\t\treturn zero, false\n\t}\n\treturn q.head.Value, true\n}\n\nfunc (q *Queue[T]) Size() int {\n\treturn q.size\n}\n\nfunc (q *Queue[T]) IsEmpty() bool {\n\treturn q.size == 0\n}\n\nfunc (q *Queue[T]) Clear() {\n\tq.head = nil\n\tq.tail = nil\n}\n\nfunc (q *Queue[T]) String() string {\n\tresult := \"[\"\n\tfor n := q.head; n != nil; n = n.next {\n\t\tif n != q.head {\n\t\t\tresult += \", \"\n\t\t}\n\t\tresult += fmt.Sprintf(\"%v\", n.Value)\n\t}\n\treturn result + \"]\"\n}\n\nfunc main() {\n\tscanner := bufio.NewScanner(os.Stdin)\n\tqueue := NewQueue[int]()\n\n\tfor {\n\t\tif !scanner.Scan() {\n\t\t\tbreak\n\t\t}\n\t\tline := scanner.Text()\n\t\tfmt.Println(\"$\" + line)\n\t\targs := strings.Fields(line)\n\t\tif len(args) == 0 {\n\t\t\tcontinue\n\t\t}\n\t\tswitch args[0] {\n\t\tcase \"end\":\n\t\t\tbreak\n\t\tcase \"show\":\n\t\t\tfmt.Println(queue)\n\t\tcase \"push\":\n\t\t\tfor _, arg := range args[1:] {\n\t\t\t\tvalue, _ := strconv.Atoi(arg)\n\t\t\t\tqueue.Enqueue(value)\n\t\t\t}\n\t\tcase \"pop\":\n\t\t\tif _, ok := queue.Dequeue(); !ok {\n\t\t\t\tfmt.Println(\"falha: fila vazia\")\n\t\t\t}\n\t\tcase \"peek\":\n\t\t\tif value, ok := queue.Peek(); ok {\n\t\t\t\tfmt.Println(value)\n\t\t\t} else {\n\t\t\t\tfmt.Println(\"falha: fila vazia\")\n\t\t\t}\n\t\tdefault:\n\t\t\tfmt.Println(\"Unknown command:\", args[0])\n\t\t}\n\t}\n}\n",
+            "lines": "122"
+        }
+    ]
+}

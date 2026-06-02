@@ -1,0 +1,44 @@
+{
+    "patches": [
+        {
+            "label": "2026-05-27_19-14-33",
+            "content": "@@ -413,9 +413,9 @@\n != '\n-#\n+X\n ' %7B%0A\n",
+            "lines": "63"
+        },
+        {
+            "label": "2026-05-27_20-56-54",
+            "content": "@@ -508,18 +508,16 @@\n + d.l, c\n-ol\n  + d.c%7D)\n",
+            "lines": "63"
+        },
+        {
+            "label": "2026-05-27_22-32-39",
+            "content": "@@ -360,16 +360,18 @@\n %3C 0 %7C%7C c\n+ol\n  %3E= nc %7B\n",
+            "lines": "63"
+        },
+        {
+            "label": "2026-05-27_22-35-30",
+            "content": "@@ -360,18 +360,16 @@\n %3C 0 %7C%7C c\n-ol\n  %3E= nc %7B\n@@ -506,16 +506,18 @@\n + d.l, c\n+ol\n  + d.c%7D)\n",
+            "lines": "63"
+        },
+        {
+            "label": "2026-05-27_22-35-42",
+            "content": "@@ -508,17 +508,16 @@\n + d.l, c\n-d\n  + d.c%7D)\n",
+            "lines": "63"
+        },
+        {
+            "label": "2026-05-27_22-35-56",
+            "content": "@@ -508,16 +508,17 @@\n + d.l, c\n+d\n  + d.c%7D)\n",
+            "lines": "63"
+        },
+        {
+            "label": "2026-05-27_22-36-01",
+            "content": "@@ -508,18 +508,16 @@\n + d.l, c\n-ol\n  + d.c%7D)\n",
+            "lines": "63"
+        },
+        {
+            "label": "2026-05-28_02-50-11",
+            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n)\n\ntype Pos struct {\n\tl, c int\n}\n\nfunc burnTrees(grid [][]rune, l, c int) {\n\tnl := len(grid)\n\tnc := len(grid[0])\n\n\tdirs := []Pos{{-1, 0}, {1, 0}, {0, -1}, {0, 1}}\n\n\tstack := NewStack[Pos]()\n\tstack.Push(Pos{l, c})\n\n\tfor !stack.IsEmpty() {\n\t\tpos := stack.Pop()\n\t\tr, col := pos.l, pos.c\n\n\t\tif r < 0 || r >= nl || col < 0 || col >= nc {\n\t\t\tcontinue\n\t\t}\n\t\tif grid[r][col] != '#' {\n\t\t\tcontinue\n\t\t}\n\n\t\tgrid[r][col] = 'o'\n\n\t\tfor _, d := range dirs {\n\t\t\tstack.Push(Pos{r + d.l, col + d.c})\n\t\t}\n\t}\n\n}\n\nfunc main() {\n\tscanner := bufio.NewScanner(os.Stdin)\n\tscanner.Scan()\n\tline := scanner.Text()\n\tvar nl, nc, lfire, cfire int\n\tfmt.Sscanf(line, \"%d %d %d %d\", &nl, &nc, &lfire, &cfire)\n\n\tgrid := make([][]rune, 0, nl)\n\tfor range nl {\n\t\tscanner.Scan()\n\t\tline := []rune(scanner.Text())\n\t\tgrid = append(grid, line)\n\t}\n\tburnTrees(grid, lfire, cfire)\n\tshowGrid(grid)\n}\n\nfunc showGrid(mat [][]rune) {\n\tfor _, linha := range mat {\n\t\tfmt.Println(string(linha))\n\t}\n}\n",
+            "lines": "63"
+        }
+    ]
+}

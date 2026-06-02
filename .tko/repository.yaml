@@ -20,7 +20,6 @@ sources:
   quests: null
 expanded:
 - ed@dfs
-- ed@linear
 flags:
   inbox: all
   panel: skills
@@ -28,5 +27,5 @@ flags:
   task_graph_mode: time
   show_time: 'true'
 lang: go
-selected: ed@bufferring
-selected_index: 7
+selected: ed@dfs_read
+selected_index: 9
