@@ -1,0 +1,34 @@
+{
+    "patches": [
+        {
+            "label": "2026-06-17_01-21-53",
+            "content": "@@ -266,16 +266,17 @@\n eat(%22...\n+.\n %22, nivel\n",
+            "lines": "84"
+        },
+        {
+            "label": "2026-06-17_01-22-21",
+            "content": "@@ -365,32 +365,33 @@\n ings.Repeat(%22...\n+.\n %22, nivel) + strc\n",
+            "lines": "84"
+        },
+        {
+            "label": "2026-06-17_01-23-37",
+            "content": "@@ -373,17 +373,16 @@\n eat(%22...\n-.\n %22, nivel\n@@ -476,32 +476,33 @@\n ings.Repeat(%22...\n+.\n %22, nivel) + strc\n",
+            "lines": "84"
+        },
+        {
+            "label": "2026-06-17_01-52-55",
+            "content": "@@ -258,33 +258,32 @@\n ings.Repeat(%22...\n-.\n %22, nivel) + %22#%22)\n",
+            "lines": "84"
+        },
+        {
+            "label": "2026-06-17_02-28-38",
+            "content": "@@ -478,33 +478,32 @@\n ings.Repeat(%22...\n-.\n %22, nivel) + strc\n",
+            "lines": "84"
+        },
+        {
+            "label": "2026-06-17_02-28-48",
+            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n\n\t\"strconv\"\n\t\"strings\"\n)\n\ntype Node struct {\n\tValue int\n\tLeft  *Node\n\tRight *Node\n}\n\n// MyShow imprime a \u00e1rvore bin\u00e1ria de forma formatada.\nfunc MyShow(node *Node, nivel int) {\n\tif node == nil {\n\t\tfmt.Println(strings.Repeat(\"....\", nivel) + \"#\")\n\t\treturn\n\t}\n\n\tif node.Left == nil && node.Right == nil {\n\t\tfmt.Println(strings.Repeat(\"....\", nivel) + strconv.Itoa(node.Value))\n\t\treturn\n\t}\n\n\tMyShow(node.Left, nivel+1)\n\tfmt.Println(strings.Repeat(\"....\", nivel) + strconv.Itoa(node.Value))\n\tMyShow(node.Right, nivel+1)\n}\n\n// -----------------------------------------------------------------------------------\nfunc BShow(node *Node, history string) {\n\tif node != nil && (node.Left != nil || node.Right != nil) {\n\t\tBShow(node.Left, history+\"l\")\n\t}\n\tfor i := 0; i < len(history)-1; i++ {\n\t\tif history[i] != history[i+1] {\n\t\t\tfmt.Print(\"\u2502   \")\n\t\t} else {\n\t\t\tfmt.Print(\"    \")\n\t\t}\n\t}\n\tif history != \"\" {\n\t\tif history[len(history)-1] == 'l' {\n\t\t\tfmt.Print(\"\u256d\u2500\u2500\u2500\")\n\t\t} else {\n\t\t\tfmt.Print(\"\u2570\u2500\u2500\u2500\")\n\t\t}\n\t}\n\tif node == nil {\n\t\tfmt.Println(\"#\")\n\t\treturn\n\t}\n\tfmt.Println(node.Value)\n\tif node.Left != nil || node.Right != nil {\n\t\tBShow(node.Right, history+\"r\")\n\t}\n}\n\nfunc create(parts *[]string) *Node {\n\telem := (*parts)[0]\n\t*parts = (*parts)[1:]\n\tif elem == \"#\" {\n\t\treturn nil\n\t}\n\tvalue, _ := strconv.Atoi(elem)\n\tnode := &Node{Value: value}\n\tnode.Left = create(parts)\n\tnode.Right = create(parts)\n\treturn node\n}\n\nfunc main() {\n\tscanner := bufio.NewScanner(os.Stdin)\n\tscanner.Scan()\n\tparts := strings.Split(scanner.Text(), \" \")\n\troot := create(&parts)\n\tBShow(root, \"\") // Chama a fun\u00e7\u00e3o de impress\u00e3o formatada\n\tMyShow(root, 0) // Chama a fun\u00e7\u00e3o de impress\u00e3o personalizada\n}\n",
+            "lines": "84"
+        }
+    ]
+}

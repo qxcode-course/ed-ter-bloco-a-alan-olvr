@@ -19,13 +19,17 @@ sources:
   writeable: false
   quests: null
 expanded:
+- ed@tree
+- ed@bfs
 - ed@dfs
 flags:
   inbox: all
   panel: skills
-  show_panel: 'true'
   task_graph_mode: time
   show_time: 'true'
+audit:
+  enabled: true
+  interval_seconds: null
 lang: go
-selected: ed@dfs_read
+selected: ed@formatada
 selected_index: 9
