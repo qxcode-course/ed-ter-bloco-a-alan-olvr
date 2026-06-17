@@ -19,9 +19,7 @@ sources:
   writeable: false
   quests: null
 expanded:
-- ed@tree
 - ed@bfs
-- ed@dfs
 flags:
   inbox: all
   panel: skills
@@ -31,5 +29,5 @@ audit:
   enabled: true
   interval_seconds: null
 lang: go
-selected: ed@formatada
-selected_index: 9
+selected: ed@dfs
+selected_index: 8

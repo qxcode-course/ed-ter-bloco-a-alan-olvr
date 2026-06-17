@@ -1,0 +1,19 @@
+{
+    "patches": [
+        {
+            "label": "2026-06-17_17-28-01",
+            "content": "@@ -118,605 +118,17 @@\n  %7B%0A%09\n-if len(board) == 0 %7B%0A%09%09return%0A%09%7D%0A%09nrows := len(board)%0A%09ncols := len(board%5B0%5D)%0A%0A%09var dfs func(r, c int)%0A%09dfs = func(r, c int) %7B%0A%09%09if r %3C 0 %7C%7C r %3E= nrows %7C%7C c %3C 0 %7C%7C c %3E= ncols %7C%7C board%5Br%5D%5Bc%5D != 'O' %7B%0A%09%09%09return%0A%09%09%7D%0A%09%09board%5Br%5D%5Bc%5D = 'S'%0A%09%09dfs(r+1, c)%0A%09%09dfs(r-1, c)%0A%09%09dfs(r, c+1)%0A%09%09dfs(r, c-1)%0A%09%7D%0A%0A%09for r := 0; r %3C nrows; r++ %7B%0A%09%09dfs(r, 0)%0A%09%09dfs(r, ncols-1)%0A%09%7D%0A%09for c := 0; c %3C ncols; c++ %7B%0A%09%09dfs(0, c)%0A%09%09dfs(nrows-1, c)%0A%09%7D%0A%0A%09for r := 0; r %3C nrows; r++ %7B%0A%09%09for c := 0; c %3C ncols; c++ %7B%0A%09%09%09if board%5Br%5D%5Bc%5D == '0' %7B%0A%09%09%09%09board%5Br%5D%5Bc%5D = 'X'%0A%09%09%09%7D else if board%5Br%5D%5Bc%5D == 'S' %7B%0A%09%09%09%09board%5Br%5D%5Bc%5D = 'O'%0A%09%09%09%7D%0A%09%09%7D%0A%09%7D\n+_ = board\n %0A%7D%0A%0A\n",
+            "lines": "29"
+        },
+        {
+            "label": "2026-06-17_17-38-15",
+            "content": "@@ -617,17 +617,17 @@\n %5Bc%5D == '\n-O\n+0\n ' %7B%0A%09%09%09%09\n",
+            "lines": "64"
+        },
+        {
+            "label": "2026-06-17_18-49-39",
+            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n)\n\n// N\u00c3O ALTERE A ASSINATURA DA FUN\u00c7\u00c3O solve\nfunc solve(board [][]byte) {\n\tif len(board) == 0 {\n\t\treturn\n\t}\n\tnrows := len(board)\n\tncols := len(board[0])\n\n\tvar dfs func(r, c int)\n\tdfs = func(r, c int) {\n\t\tif r < 0 || r >= nrows || c < 0 || c >= ncols || board[r][c] != 'O' {\n\t\t\treturn\n\t\t}\n\t\tboard[r][c] = 'S'\n\t\tdfs(r+1, c)\n\t\tdfs(r-1, c)\n\t\tdfs(r, c+1)\n\t\tdfs(r, c-1)\n\t}\n\n\tfor r := 0; r < nrows; r++ {\n\t\tdfs(r, 0)\n\t\tdfs(r, ncols-1)\n\t}\n\tfor c := 0; c < ncols; c++ {\n\t\tdfs(0, c)\n\t\tdfs(nrows-1, c)\n\t}\n\n\tfor r := 0; r < nrows; r++ {\n\t\tfor c := 0; c < ncols; c++ {\n\t\t\tif board[r][c] == 'O' {\n\t\t\t\tboard[r][c] = 'X'\n\t\t\t} else if board[r][c] == 'S' {\n\t\t\t\tboard[r][c] = 'O'\n\t\t\t}\n\t\t}\n\t}\n}\n\n// N\u00c3O ALTERE A MAIN\nfunc main() {\n\tscanner := bufio.NewScanner(os.Stdin)\n\tscanner.Scan()\n\tvar nrows, ncols int\n\tfmt.Sscanf(scanner.Text(), \"%d %d\", &nrows, &ncols)\n\tboard := make([][]byte, nrows)\n\tfor i := 0; i < nrows; i++ {\n\t\tscanner.Scan()\n\t\tboard[i] = []byte(scanner.Text())\n\t}\n\tsolve(board)\n\tfor _, row := range board {\n\t\tfmt.Println(string(row))\n\t}\n}\n",
+            "lines": "64"
+        }
+    ]
+}
