@@ -1,0 +1,24 @@
+{
+    "patches": [
+        {
+            "label": "2026-06-23_13-34-01",
+            "content": "@@ -902,17 +902,17 @@\n ount := \n-1\n+0\n %0A%0A      \n",
+            "lines": "67"
+        },
+        {
+            "label": "2026-06-24_01-43-21",
+            "content": "@@ -902,17 +902,17 @@\n ount := \n-0\n+1\n %0A%0A      \n",
+            "lines": "67"
+        },
+        {
+            "label": "2026-06-24_01-43-28",
+            "content": "@@ -902,17 +902,17 @@\n ount := \n-1\n+0\n %0A%0A      \n",
+            "lines": "67"
+        },
+        {
+            "label": "2026-06-24_02-01-21",
+            "content": "package main\nimport (\n    \"bufio\"\n    \"fmt\"\n    \"os\"\n)\n\ntype Bomb struct {\n    x, y, r int64\n}\n\nfunc canDetonate(a, b Bomb) bool {\n    dx := a.x - b.x\n    dy := a.y - b.y\n    distSq := dx*dx + dy*dy\n    rSq := a.r * a.r\n    return distSq <= rSq\n}\n\nfunc main() {\n    reader := bufio.NewReader(os.Stdin)\n\n    var n, d int\n    fmt.Fscan(reader, &n, &d)\n    _ = d\n\n    bombs := make([]Bomb, n)\n    for i := 0; i < n; i++ {\n        fmt.Fscan(reader, &bombs[i].x, &bombs[i].y, &bombs[i].r)\n    }\n\n    adj := make([][]bool, n)\n    for i := 0; i < n; i++ {\n        adj[i] = make([]bool, n)\n        for j := 0; j < n; j++ {\n            if i != j && canDetonate(bombs[i], bombs[j]) {\n                adj[i][j] = true\n            }\n        }\n    }\n\n    maxCount := 0\n    for start := 0; start < n; start++ {\n        visited := make([]bool, n)\n        visited[start] = true\n        queue := []int{start}\n        count := 1\n\n        for len(queue) > 0 {\n            cur := queue[0]\n            queue = queue[1:]\n\n            for next := 0; next < n; next++ {\n                if !visited[next] && adj[cur][next] {\n                    visited[next] = true\n                    count++\n                    queue = append(queue, next)\n                }\n            }\n        }\n        if count > maxCount {\n            maxCount = count\n        }\n    }\n\n    fmt.Println(maxCount)\n}\n",
+            "lines": "67"
+        }
+    ]
+}

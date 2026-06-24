@@ -1,0 +1,54 @@
+{
+    "patches": [
+        {
+            "label": "2026-06-17_19-57-31",
+            "content": "@@ -124,17 +124,16 @@\n %7B%0A%09%09%7Bp.l\n-1\n , p.c%7D, \n",
+            "lines": "99"
+        },
+        {
+            "label": "2026-06-17_20-51-25",
+            "content": "@@ -124,17 +124,16 @@\n %7B%0A%09%09%7Bp.l\n--\n 1, p.c%7D,\n",
+            "lines": "99"
+        },
+        {
+            "label": "2026-06-17_20-52-07",
+            "content": "@@ -124,19 +124,17 @@\n %7B%0A%09%09%7Bp.l\n- - \n+-\n 1, p.c%7D,\n",
+            "lines": "99"
+        },
+        {
+            "label": "2026-06-17_20-52-17",
+            "content": "@@ -714,46 +714,8 @@\n s %7B%0A\n-%09%09%09grid%5BendPos.l%5D%5BendPos.c%5D = '.'%0A%09%09%09%0A\n %09%09%09f\n",
+            "lines": "99"
+        },
+        {
+            "label": "2026-06-17_20-54-03",
+            "content": "@@ -131,24 +131,25 @@\n l - 1, p.c%7D,\n+ \n %0A%09%09%7Bp.l + 1,\n@@ -154,16 +154,17 @@\n 1, p.c%7D,\n+ \n %0A%09%09%7Bp.l,\n@@ -173,16 +173,17 @@\n .c - 1%7D,\n+ \n %0A%09%09%7Bp.l,\n@@ -192,16 +192,17 @@\n .c + 1%7D,\n+ \n %0A%09%7D%0A%7D%0A%0Af\n@@ -744,16 +744,20 @@\n %5D = '.'%0A\n+%09%09%09%0A\n %09%09%09for p\n@@ -894,27 +894,8 @@\n %09if \n-!visited%5Bneig%5D && (\n matc\n@@ -917,26 +917,25 @@\n  ') \n-%7C%7C neig == endPos)\n+&& !visited%5Bneig%5D\n  %7B%0A%09\n",
+            "lines": "101"
+        },
+        {
+            "label": "2026-06-17_20-55-38",
+            "content": "@@ -685,16 +685,17 @@\n ueue()%0A%0A\n+%09\n %09if cur \n@@ -710,33 +710,45 @@\n s %7B%0A\n-%0A    path := %5B%5DPos%7B%7D%0A    \n+%09%09%09grid%5BendPos.l%5D%5BendPos.c%5D = '.'%0A%09%09%09\n for \n@@ -752,19 +752,25 @@\n or p := \n+prev%5B\n cur\n+%5D\n ; p != s\n@@ -796,83 +796,12 @@\n %5D %7B%0A\n-        path = append(path, p)%0A   %09%7D%0A%0A    for _, p := range path %7B%0A        \n+%09%09%09%09\n grid\n@@ -821,26 +821,25 @@\n '.'%0A\n-    %7D%0A%0A    \n+%09%09%09%7D%0A%09%09%09\n return%0A\n+%09%09\n %7D%0A%0A%09\n",
+            "lines": "100"
+        },
+        {
+            "label": "2026-06-17_20-58-14",
+            "content": "@@ -1533,20 +1533,16 @@\n %0A%09%09for c\n-, ch\n  := rang\n@@ -1547,139 +1547,158 @@\n nge \n-mat%5Bl%5D %7B%0A%09%09%09%0A        if ch == 'I' %7C%7C ch == 'F' %7B%0A            fmt.Fprintf(os.Stderr, %22char=%25c l=%25d c=%25d%5Cn%22, ch, l, c)%0A        %7D%0A    \n+nc %7B%0A%09%09%09if mat%5Bl%5D%5Bc%5D == 'I' %7B%0A%09%09%09%09mat%5Bl%5D%5Bc%5D = ' '%0A%09%09%09%09inicio = Pos%7Bl, c%7D%0A%09%09%09%7D%0A%09%09%09if mat%5Bl%5D%5Bc%5D == 'F' %7B%0A%09%09%09%09mat%5Bl%5D%5Bc%5D = ' '%0A%09%09%09%09fim = Pos%7Bl, c%7D%0A%09%09%09%7D%0A%09%09\n %7D%0A%09%7D\n",
+            "lines": "106"
+        },
+        {
+            "label": "2026-06-17_21-01-24",
+            "content": "@@ -1533,16 +1533,20 @@\n %0A%09%09for c\n+, ch\n  := rang\n@@ -1551,158 +1551,139 @@\n nge \n-nc %7B%0A%09%09%09if mat%5Bl%5D%5Bc%5D == 'I' %7B%0A%09%09%09%09mat%5Bl%5D%5Bc%5D = ' '%0A%09%09%09%09inicio = Pos%7Bl, c%7D%0A%09%09%09%7D%0A%09%09%09if mat%5Bl%5D%5Bc%5D == 'F' %7B%0A%09%09%09%09mat%5Bl%5D%5Bc%5D = ' '%0A%09%09%09%09fim = Pos%7Bl, c%7D%0A%09%09%09%7D%0A%09%09\n+mat%5Bl%5D %7B%0A%09%09%09%0A        if ch == 'I' %7C%7C ch == 'F' %7B%0A            fmt.Fprintf(os.Stderr, %22char=%25c l=%25d c=%25d%5Cn%22, ch, l, c)%0A        %7D%0A    \n %7D%0A%09%7D\n",
+            "lines": "102"
+        },
+        {
+            "label": "2026-06-23_01-55-43",
+            "content": "@@ -813,39 +813,8 @@\n   %09%7D\n-%0A%09path = append(path, startPos)\n %0A%0A  \n",
+            "lines": "106"
+        },
+        {
+            "label": "2026-06-23_02-02-35",
+            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n)\n\ntype Pos struct {\n\tl, c int\n}\n\nfunc (p Pos) getNeig() []Pos {\n\treturn []Pos{\n\t\t{p.l - 1, p.c},\n\t\t{p.l + 1, p.c},\n\t\t{p.l, p.c - 1},\n\t\t{p.l, p.c + 1},\n\t}\n}\n\nfunc inside(grid [][]rune, pos Pos) bool {\n\tnrows := len(grid)\n\tncols := len(grid[0])\n\treturn pos.l >= 0 && pos.l < nrows && pos.c >= 0 && pos.c < ncols\n}\n\nfunc match(grid [][]rune, pos Pos, char rune) bool {\n\treturn inside(grid, pos) && grid[pos.l][pos.c] == char\n}\n\nfunc search(grid [][]rune, startPos Pos, endPos Pos) {\n\tprev := map[Pos]Pos{}\n\tvisited := map[Pos]bool{}\n\n\tq := NewQueue[Pos]()\n\tq.Enqueue(startPos)\n\tvisited[startPos] = true\n\n\tfor !q.IsEmpty() {\n\t\tcur, _ := q.Dequeue()\n\n\tif cur == endPos {\n\n    path := []Pos{}\n    for p := cur; p != startPos; p = prev[p] {\n        path = append(path, p)\n   \t}\n\tpath = append(path, startPos)\n\n    for _, p := range path {\n        grid[p.l][p.c] = '.'\n    }\n\n    return\n}\n\n\t\tfor _, neig := range cur.getNeig() {\n\t\t\tif !visited[neig] && (match(grid, neig, ' ') || neig == endPos) {\n\t\t\t\tvisited[neig] = true\n\t\t\t\tprev[neig] = cur\n\t\t\t\tq.Enqueue(neig)\n\t\t\t}\n\t\t}\n\t}\n}\n\nfunc voltar() {}\n\nfunc main() {\n\tscanner := bufio.NewScanner(os.Stdin)\n\n\tvar nl, nc int\n\tscanner.Scan()\n\tline := scanner.Text()\n\tfmt.Sscanf(line, \"%d %d\", &nl, &nc)\n\tmat := make([][]rune, nl) // Inicializa a matriz de runes\n\n\t// Carregando matriz\n\tfor i := range nl {\n\t\tscanner.Scan()\n\t\tline := scanner.Text()\n\t\tmat[i] = []rune(line)\n\t}\n\n\tvar inicio, fim Pos\n\n\t// Procurando inicio e fim e colocando ' ' nas posi\u00e7\u00f5es iniciais\n\tfor l := range nl {\n\t\tfor c := range nc {\n\t\t\tif mat[l][c] == 'I' {\n\t\t\t\tmat[l][c] = ' '\n\t\t\t\tinicio = Pos{l, c}\n\t\t\t}\n\t\t\tif mat[l][c] == 'F' {\n\t\t\t\tmat[l][c] = ' '\n\t\t\t\tfim = Pos{l, c}\n\t\t\t}\n\t\t}\n\t}\n\n\tsearch(mat, inicio, fim)\n\n\tfor _, line := range mat {\n\t\tfmt.Println(string(line)) // Converte o slice de runes de volta para string para imprimir\n\t}\n}\n",
+            "lines": "107"
+        }
+    ]
+}

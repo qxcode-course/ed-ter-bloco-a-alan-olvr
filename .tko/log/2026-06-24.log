@@ -1,0 +1,19 @@
+2026-06-24 01:41:33, MOVE, v:1, k:ed@detonate, mode:PICK
+2026-06-24 01:41:35, EXEC, v:1, k:ed@detonate, mode:FULL, rate:0
+2026-06-24 01:42:45, MOVE, v:1, k:ed@detonate, mode:PICK
+2026-06-24 01:42:46, EXEC, v:1, k:ed@detonate, mode:FULL, rate:0
+2026-06-24 01:43:21, EXEC, v:1, k:ed@detonate, mode:FULL, rate:100, size:67
+2026-06-24 01:43:28, EXEC, v:1, k:ed@detonate, mode:FULL, rate:0, size:67
+2026-06-24 01:43:31, EXEC, v:1, k:ed@detonate, mode:FULL, rate:0
+2026-06-24 01:43:31, MOVE, v:1, k:ed@detonate, mode:EDIT
+2026-06-24 01:43:26, MOVE, v:1, k:ed@detonate, mode:EDIT
+2026-06-24 01:49:41, EXEC, v:1, k:ed@detonate, mode:FULL, rate:0
+2026-06-24 01:49:42, EXEC, v:1, k:ed@detonate, mode:FULL, rate:0
+2026-06-24 01:49:42, MOVE, v:1, k:ed@detonate, mode:EDIT
+2026-06-24 01:53:51, EXEC, v:1, k:ed@detonate, mode:FULL, rate:0
+2026-06-24 01:53:51, MOVE, v:1, k:ed@detonate, mode:EDIT
+2026-06-24 01:59:18, EXEC, v:1, k:ed@detonate, mode:FULL, rate:0
+2026-06-24 02:01:11, EXEC, v:1, k:ed@detonate, mode:FULL, rate:0
+2026-06-24 02:01:22, EXEC, v:1, k:ed@detonate, mode:FULL, rate:100, size:67
+2026-06-24 02:01:23, MOVE, v:1, k:ed@detonate, mode:BACK
+2026-06-24 02:01:53, SELF, v:1, k:ed@detonate, self:1, rate:100, study:72, problem:1

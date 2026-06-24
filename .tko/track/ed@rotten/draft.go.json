@@ -1,0 +1,29 @@
+{
+    "patches": [
+        {
+            "label": "2026-06-23_02-31-36",
+            "content": "@@ -146,20 +146,16 @@\n     %7Bp.l\n- - 1\n , p.c%7D,%0A\n@@ -479,17 +479,17 @@\n en(grid%5B\n-1\n+0\n %5D)%0A%0A    \n",
+            "lines": "117"
+        },
+        {
+            "label": "2026-06-23_02-32-03",
+            "content": "@@ -483,17 +483,17 @@\n en(grid%5B\n-0\n+1\n %5D)%0A%0A    \n@@ -617,12 +617,12 @@\n rid%5B\n-c%5D%5Bl\n+l%5D%5Bc\n %5D %7B%0A\n",
+            "lines": "117"
+        },
+        {
+            "label": "2026-06-23_02-32-16",
+            "content": "@@ -617,12 +617,12 @@\n rid%5B\n-l%5D%5Bc\n+c%5D%5Bl\n %5D %7B%0A\n@@ -1337,21 +1337,23 @@\n  return \n-fr\n+minut\n es\n-h\n %0A%7D%0A%0Afunc\n",
+            "lines": "117"
+        },
+        {
+            "label": "2026-06-23_02-32-44",
+            "content": "@@ -1337,23 +1337,21 @@\n  return \n-minut\n+fr\n es\n+h\n %0A%7D%0A%0Afunc\n",
+            "lines": "117"
+        },
+        {
+            "label": "2026-06-23_03-41-31",
+            "content": "package main\nimport (\n    \"fmt\"\n    \"bufio\"\n    \"os\"\n)\n\ntype Pos struct {\n    l, c int \n}\n\nfunc (p *Pos) getNeig() []Pos {\n    return []Pos{\n        {p.l - 1, p.c},\n        {p.l + 1, p.c},\n        {p.l, p.c - 1},\n        {p.l, p.c + 1},\n    }\n}\n\nfunc inside (grid [][]int, pos Pos) bool {\n    nrows := len(grid)\n    ncols := len(grid[0])\n    return pos.l >= 0 && pos.l < nrows && pos.c >= 0 && pos.c < ncols\n}\n\nfunc orangesRotting(grid [][]int) int {\n    nl := len(grid)\n    nc := len(grid[0])\n\n    queue := []Pos{}\n    fresh := 0\n\n    for l := 0; l < nl; l++ {\n        for c := 0; c < nc; c++ {\n            switch grid[l][c] {\n            case 2: \n                queue = append(queue, Pos{l, c})\n            case 1: \n                fresh++\n            }\n        }\n    }\n\n    if fresh == 0 {\n        return 0\n    }\n\n    minutes := 0\n\n    for len(queue) > 0 {\n        next := []Pos{}\n\n        for _, cur := range queue {\n            for _, neig := range cur.getNeig() {\n                if inside(grid, neig) && grid[neig.l][neig.c] == 1 {\n                    grid[neig.l][neig.c] = 2\n                    fresh--\n                    next = append(next, neig)\n                }\n            }\n        }\n\n        queue = next\n        if len(next) > 0 {\n            minutes++\n        }\n    }\n\n    if fresh > 0 {\n        return -1\n    }\n\n    return minutes\n}\n\nfunc main() {\n    scanner := bufio.NewScanner(os.Stdin)\n    scanner.Buffer(make([]byte, 1024*1024), 1024*1024)\n\n    var nl, nc int\n    scanner.Scan()\n    fmt.Sscanf(scanner.Text(), \"%d %d\", &nl, &nc)\n\n    grid := make([][]int, nl)\n    for i := 0; i < nl; i++ {\n        grid[i] = make([]int, nc)\n        scanner.Scan()\n        line := scanner.Text()\n        pos := 0\n        for _, tok := range splitSpaces(line) {\n            fmt.Sscanf(tok, \"%d\", &grid[i][pos])\n            pos++\n        }\n    }\n\n    fmt.Println(orangesRotting(grid))\n}\n\nfunc splitSpaces(s string) []string {\n    var tokens []string\n    cur := \"\"\n    for _, r := range s {\n        if r == ' ' || r == '\\t' {\n            if cur != \"\" {\n                tokens = append(tokens, cur)\n                cur = \"\"\n            }\n        } else {\n            cur += string(r)\n        }\n    }\n    if cur != \"\" {\n        tokens = append(tokens, cur)\n    }\n    return tokens\n}\n",
+            "lines": "117"
+        }
+    ]
+}
