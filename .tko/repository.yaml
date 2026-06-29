@@ -29,5 +29,5 @@ audit:
   enabled: true
   interval_seconds: null
 lang: go
-selected: ed@princesa
-selected_index: 3
+selected: ed@manipulacao
+selected_index: 5

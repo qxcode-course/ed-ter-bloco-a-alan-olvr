@@ -1,10 +1,11 @@
 package main
 import "fmt"
+
 func main() {
 	var n int
 	fmt.Scan(&n)
 
-	fila := make([]string, n)
+	fila := make([]int, n)
 	for i := 0; i < n; i++ {
 		fmt.Scan(&fila[i])
 	}
@@ -12,25 +13,20 @@ func main() {
 	var m int
 	fmt.Scan(&m)
 
-	saindo := make(map[string]bool) 
+	saindo := make(map[int] bool, m) 
 	for i := 0; i < m; i++ {
-		var id string
+		var id int
 		fmt.Scan(&id)
 		saindo[id] = true
 	}
 
-	resultado  := []string{}
+	sep := ""
 	for _, id := range fila {
 		if !saindo[id] {
-			resultado = append(resultado, id)
+			fmt.Print(sep, id)
+			sep = " "
 		}
 	}
 
-	for i, id := range resultado {
-		if i > 0 {
-			fmt.Print(" ")
-		}
-		fmt.Print(id)
-	}
 	fmt.Println(" ")
 }
