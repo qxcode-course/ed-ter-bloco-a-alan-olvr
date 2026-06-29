@@ -19,7 +19,6 @@ sources:
   writeable: false
   quests: null
 expanded:
-- ed@bfs
 - ed@map_set
 flags:
   inbox: all
@@ -30,5 +29,5 @@ audit:
   enabled: true
   interval_seconds: null
 lang: go
-selected: ed@analise
-selected_index: 2
+selected: ed@princesa
+selected_index: 3

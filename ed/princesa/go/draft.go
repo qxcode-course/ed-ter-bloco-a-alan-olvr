@@ -2,6 +2,29 @@ package main
 
 import "fmt"
 
+func proximoVivo(vivos []bool, pos, n int) int {
+	pos = (pos + 1) % n
+	for !vivos[pos] {
+		pos = (pos + 1) % n
+	}
+	return pos
+}
+
+func imprimirVivos(elementos []int, vivos []bool, espada int) {
+	fmt.Print("[ ")
+	for i, v := range elementos {
+		if !vivos[i] {
+			continue
+		}
+		fmt.Print(v)
+		if i == espada {
+			fmt.Print(">")
+		}
+		fmt.Print(" ")
+	}
+	fmt.Println("]")
+}
+
 func josephus(n int, e int) {
 
 	elementos := make([]int, n)
@@ -15,45 +38,25 @@ func josephus(n int, e int) {
 	count := n
 
 	for count > 1 {
-		fmt.Print("[ ")
-		for i := 0; i < n; i++ {
-			if vivos[i] {
-				fmt.Printf("%d", elementos[i])
-				if i == espada {
-					fmt.Print(">")
-				}
-				fmt.Print(" ")
-			}
-		}
-		fmt.Println("]")
+		imprimirVivos(elementos, vivos, espada)
 
-		alvo := (espada + 1) % n
-		for !vivos[alvo] {
-			alvo = (alvo + 1) % n
-		}
-
+		alvo := proximoVivo(vivos, espada, n)
 		vivos[alvo] = false
 		count--
-
-		espada = (alvo + 1) % n
-		for !vivos[espada] {
-			espada = (espada + 1) % n
-		}
+		espada = proximoVivo(vivos, alvo, n)
 	}
 
-	for i := 0; i < n; i++ {
+	for i, v := range elementos {
 		if vivos[i] {
-			fmt.Printf("[ %d> ]\n", elementos[i])
+			fmt.Printf("[ %d> ]\n", v)
 			break
 		}
 	}
 }
 
 func main() {
-
 	var n, e int
 	fmt.Scan(&n, &e)
-
 	josephus(n, e)
 
 }

@@ -17,3 +17,31 @@
 2026-06-24 02:01:22, EXEC, v:1, k:ed@detonate, mode:FULL, rate:100, size:67
 2026-06-24 02:01:23, MOVE, v:1, k:ed@detonate, mode:BACK
 2026-06-24 02:01:53, SELF, v:1, k:ed@detonate, self:1, rate:100, study:72, problem:1
+2026-06-24 02:02:56, MOVE, v:1, k:ed@princesa, mode:PICK
+2026-06-24 02:11:31, MOVE, v:1, k:ed@princesa, mode:EDIT
+2026-06-24 02:13:45, EXEC, v:1, k:ed@princesa, mode:FULL, size:62, fail:COMP
+2026-06-24 02:14:24, EXEC, v:1, k:ed@princesa, mode:FULL, rate:0, size:62
+2026-06-24 02:14:26, EXEC, v:1, k:ed@princesa, mode:FULL, rate:0
+2026-06-24 02:14:26, EXEC, v:1, k:ed@princesa, mode:FULL, rate:0
+2026-06-24 02:14:26, EXEC, v:1, k:ed@princesa, mode:FULL, rate:0
+2026-06-24 02:14:21, MOVE, v:1, k:ed@princesa, mode:EDIT
+2026-06-24 02:14:26, MOVE, v:1, k:ed@princesa, mode:EDIT
+2026-06-24 02:18:41, EXEC, v:1, k:ed@princesa, mode:FULL, rate:0
+2026-06-24 02:18:44, EXEC, v:1, k:ed@princesa, mode:FULL, rate:0
+2026-06-24 02:19:13, EXEC, v:1, k:ed@princesa, mode:FULL, rate:0
+2026-06-24 02:19:16, EXEC, v:1, k:ed@princesa, mode:FULL, rate:0
+2026-06-24 02:19:18, EXEC, v:1, k:ed@princesa, mode:FULL, rate:0
+2026-06-24 02:19:21, EXEC, v:1, k:ed@princesa, mode:FULL, rate:0
+2026-06-24 02:19:23, EXEC, v:1, k:ed@princesa, mode:FULL, rate:0
+2026-06-24 02:19:28, EXEC, v:1, k:ed@princesa, mode:FULL, rate:0
+2026-06-24 02:19:32, EXEC, v:1, k:ed@princesa, mode:FULL, rate:0
+2026-06-24 02:19:36, EXEC, v:1, k:ed@princesa, mode:FULL, rate:0
+2026-06-24 02:19:40, EXEC, v:1, k:ed@princesa, mode:FULL, rate:0
+2026-06-24 02:19:43, EXEC, v:1, k:ed@princesa, mode:FULL, rate:0
+2026-06-24 02:19:48, EXEC, v:1, k:ed@princesa, mode:FULL, rate:0
+2026-06-24 02:20:22, EXEC, v:1, k:ed@princesa, mode:FULL, rate:0
+2026-06-24 02:20:41, EXEC, v:1, k:ed@princesa, mode:FULL, rate:0
+2026-06-24 02:20:47, EXEC, v:1, k:ed@princesa, mode:FULL, rate:0
+2026-06-24 02:20:46, MOVE, v:1, k:ed@princesa, mode:EDIT
+2026-06-24 02:23:17, EXEC, v:1, k:ed@princesa, mode:FULL, rate:0
+2026-06-24 02:23:16, MOVE, v:1, k:ed@princesa, mode:EDIT

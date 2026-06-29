@@ -17,8 +17,33 @@
         },
         {
             "label": "2026-03-30_00-36-09",
-            "content": "package main\n\nimport \"fmt\"\n\nfunc josephus(n int, e int) {\n\n\telementos := make([]int, n)\n\tvivos := make([]bool, n)\n\tfor i := 0; i < n; i++ {\n\t\telementos[i] = i + 1\n\t\tvivos[i] = true\n\t}\n\n\tespada := e - 1\n\tcount := n\n\n\tfor count > 1 {\n\t\tfmt.Print(\"[ \")\n\t\tfor i := 0; i < n; i++ {\n\t\t\tif vivos[i] {\n\t\t\t\tfmt.Printf(\"%d\", elementos[i])\n\t\t\t\tif i == espada {\n\t\t\t\t\tfmt.Print(\">\")\n\t\t\t\t}\n\t\t\t\tfmt.Print(\" \")\n\t\t\t}\n\t\t}\n\t\tfmt.Println(\"]\")\n\n\t\talvo := (espada + 1) % n\n\t\tfor !vivos[alvo] {\n\t\t\talvo = (alvo + 1) % n\n\t\t}\n\n\t\tvivos[alvo] = false\n\t\tcount--\n\n\t\tespada = (alvo + 1) % n\n\t\tfor !vivos[espada] {\n\t\t\tespada = (espada + 1) % n\n\t\t}\n\t}\n\n\tfor i := 0; i < n; i++ {\n\t\tif vivos[i] {\n\t\t\tfmt.Printf(\"[ %d> ]\\n\", elementos[i])\n\t\t\tbreak\n\t\t}\n\t}\n}\n\nfunc main() {\n\n\tvar n, e int\n\tfmt.Scan(&n, &e)\n\n\tjosephus(n, e)\n\n}\n",
+            "content": "@@ -30,196 +30,208 @@\n unc \n-proximoVivo(vivos %5B%5Dbool, pos, \n+josephus(\n n int\n-)\n+, e\n  int\n+)\n  %7B%0A\n-%09p\n+%0A%09element\n os \n+:\n = \n-(pos + 1) %25\n+make(%5B%5Dint,\n  n\n+)\n %0A%09\n-for !vivos%5Bpos%5D %7B%0A%09%09pos = (pos + 1) %25 n%0A%09%7D%0A%09return pos%0A%7D%0A%0Afunc imprimirVivos(elementos %5B%5Dint, vivos %5B%5Dbool, espada int)\n+vivos := make(%5B%5Dbool, n)%0A%09for i := 0; i %3C n; i++ %7B%0A%09%09elementos%5Bi%5D = i + 1%0A%09%09vivos%5Bi%5D = true%0A%09%7D%0A%0A%09espada := e - 1%0A%09count := n%0A%0A%09for count %3E 1\n  %7B%0A\n+%09\n %09fmt\n@@ -243,16 +243,17 @@\n t(%22%5B %22)%0A\n+%09\n %09for i :\n@@ -265,22 +265,9 @@\n i %3C \n-len(elementos)\n+n\n ; i+\n@@ -276,12 +276,12 @@\n %7B%0A%09%09\n+%09\n if \n-!\n vivo\n@@ -294,36 +294,42 @@\n %0A%09%09%09\n-continue%0A%09%09%7D%0A%09%09fmt.Print(v)%0A\n+%09fmt.Printf(%22%25d%22, elementos%5Bi%5D)%0A%09%09\n %09%09if\n@@ -342,24 +342,26 @@\n espada %7B%0A%09%09%09\n+%09%09\n fmt.Print(%22%3E\n@@ -365,18 +365,22 @@\n (%22%3E%22)%0A%09%09\n-%7D%0A\n+%09%09%7D%0A%09%09\n %09%09fmt.Pr\n@@ -389,18 +389,25 @@\n t(%22 %22)%0A%09\n-%7D%0A\n+%09%09%7D%0A%09%09%7D%0A%09\n %09fmt.Pri\n@@ -420,176 +420,129 @@\n %5D%22)%0A\n-%7D%0A%0Afunc josephus(n int, e int) %7B%0A%0A%09elementos := make(%5B%5Dint, n)%0A%09vivos := make(%5B%5Dbool, n)%0A%09for i := 0; i %3C n; i++ %7B%0A%09%09elementos%5Bi%5D = i + 1%0A%09%09vivos%5Bi%5D = true%0A%09%7D\n+%0A%09%09alvo := (espada + 1) %25 n%0A%09%09for !vivos%5Balvo%5D %7B%0A%09%09%09alvo = (alvo + 1) %25 n%0A%09%09%7D%0A%0A%09%09vivos%5Balvo%5D = false%0A%09%09count--\n %0A%0A\n+%09\n %09espada \n := e\n@@ -541,199 +541,80 @@\n ada \n-:\n = \n-e - 1%0A%09count := n%0A%0A\n+(alvo + 1) %25 n%0A%09\n %09for \n-count %3E 1 %7B%0A%09%09imprimirVivos(elementos, \n+!\n vivos\n-, \n+%5B\n espada\n-)%0A%0A%09%09alvo := proximoVivo(vivos, espada, n)%0A%09%09vivos%5Balvo%5D = true%0A%09%09count--%0A%09%09espada = proximoVivo(vivos, alvo, n)\n+%5D %7B%0A%09%09%09espada = (espada + 1) %25 n%0A%09%09%7D\n %0A%09%7D%0A\n@@ -624,30 +624,25 @@\n or i\n-, v\n  := \n-range elementos\n+0; i %3C n; i++\n  %7B%0A%09\n@@ -668,18 +668,17 @@\n mt.Print\n-ln\n+f\n (%22%5B %25d%3E \n@@ -682,12 +682,25 @@\n d%3E %5D\n+%5Cn\n %22, \n-v\n+elementos%5Bi%5D\n )%0A%09%09\n@@ -730,16 +730,17 @@\n ain() %7B%0A\n+%0A\n %09var n, \n@@ -763,16 +763,17 @@\n &n, &e)%0A\n+%0A\n %09josephu\n",
             "lines": "59"
+        },
+        {
+            "label": "2026-06-24_02-13-45",
+            "content": "@@ -233,37 +233,39 @@\n %22%5B %22)%0A%09for i\n-, v\n  := \n-range \n+0; i %3C len(\n elementos %7B%0A\n@@ -253,32 +253,38 @@\n  %3C len(elementos\n+); i++\n  %7B%0A%09%09if !vivos%5Bi\n",
+            "lines": "62"
+        },
+        {
+            "label": "2026-06-24_02-14-24",
+            "content": "@@ -812,17 +812,18 @@\n mt.Print\n-f\n+ln\n (%22%5B %25d%3E \n@@ -827,10 +827,8 @@\n d%3E %5D\n-%5Cn\n %22, v\n",
+            "lines": "62"
+        },
+        {
+            "label": "2026-06-29_14-31-33",
+            "content": "@@ -544,12 +544,11 @@\n %5D = \n-fals\n+tru\n e%0A%09%7D\n",
+            "lines": "62"
+        },
+        {
+            "label": "2026-06-29_15-12-13",
+            "content": "@@ -544,11 +544,12 @@\n %5D = \n-tru\n+fals\n e%0A%09%7D\n@@ -696,20 +696,19 @@\n alvo%5D = \n-fals\n+tru\n e%0A%09%09coun\n",
+            "lines": "62"
+        },
+        {
+            "label": "2026-06-29_15-12-43",
+            "content": "package main\n\nimport \"fmt\"\n\nfunc proximoVivo(vivos []bool, pos, n int) int {\n\tpos = (pos + 1) % n\n\tfor !vivos[pos] {\n\t\tpos = (pos + 1) % n\n\t}\n\treturn pos\n}\n\nfunc imprimirVivos(elementos []int, vivos []bool, espada int) {\n\tfmt.Print(\"[ \")\n\tfor i, v := range elementos {\n\t\tif !vivos[i] {\n\t\t\tcontinue\n\t\t}\n\t\tfmt.Print(v)\n\t\tif i == espada {\n\t\t\tfmt.Print(\">\")\n\t\t}\n\t\tfmt.Print(\" \")\n\t}\n\tfmt.Println(\"]\")\n}\n\nfunc josephus(n int, e int) {\n\n\telementos := make([]int, n)\n\tvivos := make([]bool, n)\n\tfor i := 0; i < n; i++ {\n\t\telementos[i] = i + 1\n\t\tvivos[i] = true\n\t}\n\n\tespada := e - 1\n\tcount := n\n\n\tfor count > 1 {\n\t\timprimirVivos(elementos, vivos, espada)\n\n\t\talvo := proximoVivo(vivos, espada, n)\n\t\tvivos[alvo] = false\n\t\tcount--\n\t\tespada = proximoVivo(vivos, alvo, n)\n\t}\n\n\tfor i, v := range elementos {\n\t\tif vivos[i] {\n\t\t\tfmt.Printf(\"[ %d> ]\\n\", v)\n\t\t\tbreak\n\t\t}\n\t}\n}\n\nfunc main() {\n\tvar n, e int\n\tfmt.Scan(&n, &e)\n\tjosephus(n, e)\n\n}\n",
+            "lines": "62"
         }
     ]
 }
