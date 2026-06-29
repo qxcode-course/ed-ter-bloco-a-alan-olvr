@@ -22,11 +22,7 @@ func getMen(vet []int) []int {
 func getCalmWomen(vet []int) []int {
 	result := []int{}
 	for _, v := range vet {
-		stress := v
-		if stress < 0 {
-			stress = -stress
-		}
-		if v < 0 && stress < 10 {
+		if v < 0 && -v < 10 {
 			result = append(result, v)
 		}
 	}
@@ -40,18 +36,18 @@ func sortVet(vet []int) []int {
 	return result
 }
 
+func abs(x int) int {
+	if x < 0 {
+		return -x
+	}
+	return x
+}
+
 func sortStress(vet []int) []int {
 	result := make([]int, len(vet))
 	copy(result, vet)
 	sort.Slice(result, func(i, j int) bool {
-		ai, aj := result[i], result[j]
-		if ai < 0 {
-			ai = -ai
-		}
-		if aj < 0 {
-			aj = -aj
-		}
-		return ai < aj
+		return abs(result[i]) < abs(result[j])
 	})
 	return result
 }
@@ -88,6 +84,30 @@ func repeated(vet []int) []int {
 	return result
 }
 
+func printVec(vet []int) {
+	fmt.Print("[")
+	for i, v := range vet {
+		if i > 0 {
+			fmt.Print(", ")
+		}
+		fmt.Print(v)
+	}
+	fmt.Println("]")
+}
+
+func str2vet(s string) []int {
+	if s == "[]" {
+		return []int{}
+	}
+	s = s[1 : len(s)-1]
+	parts := strings.Split(s, ",")
+	vet := make([]int, len(parts))
+	for i, part := range parts {
+		vet[i], _ = strconv.Atoi(part)
+	}
+	return vet
+}
+
 func main() {
 	scanner := bufio.NewScanner(os.Stdin)
 
@@ -122,29 +142,4 @@ func main() {
 			return
 		}
 	}
-}
-
-func printVec(vet []int) {
-	fmt.Print("[")
-	for i, val := range vet {
-		if i > 0 {
-			fmt.Print(", ")
-		}
-		fmt.Print(val)
-	}
-	fmt.Println("]")
-}
-
-func str2vet(s string) []int {
-	if s == "[]" {
-		return nil
-	}
-	s = s[1 : len(s)-1]
-	parts := strings.Split(s, ",")
-	var vet []int
-	for _, part := range parts {
-		n, _ := strconv.Atoi(part)
-		vet = append(vet, n)
-	}
-	return vet
 }
