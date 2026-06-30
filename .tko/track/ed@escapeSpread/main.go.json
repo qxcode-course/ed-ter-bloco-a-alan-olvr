@@ -1,0 +1,24 @@
+{
+    "patches": [
+        {
+            "label": "2026-06-30_00-28-46",
+            "content": "@@ -2449,17 +2449,16 @@\n  return \n--\n 1%0A    %7D%0A\n",
+            "lines": "120"
+        },
+        {
+            "label": "2026-06-30_17-49-40",
+            "content": "@@ -1787,31 +1787,8 @@\n ' %7C%7C\n- grid%5Bni%5D%5Bnj%5D == '1' %7C%7C\n  vis\n",
+            "lines": "120"
+        },
+        {
+            "label": "2026-06-30_17-54-06",
+            "content": "@@ -205,231 +205,8 @@\n t %7B%0A\n-%0A    for i, row := range grid %7B%0A        filtered := row%5B:0%5D%0A        for _, b := range row %7B%0A            if b != ' ' %7B%0A                filtered = append(filtered, b)%0A            %7D%0A        %7D%0A        grid%5Bi%5D = filtered%0A    %7D%0A%0A\n %09m, \n",
+            "lines": "120"
+        },
+        {
+            "label": "2026-06-30_18-00-54",
+            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n)\n\n// N\u00e3o modifique a assinatura da fun\u00e7\u00e3o numIslands\n// Ela \u00e9 a fun\u00e7\u00e3o que ser\u00e1 chamada no LeetCode para resolver o problema\nfunc numIslands(grid [][]byte) int {\n\n    for i, row := range grid {\n        filtered := row[:0]\n        for _, b := range row {\n            if b != ' ' {\n                filtered = append(filtered, b)\n            }\n        }\n        grid[i] = filtered\n    }\n\n\tm, n := len(grid), len(grid[0])\n\tdirs := [][2]int{{0,1}, {0, -1}, {1, 0}, {-1, 0}}\n\tconst INF = int(1e18)\n\n\tfireTime := make([][]int, m)\n\tfor i := range fireTime {\n\t\tfireTime[i] = make([]int, n)\n\t\tfor j := range fireTime[i] {\n\t\t\tfireTime[i][j] = INF\n\t\t}\n\t}\n\n\tqueue := [][2]int{}\n\tfor i := 0; i < m; i++ {\n\t\tfor j := 0; j < n; j++ {\n\t\t\tif grid[i][j] == '1' {\n\t\t\t\tfireTime[i][j] = 0\n\t\t\t\tqueue = append(queue, [2]int{i, j})\n\t\t\t}\n\t\t}\n\t}\n\n\tfor t := 1; len(queue) > 0; t++ {\n    \tnext := [][2]int{}\n        for _, cell := range queue {\n        \tfor _, d := range dirs {\n                ni, nj := cell[0]+d[0], cell[1]+d[1]\n                if ni >= 0 && ni < m && nj >= 0 && nj < n &&\n                    grid[ni][nj] != '2' && fireTime[ni][nj] == INF {\n                    fireTime[ni][nj] = t\n                    next = append(next, [2]int{ni, nj})\n                }\n            }\n        }\n        queue = next\n    }\n\n\tcanEscape := func(w int) bool {\n        if fireTime[0][0] <= w {\n            return false\n        }\n        visited := make([][]bool, m)\n        for i := range visited {\n            visited[i] = make([]bool, n)\n        }\n        visited[0][0] = true\n        queue := [][2]int{{0, 0}}\n        for step := 1; len(queue) > 0; step++ {\n            next := [][2]int{}\n            for _, cell := range queue {\n                for _, d := range dirs {\n                    ni, nj := cell[0]+d[0], cell[1]+d[1]\n                    if ni < 0 || ni >= m || nj < 0 || nj >= n {\n                        continue\n                    }\n                    if grid[ni][nj] == '2' || grid[ni][nj] == '1' || visited[ni][nj] {\n                        continue\n                    }\n                    arrivalTime := w + step\n                    if ni == m-1 && nj == n-1 {\n                        if arrivalTime <= fireTime[ni][nj] {\n                            return true\n                        }\n                        continue\n                    }\n                    if arrivalTime < fireTime[ni][nj] {\n                        visited[ni][nj] = true\n                        next = append(next, [2]int{ni, nj})\n                    }\n                }\n            }\n            queue = next\n        }\n        return false\n    }\n\n    if !canEscape(0) {\n        return -1\n    }\n    if canEscape(int(1e9)) {\n        return int(1e9)\n    }\n    lo, hi := 0, int(1e9)\n    for lo < hi {\n        mid := (lo + hi + 1) / 2\n        if canEscape(mid) {\n            lo = mid\n        } else {\n            hi = mid - 1\n        }\n    }\n    return lo\n}\n\n// N\u00e3o modifique a fun\u00e7\u00e3o main\nfunc main() {\n\tscanner := bufio.NewScanner(os.Stdin)\n\tscanner.Scan()\n\tline := scanner.Text()\n\tvar nl, nc int\n\tfmt.Sscanf(line, \"%d %d\", &nl, &nc)\n\tgrid := make([][]byte, nl)\n\tfor i := 0; i < nl; i++ {\n\t\tscanner.Scan()\n\t\tgrid[i] = []byte(scanner.Text())\n\t}\n\tresult := numIslands(grid)\n\tfmt.Println(result)\n}\n",
+            "lines": "131"
+        }
+    ]
+}
