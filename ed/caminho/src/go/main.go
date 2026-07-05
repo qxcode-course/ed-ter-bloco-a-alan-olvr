@@ -11,55 +11,71 @@ type Pos struct {
 }
 
 func (p Pos) getNeig() []Pos {
-	return []Pos{
-		{p.l - 1, p.c},
-		{p.l + 1, p.c},
-		{p.l, p.c - 1},
-		{p.l, p.c + 1},
-	}
+	cima := Pos{p.l - 1, p.c}
+	baixo := Pos{p.l + 1, p.c}
+	esquerda := Pos{p.l, p.c - 1}
+	direita := Pos{p.l, p.c + 1}
+
+	return []Pos{cima, baixo, esquerda, direita}
 }
 
 func inside(grid [][]rune, pos Pos) bool {
-	nrows := len(grid)
-	ncols := len(grid[0])
-	return pos.l >= 0 && pos.l < nrows && pos.c >= 0 && pos.c < ncols
+	qtdLinhas := len(grid)
+	qtdColunas := len(grid[0])
+
+	if pos.l < 0 || pos.l >= qtdLinhas {
+		return false
+	}
+	if pos.c < 0 || pos.c >= qtdColunas {
+		return false
+	}
+	return true
 }
 
 func match(grid [][]rune, pos Pos, char rune) bool {
-	return inside(grid, pos) && grid[pos.l][pos.c] == char
+	if !inside(grid, pos) {
+		return false
+	}
+	return grid[pos.l][pos.c] == char
 }
 
 func search(grid [][]rune, startPos Pos, endPos Pos) {
-	prev := map[Pos]Pos{}
-	visited := map[Pos]bool{}
+	veioDe := map[Pos]Pos{}
+	explorado := map[Pos]bool{}
 
-	q := NewQueue[Pos]()
-	q.Enqueue(startPos)
-	visited[startPos] = true
+	fila := NewQueue[Pos]()
+	fila.Enqueue(startPos)
+	explorado[startPos] = true
 
-	for !q.IsEmpty() {
-		cur, _ := q.Dequeue()
+	for !fila.IsEmpty() {
+		noAtual, _ := fila.Dequeue()
 
-	if cur == endPos {
+		if noAtual == endPos {
+			trilha := make([]Pos, 0)
+			no := noAtual
+			for no != startPos {
+				trilha = append(trilha, no)
+				no = veioDe[no]
+			}
+			trilha = append(trilha, startPos)
+			for _, ponto := range trilha {
+				grid[ponto.l][ponto.c] = '.'
+			}
 
-    path := []Pos{}
-    for p := cur; p != startPos; p = prev[p] {
-        path = append(path, p)
-   	}
-	path = append(path, startPos)
+			return
+		}
 
-    for _, p := range path {
-        grid[p.l][p.c] = '.'
-    }
-
-    return
-}
-
-		for _, neig := range cur.getNeig() {
-			if !visited[neig] && (match(grid, neig, ' ') || neig == endPos) {
-				visited[neig] = true
-				prev[neig] = cur
-				q.Enqueue(neig)
+		vizinhos := noAtual.getNeig()
+		for _, v := range vizinhos {
+			if explorado[v] {
+				continue
+			}
+			ehCaminhoLivre := match(grid, v, ' ')
+			ehDestino := v == endPos
+			if ehCaminhoLivre || ehDestino {
+				explorado[v] = true
+				veioDe[v] = noAtual
+				fila.Enqueue(v)
 			}
 		}
 	}
