@@ -299,3 +299,204 @@
 2026-07-05 18:53:10, MOVE, v:1, k:ed@clonar, mode:BACK
 2026-07-05 18:53:24, SELF, v:1, k:ed@clonar, self:1, rate:100, study:120, problem:1
 2026-07-05 18:53:32, MOVE, v:1, k:ed@soma, mode:DOWN
+2026-07-05 18:53:05, MOVE, v:1, k:ed@clonar, mode:EDIT
+2026-07-05 18:53:08, MOVE, v:1, k:ed@clonar, mode:EDIT
+2026-07-05 18:53:32, MOVE, v:1, k:ed@soma, mode:EDIT
+2026-07-05 18:57:22, MOVE, v:1, k:ed@soma, mode:EDIT
+2026-07-05 18:57:48, MOVE, v:1, k:ed@soma, mode:PICK
+2026-07-05 18:57:50, EXEC, v:1, k:ed@soma, mode:FULL, rate:42, size:85
+2026-07-05 19:00:22, EXEC, v:1, k:ed@soma, mode:FULL, rate:100, size:94
+2026-07-05 19:00:35, EXEC, v:1, k:ed@soma, mode:FULL, size:94, fail:COMP
+2026-07-05 19:00:42, EXEC, v:1, k:ed@soma, mode:FULL, size:94, fail:COMP
+2026-07-05 19:00:43, EXEC, v:1, k:ed@soma, mode:FULL, fail:COMP
+2026-07-05 19:00:44, EXEC, v:1, k:ed@soma, mode:FULL, fail:COMP
+2026-07-05 19:01:00, EXEC, v:1, k:ed@soma, mode:FULL, rate:0, size:94
+2026-07-05 19:01:01, EXEC, v:1, k:ed@soma, mode:FULL, rate:0
+2026-07-05 19:01:24, EXEC, v:1, k:ed@soma, mode:FULL, rate:0
+2026-07-05 19:01:25, EXEC, v:1, k:ed@soma, mode:FULL, rate:0
+2026-07-05 19:01:28, EXEC, v:1, k:ed@soma, mode:FULL, rate:0
+2026-07-05 19:01:29, EXEC, v:1, k:ed@soma, mode:FULL, rate:0
+2026-07-05 19:01:34, EXEC, v:1, k:ed@soma, mode:FULL, rate:0
+2026-07-05 19:01:43, EXEC, v:1, k:ed@soma, mode:FULL, rate:0
+2026-07-05 19:00:59, MOVE, v:1, k:ed@soma, mode:EDIT
+2026-07-05 19:01:43, MOVE, v:1, k:ed@soma, mode:EDIT
+2026-07-05 19:04:08, EXEC, v:1, k:ed@soma, mode:FULL, rate:0
+2026-07-05 19:04:11, EXEC, v:1, k:ed@soma, mode:FULL, rate:0
+2026-07-05 19:04:16, EXEC, v:1, k:ed@soma, mode:FULL, rate:0
+2026-07-05 19:04:20, EXEC, v:1, k:ed@soma, mode:FULL, rate:0
+2026-07-05 19:04:28, EXEC, v:1, k:ed@soma, mode:FULL, rate:0
+2026-07-05 19:04:31, EXEC, v:1, k:ed@soma, mode:FULL, rate:0
+2026-07-05 19:04:36, EXEC, v:1, k:ed@soma, mode:FULL, rate:0
+2026-07-05 19:04:37, EXEC, v:1, k:ed@soma, mode:FULL, rate:0
+2026-07-05 19:04:53, EXEC, v:1, k:ed@soma, mode:FULL, rate:0
+2026-07-05 19:04:56, EXEC, v:1, k:ed@soma, mode:FULL, rate:0
+2026-07-05 19:05:01, EXEC, v:1, k:ed@soma, mode:FULL, rate:0
+2026-07-05 19:05:06, EXEC, v:1, k:ed@soma, mode:FULL, rate:0
+2026-07-05 19:05:07, EXEC, v:1, k:ed@soma, mode:FULL, rate:0
+2026-07-05 19:05:17, EXEC, v:1, k:ed@soma, mode:FULL, rate:0
+2026-07-05 19:05:20, EXEC, v:1, k:ed@soma, mode:FULL, rate:0
+2026-07-05 19:05:30, EXEC, v:1, k:ed@soma, mode:FULL, rate:0
+2026-07-05 19:05:39, EXEC, v:1, k:ed@soma, mode:FULL, rate:0
+2026-07-05 19:05:47, EXEC, v:1, k:ed@soma, mode:FULL, rate:0
+2026-07-05 19:05:50, EXEC, v:1, k:ed@soma, mode:FULL, rate:0
+2026-07-05 19:05:54, EXEC, v:1, k:ed@soma, mode:FULL, rate:0
+2026-07-05 19:06:03, EXEC, v:1, k:ed@soma, mode:FULL, rate:0
+2026-07-05 19:06:06, EXEC, v:1, k:ed@soma, mode:FULL, rate:0
+2026-07-05 19:06:11, EXEC, v:1, k:ed@soma, mode:FULL, rate:0
+2026-07-05 19:06:16, EXEC, v:1, k:ed@soma, mode:FULL, rate:0
+2026-07-05 19:06:21, EXEC, v:1, k:ed@soma, mode:FULL, rate:0
+2026-07-05 19:06:31, EXEC, v:1, k:ed@soma, mode:FULL, rate:0
+2026-07-05 19:06:35, EXEC, v:1, k:ed@soma, mode:FULL, rate:0
+2026-07-05 19:06:42, EXEC, v:1, k:ed@soma, mode:FULL, rate:0
+2026-07-05 19:06:43, EXEC, v:1, k:ed@soma, mode:FULL, rate:0
+2026-07-05 19:06:45, EXEC, v:1, k:ed@soma, mode:FULL, rate:0
+2026-07-05 19:06:52, EXEC, v:1, k:ed@soma, mode:FULL, rate:0
+2026-07-05 19:07:01, EXEC, v:1, k:ed@soma, mode:FULL, rate:0
+2026-07-05 19:07:05, EXEC, v:1, k:ed@soma, mode:FULL, rate:0
+2026-07-05 19:07:09, EXEC, v:1, k:ed@soma, mode:FULL, rate:0
+2026-07-05 19:07:12, EXEC, v:1, k:ed@soma, mode:FULL, rate:0
+2026-07-05 19:07:12, MOVE, v:1, k:ed@soma, mode:EDIT
+2026-07-05 19:13:51, EXEC, v:1, k:ed@soma, mode:FULL, rate:0
+2026-07-05 19:13:52, EXEC, v:1, k:ed@soma, mode:FULL, rate:0
+2026-07-05 19:16:44, EXEC, v:1, k:ed@soma, mode:FULL, rate:0
+2026-07-05 19:16:44, MOVE, v:1, k:ed@soma, mode:EDIT
+2026-07-05 19:31:29, EXEC, v:1, k:ed@soma, mode:FULL, rate:0
+2026-07-05 19:31:29, MOVE, v:1, k:ed@soma, mode:EDIT
+2026-07-05 19:38:54, EXEC, v:1, k:ed@soma, mode:FULL, rate:0
+2026-07-05 19:38:54, MOVE, v:1, k:ed@soma, mode:EDIT
+2026-07-05 19:53:05, EXEC, v:1, k:ed@soma, mode:FULL, rate:0
+2026-07-05 19:53:05, MOVE, v:1, k:ed@soma, mode:EDIT
+2026-07-05 22:42:49, MOVE, v:1, k:ed@soma, mode:PICK
+2026-07-05 22:42:52, EXEC, v:1, k:ed@soma, mode:FULL, rate:0
+2026-07-05 22:44:04, EXEC, v:1, k:ed@soma, mode:FULL, rate:0
+2026-07-05 22:44:46, EXEC, v:1, k:ed@soma, mode:FULL, rate:0
+2026-07-05 22:44:47, EXEC, v:1, k:ed@soma, mode:FULL, rate:0
+2026-07-05 22:44:49, EXEC, v:1, k:ed@soma, mode:FULL, rate:0
+2026-07-05 22:44:51, EXEC, v:1, k:ed@soma, mode:FULL, rate:0
+2026-07-05 22:44:52, EXEC, v:1, k:ed@soma, mode:FULL, rate:0
+2026-07-05 22:44:57, EXEC, v:1, k:ed@soma, mode:FULL, rate:0
+2026-07-05 22:45:00, EXEC, v:1, k:ed@soma, mode:FULL, rate:0
+2026-07-05 22:45:03, EXEC, v:1, k:ed@soma, mode:FULL, rate:0
+2026-07-05 22:45:07, EXEC, v:1, k:ed@soma, mode:FULL, rate:0
+2026-07-05 22:45:13, EXEC, v:1, k:ed@soma, mode:FULL, rate:0
+2026-07-05 22:45:16, EXEC, v:1, k:ed@soma, mode:FULL, rate:0
+2026-07-05 22:45:23, EXEC, v:1, k:ed@soma, mode:FULL, rate:0
+2026-07-05 22:45:26, EXEC, v:1, k:ed@soma, mode:FULL, rate:0
+2026-07-05 22:45:28, EXEC, v:1, k:ed@soma, mode:FULL, rate:0
+2026-07-05 22:46:24, EXEC, v:1, k:ed@soma, mode:FULL, rate:0
+2026-07-05 22:46:26, EXEC, v:1, k:ed@soma, mode:FULL, rate:0
+2026-07-05 22:46:30, EXEC, v:1, k:ed@soma, mode:FULL, rate:0
+2026-07-05 22:46:35, EXEC, v:1, k:ed@soma, mode:FULL, rate:0
+2026-07-05 22:46:37, EXEC, v:1, k:ed@soma, mode:FULL, rate:0
+2026-07-05 22:47:20, EXEC, v:1, k:ed@soma, mode:FULL, rate:0
+2026-07-05 22:47:24, EXEC, v:1, k:ed@soma, mode:FULL, rate:0
+2026-07-05 22:47:28, EXEC, v:1, k:ed@soma, mode:FULL, rate:0
+2026-07-05 22:47:29, EXEC, v:1, k:ed@soma, mode:FULL, rate:0
+2026-07-05 22:47:32, EXEC, v:1, k:ed@soma, mode:FULL, rate:0
+2026-07-05 22:47:41, EXEC, v:1, k:ed@soma, mode:FULL, rate:0
+2026-07-05 22:47:41, MOVE, v:1, k:ed@soma, mode:EDIT
+2026-07-05 22:50:01, EXEC, v:1, k:ed@soma, mode:FULL, rate:0
+2026-07-05 22:50:09, EXEC, v:1, k:ed@soma, mode:FULL, rate:0
+2026-07-05 22:50:42, EXEC, v:1, k:ed@soma, mode:FULL, rate:0
+2026-07-05 22:50:43, EXEC, v:1, k:ed@soma, mode:FULL, rate:0
+2026-07-05 22:50:45, EXEC, v:1, k:ed@soma, mode:FULL, rate:0
+2026-07-05 22:50:46, EXEC, v:1, k:ed@soma, mode:FULL, rate:0
+2026-07-05 22:52:17, EXEC, v:1, k:ed@soma, mode:FULL, rate:0
+2026-07-05 22:52:19, EXEC, v:1, k:ed@soma, mode:FULL, rate:0
+2026-07-05 22:52:21, EXEC, v:1, k:ed@soma, mode:FULL, rate:0
+2026-07-05 22:52:22, EXEC, v:1, k:ed@soma, mode:FULL, rate:0
+2026-07-05 22:52:24, EXEC, v:1, k:ed@soma, mode:FULL, rate:0
+2026-07-05 22:52:25, EXEC, v:1, k:ed@soma, mode:FULL, rate:0
+2026-07-05 22:52:27, EXEC, v:1, k:ed@soma, mode:FULL, rate:0
+2026-07-05 22:52:28, EXEC, v:1, k:ed@soma, mode:FULL, rate:0
+2026-07-05 22:52:32, EXEC, v:1, k:ed@soma, mode:FULL, rate:0
+2026-07-05 22:52:37, EXEC, v:1, k:ed@soma, mode:FULL, rate:0
+2026-07-05 22:52:38, EXEC, v:1, k:ed@soma, mode:FULL, rate:0
+2026-07-05 22:52:39, EXEC, v:1, k:ed@soma, mode:FULL, rate:0
+2026-07-05 22:52:40, EXEC, v:1, k:ed@soma, mode:FULL, rate:0
+2026-07-05 22:52:40, MOVE, v:1, k:ed@soma, mode:EDIT
+2026-07-05 22:54:55, EXEC, v:1, k:ed@soma, mode:FULL, rate:0
+2026-07-05 22:54:56, EXEC, v:1, k:ed@soma, mode:FULL, rate:0
+2026-07-05 22:55:02, EXEC, v:1, k:ed@soma, mode:FULL, rate:0
+2026-07-05 22:55:04, EXEC, v:1, k:ed@soma, mode:FULL, rate:0
+2026-07-05 22:55:06, EXEC, v:1, k:ed@soma, mode:FULL, rate:0
+2026-07-05 22:55:24, EXEC, v:1, k:ed@soma, mode:FULL, rate:0
+2026-07-05 22:55:25, EXEC, v:1, k:ed@soma, mode:FULL, rate:0
+2026-07-05 22:55:38, EXEC, v:1, k:ed@soma, mode:FULL, rate:0
+2026-07-05 22:55:39, EXEC, v:1, k:ed@soma, mode:FULL, rate:0
+2026-07-05 22:55:59, EXEC, v:1, k:ed@soma, mode:FULL, rate:0
+2026-07-05 22:56:31, EXEC, v:1, k:ed@soma, mode:FULL, rate:0
+2026-07-05 22:56:32, EXEC, v:1, k:ed@soma, mode:FULL, rate:0
+2026-07-05 22:56:33, EXEC, v:1, k:ed@soma, mode:FULL, rate:0
+2026-07-05 22:56:47, EXEC, v:1, k:ed@soma, mode:FULL, rate:0
+2026-07-05 22:57:17, EXEC, v:1, k:ed@soma, mode:FULL, rate:0
+2026-07-05 22:57:23, EXEC, v:1, k:ed@soma, mode:FULL, rate:0
+2026-07-05 22:57:39, EXEC, v:1, k:ed@soma, mode:FULL, rate:0
+2026-07-05 22:57:40, EXEC, v:1, k:ed@soma, mode:FULL, rate:0
+2026-07-05 22:57:40, MOVE, v:1, k:ed@soma, mode:EDIT
+2026-07-05 23:00:15, EXEC, v:1, k:ed@soma, mode:FULL, rate:0
+2026-07-05 23:01:09, EXEC, v:1, k:ed@soma, mode:FULL, rate:0
+2026-07-05 23:01:12, EXEC, v:1, k:ed@soma, mode:FULL, rate:0
+2026-07-05 23:01:12, EXEC, v:1, k:ed@soma, mode:FULL, rate:0
+2026-07-05 23:01:13, EXEC, v:1, k:ed@soma, mode:FULL, rate:0
+2026-07-05 23:01:13, MOVE, v:1, k:ed@soma, mode:EDIT
+2026-07-05 23:03:15, EXEC, v:1, k:ed@soma, mode:FULL, rate:0
+2026-07-05 23:03:16, EXEC, v:1, k:ed@soma, mode:FULL, rate:0
+2026-07-05 23:03:17, EXEC, v:1, k:ed@soma, mode:FULL, rate:0
+2026-07-05 23:03:17, EXEC, v:1, k:ed@soma, mode:FULL, rate:0
+2026-07-05 23:03:18, EXEC, v:1, k:ed@soma, mode:FULL, rate:0
+2026-07-05 23:03:18, MOVE, v:1, k:ed@soma, mode:EDIT
+2026-07-05 23:09:10, EXEC, v:1, k:ed@soma, mode:FULL, rate:0
+2026-07-05 23:09:10, EXEC, v:1, k:ed@soma, mode:FULL, rate:0
+2026-07-05 23:09:24, EXEC, v:1, k:ed@soma, mode:FULL, rate:0
+2026-07-05 23:09:34, EXEC, v:1, k:ed@soma, mode:FULL, rate:0
+2026-07-05 23:09:47, EXEC, v:1, k:ed@soma, mode:FULL, rate:0
+2026-07-05 23:10:05, EXEC, v:1, k:ed@soma, mode:FULL, rate:0
+2026-07-05 23:10:09, EXEC, v:1, k:ed@soma, mode:FULL, rate:0
+2026-07-05 23:10:46, EXEC, v:1, k:ed@soma, mode:FULL, rate:0
+2026-07-05 23:11:48, EXEC, v:1, k:ed@soma, mode:FULL, rate:0
+2026-07-05 23:11:51, EXEC, v:1, k:ed@soma, mode:FULL, rate:0
+2026-07-05 23:11:57, EXEC, v:1, k:ed@soma, mode:FULL, rate:0
+2026-07-05 23:12:01, EXEC, v:1, k:ed@soma, mode:FULL, rate:0
+2026-07-05 23:12:02, EXEC, v:1, k:ed@soma, mode:FULL, rate:0
+2026-07-05 23:12:08, EXEC, v:1, k:ed@soma, mode:FULL, rate:0
+2026-07-05 23:12:09, EXEC, v:1, k:ed@soma, mode:FULL, rate:0
+2026-07-05 23:12:27, EXEC, v:1, k:ed@soma, mode:FULL, rate:0
+2026-07-05 23:12:27, EXEC, v:1, k:ed@soma, mode:FULL, rate:0
+2026-07-05 23:12:28, EXEC, v:1, k:ed@soma, mode:FULL, rate:0
+2026-07-05 23:12:30, EXEC, v:1, k:ed@soma, mode:FULL, rate:0
+2026-07-05 23:12:31, EXEC, v:1, k:ed@soma, mode:FULL, rate:0
+2026-07-05 23:12:32, EXEC, v:1, k:ed@soma, mode:FULL, rate:0
+2026-07-05 23:12:34, EXEC, v:1, k:ed@soma, mode:FULL, rate:0
+2026-07-05 23:12:39, EXEC, v:1, k:ed@soma, mode:FULL, rate:0
+2026-07-05 23:12:43, EXEC, v:1, k:ed@soma, mode:FULL, rate:0
+2026-07-05 23:12:43, MOVE, v:1, k:ed@soma, mode:EDIT
+2026-07-05 23:12:48, EXEC, v:1, k:ed@soma, mode:FULL, rate:0
+2026-07-05 23:12:55, EXEC, v:1, k:ed@soma, mode:FULL, rate:0
+2026-07-05 23:12:57, EXEC, v:1, k:ed@soma, mode:FULL, rate:0
+2026-07-05 23:13:01, EXEC, v:1, k:ed@soma, mode:FULL, rate:0
+2026-07-05 23:13:56, EXEC, v:1, k:ed@soma, mode:FULL, rate:0
+2026-07-05 23:13:59, EXEC, v:1, k:ed@soma, mode:FULL, rate:0
+2026-07-05 23:14:01, EXEC, v:1, k:ed@soma, mode:FULL, rate:0
+2026-07-05 23:14:02, EXEC, v:1, k:ed@soma, mode:FULL, rate:0
+2026-07-05 23:14:38, EXEC, v:1, k:ed@soma, mode:FULL, rate:0
+2026-07-05 23:14:38, MOVE, v:1, k:ed@soma, mode:EDIT
+2026-07-05 23:21:35, EXEC, v:1, k:ed@soma, mode:FULL, rate:0
+2026-07-05 23:21:52, EXEC, v:1, k:ed@soma, mode:FULL, rate:0
+2026-07-05 23:22:10, EXEC, v:1, k:ed@soma, mode:FULL, rate:0
+2026-07-05 23:22:11, EXEC, v:1, k:ed@soma, mode:FULL, rate:0
+2026-07-05 23:22:11, MOVE, v:1, k:ed@soma, mode:EDIT
+2026-07-05 23:54:54, EXEC, v:1, k:ed@soma, mode:FULL, rate:0
+2026-07-05 23:55:34, EXEC, v:1, k:ed@soma, mode:FULL, rate:0
+2026-07-05 23:55:38, EXEC, v:1, k:ed@soma, mode:FULL, rate:0
+2026-07-05 23:55:47, EXEC, v:1, k:ed@soma, mode:FULL, rate:0
+2026-07-05 23:56:29, EXEC, v:1, k:ed@soma, mode:FULL, rate:0
+2026-07-05 23:56:30, EXEC, v:1, k:ed@soma, mode:FULL, rate:0
+2026-07-05 23:57:08, EXEC, v:1, k:ed@soma, mode:FULL, rate:0
+2026-07-05 23:57:08, MOVE, v:1, k:ed@soma, mode:EDIT
+2026-07-05 23:57:50, EXEC, v:1, k:ed@soma, mode:FULL, rate:0
+2026-07-05 23:57:54, EXEC, v:1, k:ed@soma, mode:FULL, rate:0
+2026-07-05 23:57:55, EXEC, v:1, k:ed@soma, mode:FULL, rate:0
+2026-07-05 23:59:16, EXEC, v:1, k:ed@soma, mode:FULL, rate:0
+2026-07-05 23:59:18, EXEC, v:1, k:ed@soma, mode:FULL, rate:0
+2026-07-05 23:59:54, EXEC, v:1, k:ed@soma, mode:FULL, rate:0

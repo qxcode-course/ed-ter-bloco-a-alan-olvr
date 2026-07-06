@@ -3,8 +3,8 @@ package main
 import (
 	"bufio"
 	"fmt"
+	"math"
 	"os"
-
 	"strconv"
 	"strings"
 )
@@ -16,19 +16,38 @@ type Node struct {
 }
 
 func rec_sum(node *Node) int {
-	_ = node
-	return 0
+	if node == nil {
+		return 0
+	}
+	return node.Value + rec_sum(node.Left) + rec_sum(node.Right)
 }
 
 func rec_min(node *Node) int {
-	_ = node
-	return 0
+	if node == nil {
+		return math.MaxInt
+	}
+	min := node.Value
+	if l := rec_min(node.Left); l < min {
+		min = l
+	}
+	if r := rec_min(node.Right); r < min {
+		min = r
+	}
+	return min
 }
 
 // MyShow imprime a árvore binária de forma formatada.
 func MyShow(node *Node, nivel int) {
-	_, _ = node, nivel
-	// TODO
+	if node == nil {
+		return
+	}
+
+	MyShow(node.Right, nivel+1)
+	for i := 0; i < nivel; i++ {
+		fmt.Print("    ")
+	}
+	fmt.Println(node.Value)
+	MyShow(node.Left, nivel+1)
 }
 
 func BShow(node *Node, heranca string) {

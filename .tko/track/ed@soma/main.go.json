@@ -1,0 +1,39 @@
+{
+    "patches": [
+        {
+            "label": "2026-07-05_18-57-50",
+            "content": "@@ -42,15 +42,8 @@\n os%22%0A\n-%09%22math%22\n %0A%09%22s\n@@ -287,172 +287,16 @@\n  %7B%0A%09\n-if node == nil %7B%0A%09%09return math.MaxInt%0A%09%7D%0A%09min := node.Value%0A%09if l := rec_min(node.Left); l %3C min %7B%0A%09%09min = l%0A%09%7D%0A%09if r := rec_min(node.Right); r %3C min %7B%0A%09%09min = r%0A%09%7D\n+_ = node\n %0A%09re\n@@ -300,19 +300,17 @@\n %09return \n-min\n+0\n %0A%7D%0A%0A// M\n",
+            "lines": "85"
+        },
+        {
+            "label": "2026-07-05_19-00-22",
+            "content": "@@ -312,27 +312,35 @@\n  %7B%0A%09%09return \n-nil\n+math.MaxInt\n %0A%09%7D%0A%09min := \n",
+            "lines": "94"
+        },
+        {
+            "label": "2026-07-05_19-00-35",
+            "content": "@@ -312,25 +312,27 @@\n  %7B%0A%09%09return \n-0\n+nil\n %0A%09%7D%0A%09min := \n",
+            "lines": "94"
+        },
+        {
+            "label": "2026-07-05_19-00-42",
+            "content": "@@ -320,19 +320,9 @@\n urn \n-math.MaxInt\n+0\n %0A%09%7D%0A\n@@ -375,9 +375,9 @@\n ; l \n-%3E\n+%3C\n  min\n",
+            "lines": "94"
+        },
+        {
+            "label": "2026-07-05_19-00-59",
+            "content": "@@ -381,17 +381,17 @@\n eft); l \n-%3C\n+%3E\n  min %7B%0A%09\n",
+            "lines": "94"
+        },
+        {
+            "label": "2026-07-06_00-12-30",
+            "content": "@@ -38,18 +38,18 @@\n %22%0A%09%22\n-math%22%0A%09%22os\n+os%22%0A%09%22math\n %22%0A%09%22\n@@ -567,172 +567,35 @@\n  %7B%0A%09\n-if node == nil %7B%0A%09%09return%0A%09%7D%0A%0A%09MyShow(node.Right, nivel+1)%0A%09for i := 0; i %3C nivel; i++ %7B%0A%09%09fmt.Print(%22    %22)%0A%09%7D%0A%09fmt.Println(node.Value)%0A%09MyShow(node.Left, nivel+1)\n+_, _ = node, nivel%0A%09// TODO\n %0A%7D%0A%0A\n",
+            "lines": "94"
+        },
+        {
+            "label": "2026-07-06_00-21-22",
+            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"math\"\n\t\"os\"\n\t\"strconv\"\n\t\"strings\"\n)\n\ntype Node struct {\n\tValue int\n\tLeft  *Node\n\tRight *Node\n}\n\nfunc rec_sum(node *Node) int {\n\tif node == nil {\n\t\treturn 0\n\t}\n\treturn node.Value + rec_sum(node.Left) + rec_sum(node.Right)\n}\n\nfunc rec_min(node *Node) int {\n\tif node == nil {\n\t\treturn math.MaxInt\n\t}\n\tmin := node.Value\n\tif l := rec_min(node.Left); l < min {\n\t\tmin = l\n\t}\n\tif r := rec_min(node.Right); r < min {\n\t\tmin = r\n\t}\n\treturn min\n}\n\n// MyShow imprime a \u00e1rvore bin\u00e1ria de forma formatada.\nfunc MyShow(node *Node, nivel int) {\n\tif node == nil {\n\t\treturn\n\t}\n\n\tMyShow(node.Right, nivel+1)\n\tfor i := 0; i < nivel; i++ {\n\t\tfmt.Print(\"    \")\n\t}\n\tfmt.Println(node.Value)\n\tMyShow(node.Left, nivel+1)\n}\n\nfunc BShow(node *Node, heranca string) {\n\tif node != nil && (node.Left != nil || node.Right != nil) {\n\t\tBShow(node.Left, heranca+\"l\")\n\t}\n\tfor i := 0; i < len(heranca)-1; i++ {\n\t\tif heranca[i] != heranca[i+1] {\n\t\t\tfmt.Print(\"\u2502   \")\n\t\t} else {\n\t\t\tfmt.Print(\"    \")\n\t\t}\n\t}\n\tif heranca != \"\" {\n\t\tif heranca[len(heranca)-1] == 'l' {\n\t\t\tfmt.Print(\"\u256d\u2500\u2500\u2500\")\n\t\t} else {\n\t\t\tfmt.Print(\"\u2570\u2500\u2500\u2500\")\n\t\t}\n\t}\n\tif node == nil {\n\t\tfmt.Println(\"#\")\n\t\treturn\n\t}\n\tfmt.Println(node.Value)\n\tif node.Left != nil || node.Right != nil {\n\t\tBShow(node.Right, heranca+\"r\")\n\t}\n}\n\nfunc create(parts *[]string) *Node {\n\telem := (*parts)[0]\n\t*parts = (*parts)[1:]\n\tif elem == \"#\" {\n\t\treturn nil\n\t}\n\tvalue, _ := strconv.Atoi(elem)\n\tnode := &Node{Value: value}\n\tnode.Left = create(parts)\n\tnode.Right = create(parts)\n\treturn node\n}\n\nfunc main() {\n\tscanner := bufio.NewScanner(os.Stdin)\n\tscanner.Scan()\n\tparts := strings.Split(scanner.Text(), \" \")\n\troot := create(&parts)\n\tfmt.Println(\"Arvore:\")\n\tBShow(root, \"\")\n\tfmt.Printf(\"Soma: %d, Minimo: %d\\n\", rec_sum(root), rec_min(root))\n}\n",
+            "lines": "102"
+        }
+    ]
+}

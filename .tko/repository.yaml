@@ -23,11 +23,11 @@ expanded:
 flags:
   inbox: all
   panel: skills
-  task_graph_mode: time
+  task_graph_mode: executions
   show_time: 'true'
 audit:
   enabled: true
   interval_seconds: null
 lang: go
-selected: ed@clonar
-selected_index: 11
+selected: ed@soma
+selected_index: 12
