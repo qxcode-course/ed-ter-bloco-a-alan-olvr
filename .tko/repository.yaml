@@ -29,5 +29,5 @@ audit:
   enabled: true
   interval_seconds: null
 lang: go
-selected: ed@soma
-selected_index: 12
+selected: ed@compare
+selected_index: 14
