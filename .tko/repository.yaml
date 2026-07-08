@@ -29,5 +29,5 @@ audit:
   enabled: true
   interval_seconds: null
 lang: go
-selected: ed@arvore-path
-selected_index: 15
+selected: ed@bst_insert
+selected_index: 16
