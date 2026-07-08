@@ -29,5 +29,5 @@ audit:
   enabled: true
   interval_seconds: null
 lang: go
-selected: ed@compare
-selected_index: 14
+selected: ed@arvore-path
+selected_index: 15

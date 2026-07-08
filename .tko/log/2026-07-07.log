@@ -338,3 +338,10 @@
 2026-07-07 21:32:48, MOVE, v:1, k:ed@compare, mode:BACK
 2026-07-07 21:32:55, SELF, v:1, k:ed@compare, self:1, rate:100, problem:1
 2026-07-07 21:33:05, SELF, v:1, k:ed@compare, self:1, rate:100, study:140, problem:1
+2026-07-07 21:34:28, MOVE, v:1, k:ed@arvore-path, mode:DOWN
+2026-07-07 21:32:47, MOVE, v:1, k:ed@compare, mode:EDIT
+2026-07-07 21:32:46, MOVE, v:1, k:ed@compare, mode:EDIT
+2026-07-07 21:34:28, MOVE, v:1, k:ed@arvore-path, mode:EDIT
+2026-07-07 21:34:28, MOVE, v:1, k:ed@arvore-path, mode:EDIT
+2026-07-07 21:57:12, MOVE, v:1, k:ed@arvore-path, mode:PICK
+2026-07-07 21:57:13, EXEC, v:1, k:ed@arvore-path, mode:FULL, size:80, fail:COMP
